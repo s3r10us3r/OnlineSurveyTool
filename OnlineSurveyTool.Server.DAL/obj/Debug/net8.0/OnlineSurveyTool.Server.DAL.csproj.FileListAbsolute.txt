@@ -1,0 +1,15 @@
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.deps.json
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.csproj.AssemblyReference.cache
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.AssemblyInfoInputs.cache
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.AssemblyInfo.cs
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.csproj.CoreCompileInputs.cache
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSu.A3770AD9.Up2Date
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\refint\OnlineSurveyTool.Server.DAL.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\ref\OnlineSurveyTool.Server.DAL.dll

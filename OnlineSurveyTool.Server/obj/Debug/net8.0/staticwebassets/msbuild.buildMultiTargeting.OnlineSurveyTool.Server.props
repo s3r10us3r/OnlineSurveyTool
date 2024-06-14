@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OnlineSurveyTool.Server.props" />
+</Project>

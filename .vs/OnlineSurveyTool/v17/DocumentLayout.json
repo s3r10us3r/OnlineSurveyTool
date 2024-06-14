@@ -3,12 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\answeroptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\answeroptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|solutionrelative:onlinesurveytool.server.services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|solutionrelative:onlinesurveytool.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|solutionrelative:onlinesurveytool.server.services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|solutionrelative:onlinesurveytool.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|solutionrelative:onlinesurveytool.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|solutionrelative:onlinesurveytool.server.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9951562C-E406-4F70-913B-9AA97A791416}|OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj|solutionrelative:onlinesurveytool.server.services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\baserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\baserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\interfaces\\ianswerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\interfaces\\ianswerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\answeroptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\answeroptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\answerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\interfaces\\ichoiceoptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\interfaces\\ichoiceoptionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\interfaces\\ianswerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|solutionrelative:onlinesurveytool.server.dal\\interfaces\\ianswerrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3FA5089-B38E-48DE-8DBF-28444D1295EB}|OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal\\interfaces\\iquestionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,10 +119,6 @@
       "RelativeMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|solutionrelative:onlinesurveytool.server.dal.models\\answeroption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613203240_FixedDeleteMirgationFR.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613203240_FixedDeleteMirgationFR.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal.models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|solutionrelative:onlinesurveytool.server.dal.models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -115,20 +139,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185420_OSTFixedDeleteMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|solutionrelative:onlinesurveytool.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal.models\\onlinesurveytool.server.dal.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|solutionrelative:onlinesurveytool.server.dal.models\\onlinesurveytool.server.dal.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal.models\\questiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|solutionrelative:onlinesurveytool.server.dal.models\\questiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB250A02-BE5F-4014-AAFF-E6E6A1FD6EDD}|OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj|solutionrelative:onlinesurveytool.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BD80295-D689-4902-998C-C818C87F469C}|onlinesurveytool.client\\onlinesurveytool.client.esproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -153,6 +169,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{6BD80295-D689-4902-998C-C818C87F469C}|onlinesurveytool.client\\onlinesurveytool.client.esproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.client\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6BD80295-D689-4902-998C-C818C87F469C}|onlinesurveytool.client\\onlinesurveytool.client.esproj|solutionrelative:onlinesurveytool.client\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|c:\\users\\jedyn\\source\\repos\\onlinesurveytool\\onlinesurveytool.server.dal.models\\migrations\\20240613203240_fixeddeletemirgationfr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD91E99D-54D8-4514-A9F8-1EFEA1B25A70}|OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj|solutionrelative:onlinesurveytool.server.dal.models\\migrations\\20240613203240_fixeddeletemirgationfr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,11 +182,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 190,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "IRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IRepo.cs",
@@ -179,25 +199,103 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "OnlineSurveyTool.Server\\Properties\\launchSettings.json",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-14T09:21:37.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.Services\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\AuthenticationService.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server.Services\\AuthenticationService.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAcwF4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:23:18.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\BaseService.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server.Services\\BaseService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:01:20.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IService.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\Interfaces\\IService.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.Services\\Interfaces\\IService.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\Interfaces\\IService.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server.Services\\Interfaces\\IService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T07:59:23.387Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IQuestionRepo.cs",
-              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
-              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
-              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
-              "RelativeToolTip": "OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T18:19:27.533Z",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\appsettings.json",
+              "RelativeToolTip": "OnlineSurveyTool.Server\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-13T16:48:22.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Program.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Program.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T16:30:59.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\Interfaces\\IAuthenticationService.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.Services\\Interfaces\\IAuthenticationService.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\Interfaces\\IAuthenticationService.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server.Services\\Interfaces\\IAuthenticationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:19:48.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "IAnswerRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IAnswerRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IAnswerRepo.cs",
@@ -210,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "IChoiceOptionRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IChoiceOptionRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IChoiceOptionRepo.cs",
@@ -223,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "IUserRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IUserRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IUserRepo.cs",
@@ -236,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "AnswerRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\AnswerRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\AnswerRepo.cs",
@@ -249,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "BaseRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\BaseRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\BaseRepo.cs",
@@ -262,20 +360,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
+              "Title": "IQuestionRepo.cs",
+              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
+              "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
+              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
+              "RelativeToolTip": "OnlineSurveyTool.Server.DAL\\Interfaces\\IQuestionRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T18:19:27.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "AnswerOptionRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\AnswerOptionRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\AnswerOptionRepo.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\AnswerOptionRepo.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL\\AnswerOptionRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T19:34:08.084Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "ISurveyResultRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\ISurveyResultRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\ISurveyResultRepo.cs",
@@ -288,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "ISurveyRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\ISurveyRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\ISurveyRepo.cs",
@@ -301,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "IAnswerOptionRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\Interfaces\\IAnswerOptionRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\Interfaces\\IAnswerOptionRepo.cs",
@@ -314,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "QuestionRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\QuestionRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\QuestionRepo.cs",
@@ -327,20 +438,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "SurveyRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\SurveyRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\SurveyRepo.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\SurveyRepo.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL\\SurveyRepo.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAzwBIAAAAYAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T21:02:50.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "Survey.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Survey.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Survey.cs",
@@ -353,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "ChoiceOptionRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\ChoiceOptionRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\ChoiceOptionRepo.cs",
@@ -366,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "UserRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\UserRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\UserRepo.cs",
@@ -379,20 +490,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "SurveyResultRepo.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\SurveyResultRepo.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL\\SurveyResultRepo.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\SurveyResultRepo.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL\\SurveyResultRepo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T21:08:17.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "OSTDbContext.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OSTDbContext.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\OSTDbContext.cs",
@@ -405,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "SurveyResult.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\SurveyResult.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\SurveyResult.cs",
@@ -418,20 +529,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "Answer.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Answer.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Answer.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Answer.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL.Models\\Answer.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAASAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBkAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T17:46:16.99Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "ChoiceOption.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\ChoiceOption.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\ChoiceOption.cs",
@@ -444,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "AnswerOption.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\AnswerOption.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\AnswerOption.cs",
@@ -457,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 42,
               "Title": "20240613203240_FixedDeleteMirgationFR.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613203240_FixedDeleteMirgationFR.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613203240_FixedDeleteMirgationFR.cs",
@@ -470,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Question.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Question.cs",
@@ -483,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\User.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\User.cs",
@@ -496,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "EntityBase.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\EntityBase.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\EntityBase.cs",
@@ -509,31 +620,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "20240613185149_OSTFixedDeleteMigration.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185149_OSTFixedDeleteMigration.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185149_OSTFixedDeleteMigration.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185149_OSTFixedDeleteMigration.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185149_OSTFixedDeleteMigration.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T18:51:49.942Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "20240613185420_OSTFixedDeleteMigration.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185420_OSTFixedDeleteMigration.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185420_OSTFixedDeleteMigration.cs",
               "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185420_OSTFixedDeleteMigration.cs",
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL.Models\\Migrations\\20240613185420_OSTFixedDeleteMigration.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T18:54:20.968Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "OnlineSurveyTool.Server.DAL.Models.csproj",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
@@ -546,19 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "OnlineSurveyTool.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\appsettings.json",
-              "RelativeToolTip": "OnlineSurveyTool.Server\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-13T16:48:22.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "QuestionType.cs",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\QuestionType.cs",
               "RelativeDocumentMoniker": "OnlineSurveyTool.Server.DAL.Models\\QuestionType.cs",
@@ -566,23 +663,12 @@
               "RelativeToolTip": "OnlineSurveyTool.Server.DAL.Models\\QuestionType.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T17:52:45.652Z"
+              "WhenOpened": "2024-06-13T17:52:45.652Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Program.cs",
-              "RelativeDocumentMoniker": "OnlineSurveyTool.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\Program.cs",
-              "RelativeToolTip": "OnlineSurveyTool.Server\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T16:30:59.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "proxy.conf.js",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\src\\proxy.conf.js",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\src\\proxy.conf.js",
@@ -590,11 +676,12 @@
               "RelativeToolTip": "onlinesurveytool.client\\src\\proxy.conf.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-13T08:05:09.141Z"
+              "WhenOpened": "2024-06-13T08:05:09.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "angular.json",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\angular.json",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\angular.json",
@@ -602,11 +689,12 @@
               "RelativeToolTip": "onlinesurveytool.client\\angular.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-13T08:04:05.429Z"
+              "WhenOpened": "2024-06-13T08:04:05.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "package-lock.json",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\package-lock.json",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\package-lock.json",
@@ -614,11 +702,12 @@
               "RelativeToolTip": "onlinesurveytool.client\\package-lock.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-13T08:04:04.143Z"
+              "WhenOpened": "2024-06-13T08:04:04.143Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\package.json",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\package.json",
@@ -626,11 +715,12 @@
               "RelativeToolTip": "onlinesurveytool.client\\package.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-13T08:03:59.28Z"
+              "WhenOpened": "2024-06-13T08:03:59.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "aspnetcore-https.js",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\aspnetcore-https.js",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\aspnetcore-https.js",
@@ -638,11 +728,12 @@
               "RelativeToolTip": "onlinesurveytool.client\\aspnetcore-https.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-13T08:04:07.498Z"
+              "WhenOpened": "2024-06-13T08:04:07.498Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "launch.json",
               "DocumentMoniker": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\.vscode\\launch.json",
               "RelativeDocumentMoniker": "onlinesurveytool.client\\.vscode\\launch.json",
@@ -650,7 +741,8 @@
               "RelativeToolTip": "onlinesurveytool.client\\.vscode\\launch.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-13T08:04:15.058Z"
+              "WhenOpened": "2024-06-13T08:04:15.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

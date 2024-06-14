@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineSurveyTool.Server.DAL.Models\OnlineSurveyTool.Server.DAL.Models.csproj" />
+    <ProjectReference Include="..\OnlineSurveyTool.Server.DAL\OnlineSurveyTool.Server.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

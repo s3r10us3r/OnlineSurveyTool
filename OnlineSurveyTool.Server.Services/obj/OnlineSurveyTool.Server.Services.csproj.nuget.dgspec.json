@@ -4,14 +4,14 @@
     "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj": {
+    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
-        "projectName": "OnlineSurveyTool.Server.Services",
-        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
+        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
+        "projectName": "OnlineSurveyTool.Server.DAL.Models",
+        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
         "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\obj\\",
+        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,161 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj",
+        "projectName": "OnlineSurveyTool.Server.DAL",
+        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj",
+        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
+        "projectName": "OnlineSurveyTool.Server.Services",
+        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
+        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj"
+              },
+              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj": {
+                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

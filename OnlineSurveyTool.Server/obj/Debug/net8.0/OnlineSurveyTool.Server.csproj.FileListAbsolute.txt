@@ -146,3 +146,4 @@ C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\n
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.Services.pdb
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.pdb
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\obj\Debug\net8.0\OnlineSurveyTool.Server.sourcelink.json
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\AutoMapper.dll

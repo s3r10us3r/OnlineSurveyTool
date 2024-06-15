@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineSurveyTool.Server.DTOs
+namespace OnlineSurveyTool.Server.Services.DTOs
 {
     public class UserRegisterDTO
     {

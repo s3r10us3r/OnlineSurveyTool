@@ -1,4 +1,5 @@
-﻿using OnlineSurveyTool.Server.DAL.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.DAL
@@ -9,9 +10,9 @@ namespace OnlineSurveyTool.Server.DAL
         {
         }
 
-        public new Survey? GetOne(int id)
+        public new async Task<Survey?> GetOne(int id)
         {
-            var survey = Table.Find(id);
+            var survey = await Table.FindAsync(id);
             if (survey is not null && !survey.IsArchived)
             {
                 return survey;
@@ -19,9 +20,9 @@ namespace OnlineSurveyTool.Server.DAL
             return null;
         }
 
-        public Survey? GetOne(string token)
+        public new async Task<Survey?> GetOne(string token)
         {
-            var survey = Table.FirstOrDefault(s => s.Token == token);
+            var survey = await Table.FirstOrDefaultAsync(s => s.Token == token);
             if (survey is not null && !survey.IsArchived)
             {
                 return survey;
@@ -30,14 +31,14 @@ namespace OnlineSurveyTool.Server.DAL
 
         }
 
-        public new List<Survey> GetAll()
+        public new async Task<List<Survey>> GetAll()
         {
-            return Table.Where(s => !s.IsArchived).ToList();
+            return await Table.Where(s => !s.IsArchived).ToListAsync();
         }
 
-        public IEnumerable<Survey> GetOpen(int ownerId)
+        public new async Task<List<Survey>> GetOpen(int ownerId)
         {
-            return Table.Where(s => s.OwnerId == ownerId && !s.IsArchived && s.OwnerId == ownerId);
+            return await Table.Where(s => s.OwnerId == ownerId && !s.IsArchived && s.OwnerId == ownerId).ToListAsync();
         }
     }
 }

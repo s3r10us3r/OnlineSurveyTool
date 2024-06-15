@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineSurveyTool.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d8063c3282fb8e65b5e7112fbfa3364c0563154")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3de6e2b39710cdb9f2af2b0fc6cdd2de231f96c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineSurveyTool.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineSurveyTool.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

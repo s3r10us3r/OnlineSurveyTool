@@ -1,11 +1,9 @@
-﻿using OnlineSurveyTool.Server.DAL.Interfaces;
-using OnlineSurveyTool.Server.DAL.Models;
+﻿using OnlineSurveyTool.Server.DTOs;
 
 namespace OnlineSurveyTool.Server.Services.Interfaces
 {
-    public interface IAuthenticationService : IService<User, IUserRepo>
+    public interface IAuthenticationService
     {
-        IResult<User> CreateUser(string login, string eMail, string password);
-        IResult<string> AuthenticateUser(string login, string password);
+        Task<IResult<string>> AuthenticateUser(UserLoginDTO loginDTO);
     }
 }

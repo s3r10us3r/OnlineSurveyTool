@@ -2,7 +2,7 @@
 
 namespace OnlineSurveyTool.Server.Services
 {
-    public class Result<T> : IResult<T>
+    public sealed class Result<T> : IResult<T>
     {
         public bool IsSuccess => _isSuccess;
 
@@ -39,6 +39,6 @@ namespace OnlineSurveyTool.Server.Services
 
         public static Result<T> Failure(string message) => new Result<T>(false, message, default);
 
-        public static Result<T> Success(T value) => new Result<T>(true, String.Empty, value);
+        public static Result<T> Success(T value) => new Result<T>(true, default, value);
     }
 }

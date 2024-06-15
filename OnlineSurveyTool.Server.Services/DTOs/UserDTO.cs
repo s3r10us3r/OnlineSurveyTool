@@ -1,13 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineSurveyTool.Server.DTOs
+namespace OnlineSurveyTool.Server.Services.DTOs
 {
     public class UserDTO
     {
         [Required]
-        public string Login { get; set; }
-        
+        public int Id { get; set; }
+
         [Required]
-        public string EMail { get; set; }
+        public string Login { get; set; }
+
+        [Required]
+        public string Email { get; set; }
     }
 }

@@ -1,12 +1,17 @@
 div.loginRoot {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 10vh;
+    padding: 10%;
     height: 60vh;
     width: 25vw;
     background-color: white;
     border-radius: 2vh;
     margin: auto;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

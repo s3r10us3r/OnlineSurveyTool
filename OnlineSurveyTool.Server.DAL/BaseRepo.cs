@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineSurveyTool.Server.DAL
 {
@@ -23,16 +18,16 @@ namespace OnlineSurveyTool.Server.DAL
             _table = _db.Set<T>();
         }
 
-        public int Add(T entity)
+        public async Task<int> Add(T entity)
         {
-            _table.Add(entity);
-            return SaveChanges();
+            await _table.AddAsync(entity);
+            return await SaveChanges();
         }
 
-        public int AddRange(IList<T> entities)
+        public async Task<int> AddRange(IList<T> entities)
         {
-            _table.AddRange(entities);
-            return SaveChanges();
+            await _table.AddRangeAsync(entities);
+            return await SaveChanges();
         }
 
         public void Dispose()
@@ -40,41 +35,41 @@ namespace OnlineSurveyTool.Server.DAL
             _db?.Dispose();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _table.ToList();
+            return await _table.ToListAsync();
         }
 
-        public T? GetOne(int id)
+        public async Task<T?> GetOne(int id)
         {
-            return _table.Find(id);
+            return await _table.FindAsync(id);
         }
 
-        public int Remove(int id)
+        public async Task<int> Remove(int id)
         {
-            T? entity = _table.Find(id);
+            T? entity = await _table.FindAsync(id);
             if (entity is null)
             {
                 return 0;
             }
-            return Remove(entity);
+            return await Remove(entity);
         }
 
-        public int Remove(T entity)
+        public async Task<int> Remove(T entity)
         {
             _table.Remove(entity);
-            return SaveChanges();
+            return await SaveChanges();
         }
 
-        public int Save(T entity)
+        public Task<int> Update(T entity)
         {
             _table.Entry(entity).State = EntityState.Modified;
             return SaveChanges();
         }
 
-        public int SaveChanges()
+        public async Task<int> SaveChanges()
         {
-            return _db.SaveChanges();
+            return await _db.SaveChangesAsync();
         }
     }
 }

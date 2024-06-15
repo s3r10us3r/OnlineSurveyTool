@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -29,6 +29,10 @@
     </ProjectReference>
     <ProjectReference Include="..\OnlineSurveyTool.Server.DAL.Models\OnlineSurveyTool.Server.DAL.Models.csproj" />
     <ProjectReference Include="..\OnlineSurveyTool.Server.Services\OnlineSurveyTool.Server.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\" />
   </ItemGroup>
 
 </Project>

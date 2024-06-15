@@ -1,9 +1,11 @@
 ﻿using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
+using OnlineSurveyTool.Server.Services.DTOs;
 
 namespace OnlineSurveyTool.Server.Services.Interfaces
 {
-    public interface IService<E, R> where E: EntityBase, new() where R : IRepo<E>
+    public interface IUserService
     {
+        Task<IResult<UserDTO>> CreateUser(UserRegisterDTO user);
     }
 }

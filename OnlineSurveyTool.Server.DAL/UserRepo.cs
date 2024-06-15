@@ -1,4 +1,5 @@
-﻿using OnlineSurveyTool.Server.DAL.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.DAL
@@ -9,9 +10,9 @@ namespace OnlineSurveyTool.Server.DAL
         {
         }
 
-        public User? GetOne(string Login)
+        public async Task<User?> GetOne(string Login)
         {
-            return Table.FirstOrDefault(u => u.Login == Login);
+            return await Table.FirstOrDefaultAsync(u => u.Login == Login);
         }
     }
 }

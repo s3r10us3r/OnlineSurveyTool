@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.DTOs;
+using OnlineSurveyTool.Server.Services.DTOs;
 using OnlineSurveyTool.Server.Services.Interfaces;
 
 namespace OnlineSurveyTool.Server.Controllers
@@ -10,16 +10,18 @@ namespace OnlineSurveyTool.Server.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthenticationService _authService;
+        private readonly IUserService _userService;
         private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IAuthenticationService authService, ILogger<AuthController> logger)
+        public AuthController(IAuthenticationService authService, IUserService userService, ILogger<AuthController> logger)
         {
+            _userService = userService;
             _authService = authService;
             _logger = logger;
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] UserRegisterDTO userDTO)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDTO userDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -29,11 +31,11 @@ namespace OnlineSurveyTool.Server.Controllers
 
             try
             {
-                var result = _authService.CreateUser(userDTO.Login, userDTO.EMail, userDTO.Password);
+                var result = await _userService.CreateUser(userDTO);
                 if (result.IsSuccess)
                 {
-                    User user = result.Value;
-                    return CreatedAtAction(nameof(Register), new UserDTO { Login = user.Login, EMail = user.EMail });
+                    var user = result.Value;
+                    return CreatedAtAction(nameof(Register), user);
                 }
                 return BadRequest(new { message = result.Message });
             } catch (Exception e)
@@ -44,7 +46,7 @@ namespace OnlineSurveyTool.Server.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] UserLoginDTO loginDTO)
+        public async Task<IActionResult> Login([FromBody] UserLoginDTO loginDTO)
         {
             if(!ModelState.IsValid)
             {
@@ -54,7 +56,7 @@ namespace OnlineSurveyTool.Server.Controllers
 
             try
             {
-                var result = _authService.AuthenticateUser(loginDTO.Login, loginDTO.Password);
+                var result = await _authService.AuthenticateUser(loginDTO);
                 if (!result.IsSuccess)
                 {
                     return BadRequest(new { message = result.Message });

@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using OnlineSurveyTool.Server.DAL;
+using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
+using OnlineSurveyTool.Server.Services;
+using OnlineSurveyTool.Server.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
@@ -9,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<OSTDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalDbConenction")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnectionString")));
 
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -28,6 +32,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
         options.MapInboundClaims = false;
     });
+
+//repos
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+
+//services
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

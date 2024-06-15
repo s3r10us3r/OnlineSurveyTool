@@ -139,3 +139,10 @@ C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\n
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.dll
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.Services.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.Services.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\bin\Debug\net8.0\OnlineSurveyTool.Server.DAL.pdb
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server\obj\Debug\net8.0\OnlineSurveyTool.Server.sourcelink.json

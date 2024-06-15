@@ -5,7 +5,7 @@ namespace OnlineSurveyTool.Server.Services.Interfaces
 {
     public interface IAuthenticationService : IService<User, IUserRepo>
     {
-        User? CreateUser(string login, string eMail, string password);
-        string AuthenticateUser(User user, string password);
+        IResult<User> CreateUser(string login, string eMail, string password);
+        IResult<string> AuthenticateUser(string login, string password);
     }
 }

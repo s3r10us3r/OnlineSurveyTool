@@ -13,3 +13,4 @@ C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Deb
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\refint\OnlineSurveyTool.Server.DAL.dll
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.pdb
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\ref\OnlineSurveyTool.Server.DAL.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.sourcelink.json

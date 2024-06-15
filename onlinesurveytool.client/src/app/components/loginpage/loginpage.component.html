@@ -1,0 +1,14 @@
+<div class="loginRoot">
+  <h1 class="loginHeader">Login</h1>
+  <form [formGroup]="loginForm">
+    <label>
+      Username
+      <input type="text" formControlName="login"/>
+    </label>
+    <label>
+      Password
+      <input type="password" formControlName="password"/>
+    </label>
+    <button type="submit">Login</button>
+  </form>
+</div>

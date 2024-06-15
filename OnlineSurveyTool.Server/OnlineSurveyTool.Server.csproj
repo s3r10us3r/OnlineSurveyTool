@@ -28,10 +28,7 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\OnlineSurveyTool.Server.DAL.Models\OnlineSurveyTool.Server.DAL.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\OnlineSurveyTool.Server.Services\OnlineSurveyTool.Server.Services.csproj" />
   </ItemGroup>
 
 </Project>

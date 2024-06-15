@@ -1,0 +1,12 @@
+div.loginRoot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh;
+    height: 60vh;
+    width: 25vw;
+    background-color: white;
+    border-radius: 2vh;
+    margin: auto;
+}

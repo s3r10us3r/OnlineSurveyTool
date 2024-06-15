@@ -12,3 +12,4 @@ C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL.Models\
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL.Models\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.pdb
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL.Models\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.genruntimeconfig.cache
 C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL.Models\obj\Debug\net8.0\ref\OnlineSurveyTool.Server.DAL.Models.dll
+C:\Users\jedyn\source\repos\OnlineSurveyTool\OnlineSurveyTool.Server.DAL.Models\obj\Debug\net8.0\OnlineSurveyTool.Server.DAL.Models.sourcelink.json

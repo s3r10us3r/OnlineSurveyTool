@@ -1,14 +1,15 @@
 <div class="loginRoot">
-  <h1 class="loginHeader">Login</h1>
-  <form [formGroup]="loginForm">
-    <label>
+  <h1 class="loginHeader">Sign in</h1>
+  <form class="userForm" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+    <label class="userForm">
       Username
-      <input type="text" formControlName="login"/>
+      <input class="userForm" type="text" placeholder="Type your username" formControlName="login"/>
     </label>
     <label>
       Password
-      <input type="password" formControlName="password"/>
+      <input type="password" placeholder="Type your password" formControlName="password"/>
     </label>
-    <button type="submit">Login</button>
+    <button class="gradientbackground" type="submit">Sign in</button>
   </form>
+  <a routerLink="/register">Don't have an account yet? Sign up!</a>
 </div>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineSurveyTool.Server.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3de6e2b39710cdb9f2af2b0fc6cdd2de231f96c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9998d0bc2f6dc6f55681ca5d492411ee2c41882b")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineSurveyTool.Server.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineSurveyTool.Server.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

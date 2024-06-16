@@ -1,0 +1,27 @@
+<div class="registerRoot">
+  <h1 class="loginHeader">Sign up</h1>
+  <form class="userForm" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+
+    <div class="inputs">
+      <label>
+        Username
+        <input type="text" placeholder="Type your username" formControlName="login" />
+        <p>{{ loginErrorText }}</p>
+      </label>
+     
+      <label>
+        Email
+        <input type="text" placeholder="Type your email" formControlName="email" />
+        <p>{{ emailErrorText }}</p>
+      </label>
+      <label>
+        Password
+        <input type="password" placeholder="Type your password" formControlName="password" />
+        <p>{{ passwordErrorText }}</p>
+      </label>
+    </div>
+
+    <button class="gradientbackground" [disabled]="registerForm.disabled" type="submit">Sign up</button>
+  </form>
+  <a routerLink="/login">Already have an account? Sign in!</a>
+</div>

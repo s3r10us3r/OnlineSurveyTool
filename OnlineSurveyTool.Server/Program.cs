@@ -10,8 +10,10 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<OSTDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnectionString")));
+var connectionString = builder.Configuration.GetConnectionString("LocalConnectionString");
+
+builder.Services.AddDbContext<OstDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddJWTAuthentication(builder.Configuration);
 

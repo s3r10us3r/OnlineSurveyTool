@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "s6ylBNbAr38pYzCXFMTsEyeHIXE7u2jGD5WN+rga1/w=",
+  "Hash": "LerNmXF0coR7ZmVS2D5xYChSEhSCiEVK/qXyz3A2pX8=",
   "Source": "OnlineSurveyTool.Server",
   "BasePath": "_content/OnlineSurveyTool.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\onlinesurveytool.client\\onlinesurveytool.client.esproj",
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/onlinesurveytool.client/onlinesurveytool.client.esproj",
       "Version": 2,
       "Source": "onlinesurveytool.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

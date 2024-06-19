@@ -5,7 +5,7 @@ namespace OnlineSurveyTool.Server.DAL
 {
     public class ChoiceOptionRepo : BaseRepo<ChoiceOption>, IChoiceOptionRepo
     {
-        public ChoiceOptionRepo(OSTDbContext dbContext) : base(dbContext)
+        public ChoiceOptionRepo(OstDbContext dbContext) : base(dbContext)
         {
         }
     }

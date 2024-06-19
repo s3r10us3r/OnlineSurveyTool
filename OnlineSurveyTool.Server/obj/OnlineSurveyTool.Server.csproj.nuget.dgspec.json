@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj": {}
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/OnlineSurveyTool.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj",
         "projectName": "OnlineSurveyTool.Server.DAL.Models",
-        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj",
-        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\obj\\",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -50,15 +42,15 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
@@ -77,37 +69,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj",
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj",
         "projectName": "OnlineSurveyTool.Server.DAL",
-        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj",
-        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\obj\\",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
-                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj"
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj"
               }
             }
           }
@@ -116,11 +105,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -142,40 +126,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj",
         "projectName": "OnlineSurveyTool.Server.Services",
-        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj",
-        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\obj\\",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
-                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj"
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj"
               },
-              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj": {
-                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL\\OnlineSurveyTool.Server.DAL.csproj"
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj"
               }
             }
           }
@@ -184,11 +165,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -224,40 +200,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/OnlineSurveyTool.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj",
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/OnlineSurveyTool.Server.csproj",
         "projectName": "OnlineSurveyTool.Server",
-        "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\OnlineSurveyTool.Server.csproj",
-        "packagesPath": "C:\\Users\\jedyn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\obj\\",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/OnlineSurveyTool.Server.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jedyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj": {
-                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.DAL.Models\\OnlineSurveyTool.Server.DAL.Models.csproj"
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj"
               },
-              "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj": {
-                "projectPath": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server.Services\\OnlineSurveyTool.Server.Services.csproj"
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj"
               }
             }
           }
@@ -266,11 +239,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -323,7 +291,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

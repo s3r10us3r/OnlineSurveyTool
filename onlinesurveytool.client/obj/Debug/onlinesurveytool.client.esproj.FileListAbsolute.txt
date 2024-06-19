@@ -1,1 +1,2 @@
-C:\Users\jedyn\source\repos\OnlineSurveyTool\onlinesurveytool.client\obj\Debug\onlinesurveytool.client.esproj.CoreCompileInputs.cache
+C:/Users/jedyn/source/repos/OnlineSurveyTool/onlinesurveytool.client/obj/Debug/onlinesurveytool.client.esproj.CoreCompileInputs.cache
+/home/tradeckm/RiderProjects/OnlineSurveyTool/onlinesurveytool.client/obj/Debug/onlinesurveytool.client.esproj.CoreCompileInputs.cache

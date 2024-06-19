@@ -2,13 +2,13 @@
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
-    public class OSTDbContext : DbContext
+    public class OstDbContext : DbContext
     {
-        public OSTDbContext(DbContextOptions options) : base(options)
+        public OstDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        public OSTDbContext() : base()
+        public OstDbContext() : base()
         {
         }
 
@@ -78,11 +78,9 @@ namespace OnlineSurveyTool.Server.DAL.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            if (!builder.IsConfigured)
-            {
-                var connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=OnlineSurveyTool";
-                builder.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
-            }
+            if (builder.IsConfigured) return;
+            const string connectionString = @"Server=localhost;Database=OnlineSurveyTool;User=server;Password=serverPassword";
+            builder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
     }
 

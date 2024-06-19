@@ -6,7 +6,7 @@ namespace OnlineSurveyTool.Server.DAL
 {
     public class UserRepo : BaseRepo<User>, IUserRepo
     {
-        public UserRepo(OSTDbContext dbContext) : base(dbContext)
+        public UserRepo(OstDbContext dbContext) : base(dbContext)
         {
         }
 

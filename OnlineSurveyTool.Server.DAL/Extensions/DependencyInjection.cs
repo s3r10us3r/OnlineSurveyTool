@@ -8,7 +8,7 @@ namespace OnlineSurveyTool.Server.DAL.Extensions
     {
         public static void AddRepos(this IServiceCollection services)
         {
-            services.AddDbContext<OSTDbContext>();
+            services.AddDbContext<OstDbContext>();
             services.AddScoped<IAnswerOptionRepo, AnswerOptionRepo>();
             services.AddScoped<IAnswerRepo, AnswerRepo>();
             services.AddScoped<IChoiceOptionRepo, ChoiceOptionRepo>();

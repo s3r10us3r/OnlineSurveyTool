@@ -5,7 +5,7 @@ namespace OnlineSurveyTool.Server.DAL
 {
     public class SurveyResultRepo : BaseRepo<SurveyResult>, ISurveyResultRepo
     {
-        public SurveyResultRepo(OSTDbContext dbContext) : base(dbContext)
+        public SurveyResultRepo(OstDbContext dbContext) : base(dbContext)
         {
         }
     }

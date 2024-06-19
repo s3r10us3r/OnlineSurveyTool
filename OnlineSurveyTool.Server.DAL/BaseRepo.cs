@@ -7,12 +7,12 @@ namespace OnlineSurveyTool.Server.DAL
     public class BaseRepo<T> : IRepo<T> where T : EntityBase, new()
     {
         private readonly DbSet<T> _table;
-        private readonly OSTDbContext _db;
+        private readonly OstDbContext _db;
 
-        protected OSTDbContext Context => _db;
+        protected OstDbContext Context => _db;
         protected DbSet<T> Table => _table;
 
-        public BaseRepo(OSTDbContext dbContext)
+        public BaseRepo(OstDbContext dbContext)
         {
             _db = dbContext;
             _table = _db.Set<T>();

@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\jedyn\\source\\repos\\OnlineSurveyTool\\OnlineSurveyTool.Server\\..\\onlinesurveytool.client",
+"WorkingDirectory": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/../onlinesurveytool.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

@@ -39,9 +39,9 @@ namespace OnlineSurveyTool.Server.Controllers
                 }
                 if (result.Message == "User with this login already exists!")
                 {
-                    return Conflict(new { message = result.Message });
+                    return Conflict(new { message = "User with this login already exists!" });
                 }
-                return BadRequest(new { message = result.Message });
+                return BadRequest(new { message = "Invalid credentials have been supplied!" });
             } catch (Exception e)
             {
                 _logger.LogError("Error occured in AuthController.Register {e}", e);
@@ -57,13 +57,13 @@ namespace OnlineSurveyTool.Server.Controllers
                 _logger.LogWarning("Bad model supplied to AuthController.Login() {model}", loginDTO);
                 return BadRequest(new { message = "Invalid data provided", errors = ModelState });
             }
-
             try
             {
                 var result = await _authService.AuthenticateUser(loginDTO);
                 if (!result.IsSuccess)
                 {
-                    return BadRequest(new { message = result.Message });
+                    _logger.LogInformation("Invalid credentials have been supplied message: {message}", result.Message);
+                    return Unauthorized(new { message = "Invalid credentials!" });
                 }
                 string token = result.Value;
                 return Ok(new JWTResponseDTO { Token = token, TokenType = "bearer"});

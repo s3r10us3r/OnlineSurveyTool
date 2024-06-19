@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms'
-import { Validators } from '@angular/forms'
-
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { UserRegisterDTO } from '../../../dtos/user.register.dto';
 
 @Component({
   selector: 'register-component',
@@ -9,29 +10,80 @@ import { Validators } from '@angular/forms'
   styleUrls: ['../../styles/userForm.css'],
 })
 export class RegisterComponent {
+
+  constructor(private userService: UserService) { }
+
   loginErrorText: string = '';
   emailErrorText: string = '';
   passwordErrorText: string = '';
+  responseMessage: string = '';
+  responseColor: string = 'red';
+  loading: boolean = false;
 
   registerForm = new FormGroup({
-    login: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    login: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^\S*$/)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8), this.passwordValidator()])
+    password: new FormControl('', [Validators.required, Validators.minLength(8), this.passwordValidator()]),
+    passwordRepeat: new FormControl('')
   });
 
   handleSubmit() {
     if (this.registerForm.valid) {
+      if (this.registerForm.value.passwordRepeat !== this.registerForm.value.password) {
+        this.passwordErrorText = "Passwords are not the same!";
+      }
+
+      this.loading = true;
+      this.registerForm.disable();
       this.loginErrorText = "";
       this.emailErrorText = "";
       this.passwordErrorText = "";
 
-      this.registerForm.disable();
+      this.registerUser();
+      
     }
     else {   
       this.checkLogin();
       this.checkEmail();
       this.checkPassword();
     }
+  }
+
+  
+
+  registerUser() {
+    this.responseMessage = '';
+    let registerDto: UserRegisterDTO = new UserRegisterDTO(
+      this.registerForm.value.login,
+      this.registerForm.value.email,
+      this.registerForm.value.password);
+
+    this.userService.registerUser(registerDto)
+      .subscribe({
+        next: (response: any) => this.handleRegisterResponse(response),
+        error: (error: any) => this.handleError(error)
+      })
+  }
+
+  handleRegisterResponse(response: any) {
+    this.responseColor = 'lime';
+    this.responseMessage = 'User registered succesfully! You can go back and log in now!';
+    console.log(response);
+  }
+
+  handleError(error: any) {
+    if (error.status == 409) {
+      this.responseColor = 'red';
+      this.responseMessage = 'This username is already used by someone else! Choose a different username!';
+    }
+    else {
+      this.responseColor = 'red';
+      this.responseMessage = 'Something went wrong! Try again later.'
+      console.log(error);
+    }
+
+      this.loading = false;
+      this.registerForm.enable();
   }
 
   checkLogin(): void {
@@ -72,7 +124,9 @@ export class RegisterComponent {
         } else if (passwordControl.errors['passwordStrength']) {
           this.passwordErrorText = 'Password must contain at least one lowercase and uppercase letter, one digit and one non-alphanumeric character.'
         }
-      }
+    } else if (this.registerForm.value.passwordRepeat !== this.registerForm.value.password) {
+        this.passwordErrorText = "Passwords are not the same!";
+    }
 
   }
 

@@ -37,6 +37,10 @@ namespace OnlineSurveyTool.Server.Controllers
                     var user = result.Value;
                     return CreatedAtAction(nameof(Register), user);
                 }
+                if (result.Message == "User with this login already exists!")
+                {
+                    return Conflict(new { message = result.Message });
+                }
                 return BadRequest(new { message = result.Message });
             } catch (Exception e)
             {
@@ -62,7 +66,7 @@ namespace OnlineSurveyTool.Server.Controllers
                     return BadRequest(new { message = result.Message });
                 }
                 string token = result.Value;
-                return Ok(new { token });
+                return Ok(new JWTResponseDTO { Token = token, TokenType = "bearer"});
             } catch(Exception e)
             {
                 _logger.LogError("Error occured in AuthController.Login {e}", e);

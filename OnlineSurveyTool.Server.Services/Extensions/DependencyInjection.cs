@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using OnlineSurveyTool.Server.Services.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using OnlineSurveyTool.Server.Services.AuthenticationServices;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces;
 
 namespace OnlineSurveyTool.Server.Services.Extensions
 {

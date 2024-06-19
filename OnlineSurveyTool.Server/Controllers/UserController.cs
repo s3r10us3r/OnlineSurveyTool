@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.DTOs;
+using OnlineSurveyTool.Server.Responses;
+using OnlineSurveyTool.Server.Services.AuthenticationServices;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces;
 using OnlineSurveyTool.Server.Services.DTOs;
-using OnlineSurveyTool.Server.Services.Interfaces;
 
 namespace OnlineSurveyTool.Server.Controllers
 {
@@ -10,13 +12,15 @@ namespace OnlineSurveyTool.Server.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthenticationService _authService;
+        private readonly IJWTokenService _jwTokenService;
         private readonly IUserService _userService;
         private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IAuthenticationService authService, IUserService userService, ILogger<AuthController> logger)
+        public AuthController(IAuthenticationService authService, IUserService userService, IJWTokenService jwTokenService, ILogger<AuthController> logger)
         {
             _userService = userService;
             _authService = authService;
+            _jwTokenService = jwTokenService;
             _logger = logger;
         }
 
@@ -26,7 +30,7 @@ namespace OnlineSurveyTool.Server.Controllers
             if (!ModelState.IsValid)
             {
                 _logger.LogWarning("Bad model supplied to AuthController.Register() {model}", userDTO);
-                return BadRequest(new {message = "Invalid data provided", errors = ModelState});
+                return BadRequest(new {Message = "Invalid data provided", errors = ModelState});
             }
 
             try
@@ -37,15 +41,15 @@ namespace OnlineSurveyTool.Server.Controllers
                     var user = result.Value;
                     return CreatedAtAction(nameof(Register), user);
                 }
-                if (result.Message == "User with this login already exists!")
+                if (result.Reason == UserCreationFailure.NameConflict)
                 {
-                    return Conflict(new { message = "User with this login already exists!" });
+                    return Conflict(new { Message = "User with this login already exists!" });
                 }
-                return BadRequest(new { message = "Invalid credentials have been supplied!" });
+                return BadRequest(new { Message = "Invalid credentials have been supplied!" });
             } catch (Exception e)
             {
                 _logger.LogError("Error occured in AuthController.Register {e}", e);
-                return StatusCode(500, new { message = "Internal server error!" });
+                return StatusCode(500, new { Message = "Internal server error!" });
             }
         }
 
@@ -55,7 +59,7 @@ namespace OnlineSurveyTool.Server.Controllers
             if(!ModelState.IsValid)
             {
                 _logger.LogWarning("Bad model supplied to AuthController.Login() {model}", loginDTO);
-                return BadRequest(new { message = "Invalid data provided", errors = ModelState });
+                return BadRequest(new { Message = "Invalid data provided", errors = ModelState });
             }
             try
             {
@@ -63,14 +67,42 @@ namespace OnlineSurveyTool.Server.Controllers
                 if (!result.IsSuccess)
                 {
                     _logger.LogInformation("Invalid credentials have been supplied message: {message}", result.Message);
-                    return Unauthorized(new { message = "Invalid credentials!" });
+                    return Unauthorized(new { Message = "Invalid credentials!" });
                 }
-                string token = result.Value;
-                return Ok(new JWTResponseDTO { Token = token, TokenType = "bearer"});
+                var user = result.Value;
+
+                string accessToken = _jwTokenService.GenerateAccessToken(user);
+                string refreshToken = _jwTokenService.GenerateRefreshToken(user);
+                return Ok(new LoginResponse{ AccessToken = accessToken, RefreshToken = refreshToken});
             } catch(Exception e)
             {
                 _logger.LogError("Error occured in AuthController.Login {e}", e);
-                return StatusCode(500, new { message = "Internal server error!" });
+                return StatusCode(500, new { Message = "Internal server error!" });
+            }
+        }
+
+        [HttpPost("refresh")]
+        public async Task<IActionResult> Refresh([FromBody] string refreshToken)
+        {
+            var claimsPrincipalResult = _jwTokenService.GetClaimsPrincipalFromRefreshToken(refreshToken);
+            if (!claimsPrincipalResult.IsSuccess)
+            {
+                var errorMessage = claimsPrincipalResult.Reason == RefreshFailure.SecurityTokenExpired
+                    ? "Refresh token has expired."
+                    : "Invalid refresh token.";
+                return Unauthorized(new {ErrorMessage = errorMessage});
+            }
+
+            try
+            {
+                var user = await _userService.GetUserFromClaimsPrincipal(claimsPrincipalResult.Value);
+                var accessToken = _jwTokenService.GenerateAccessToken(user);
+                return Ok(new { AccessToken = accessToken });
+            }
+            catch (ArgumentException e)
+            {
+                _logger.LogWarning("Invalid refresh token supplied to Refresh {e}", e);
+                return Unauthorized(new { ErrorMessage = "Invalid refresh token." });
             }
         }
     }

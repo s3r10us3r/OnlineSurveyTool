@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace OnlineSurveyTool.Server.Services
+namespace OnlineSurveyTool.Server.Services.Utils
 {
-    public class BaseService
+    public abstract class BaseService
     {
         private ILogger<BaseService> _logger;
 

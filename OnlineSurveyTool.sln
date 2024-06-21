@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineSurveyTool.Server.DAL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Server.Services", "OnlineSurveyTool.Server.Services\OnlineSurveyTool.Server.Services.csproj", "{9951562C-E406-4F70-913B-9AA97A791416}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Server.Services.Test", "OnlineSurveyTool.Server.Services.Test\OnlineSurveyTool.Server.Services.Test.csproj", "{7B278616-7C81-4986-8ABB-587E67C07E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Server.Tests", "OnlineSurveyTool.Server.Tests\OnlineSurveyTool.Server.Tests.csproj", "{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{9951562C-E406-4F70-913B-9AA97A791416}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9951562C-E406-4F70-913B-9AA97A791416}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9951562C-E406-4F70-913B-9AA97A791416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B278616-7C81-4986-8ABB-587E67C07E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B278616-7C81-4986-8ABB-587E67C07E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B278616-7C81-4986-8ABB-587E67C07E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B278616-7C81-4986-8ABB-587E67C07E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

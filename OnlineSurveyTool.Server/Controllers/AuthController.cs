@@ -32,7 +32,6 @@ namespace OnlineSurveyTool.Server.Controllers
                 _logger.LogWarning("Bad model supplied to AuthController.Register() {model}", userDTO);
                 return BadRequest(new {Message = "Invalid data provided", errors = ModelState});
             }
-
             try
             {
                 var result = await _userService.CreateUser(userDTO);

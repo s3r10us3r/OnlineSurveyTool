@@ -3,8 +3,8 @@ using AutoMapper;
 using Microsoft.IdentityModel.JsonWebTokens;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
 using OnlineSurveyTool.Server.Services.Commons;
-using OnlineSurveyTool.Server.Services.DTOs;
 using OnlineSurveyTool.Server.Services.Test.Mocks;
 
 namespace OnlineSurveyTool.Server.Services.Test.AuthenticationServices;

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using OnlineSurveyTool.Server.Services.DTOs;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
 
 namespace OnlineSurveyTool.Server.Tests.Controllers.AuthControllerTest;
 

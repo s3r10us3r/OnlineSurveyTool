@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using OnlineSurveyTool.Server.DTOs;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
 
 namespace OnlineSurveyTool.Server.Tests.Controllers.AuthControllerTest;
 
@@ -23,6 +23,4 @@ public class AuthControllerLoginTest: AuthControllerTestBase<UserLoginDTO>
         await ShouldReturnResultForData<UnauthorizedObjectResult>(new UserLoginDTO()
             { Login = "NotAuser", Password = "NotAPassword!2"});
     }
-    
-    
 }

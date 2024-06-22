@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlineSurveyTool.Server.DTOs;
 using OnlineSurveyTool.Server.Responses;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces;
-using OnlineSurveyTool.Server.Services.DTOs;
 
 namespace OnlineSurveyTool.Server.Controllers
 {
@@ -55,7 +54,7 @@ namespace OnlineSurveyTool.Server.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDTO loginDTO)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _logger.LogWarning("Bad model supplied to AuthController.Login() {model}", loginDTO);
                 return BadRequest(new { Message = "Invalid data provided", errors = ModelState });
@@ -70,10 +69,14 @@ namespace OnlineSurveyTool.Server.Controllers
                 }
                 var user = result.Value;
 
-                string accessToken = _jwTokenService.GenerateAccessToken(user);
-                string refreshToken = _jwTokenService.GenerateRefreshToken(user);
-                return Ok(new LoginResponse{ AccessToken = accessToken, RefreshToken = refreshToken});
-            } catch(Exception e)
+                string accessToken = _jwTokenService.GenerateAccessToken(user, out var accessExpiration);
+                string refreshToken = _jwTokenService.GenerateRefreshToken(user, out var refreshExpiration);
+                return Ok(new LoginResponse
+                {
+                    AccessToken = accessToken, AccessTokenExpirationDateTime = accessExpiration,
+                    RefreshToken = refreshToken, RefresTokenExpirationDateTime = refreshExpiration
+                });
+            } catch (Exception e)
             {
                 _logger.LogError("Error occured in AuthController.Login {e}", e);
                 return StatusCode(500, new { Message = "Internal server error!" });
@@ -95,8 +98,8 @@ namespace OnlineSurveyTool.Server.Controllers
             try
             {
                 var user = await _userService.GetUserFromClaimsPrincipal(claimsPrincipalResult.Value);
-                var accessToken = _jwTokenService.GenerateAccessToken(user);
-                return Ok(new { AccessToken = accessToken });
+                var accessToken = _jwTokenService.GenerateAccessToken(user, out var expiration);
+                return Ok(new { AccessToken = accessToken, AccessTokenExpirationDateTime = expiration });
             }
             catch (ArgumentException e)
             {

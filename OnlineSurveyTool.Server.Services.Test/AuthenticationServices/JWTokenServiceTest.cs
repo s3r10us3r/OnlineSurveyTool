@@ -30,7 +30,7 @@ public class JWTokenServiceTest
     public async Task ShouldGenerateAccessTokenForAValidUser()
     {
         var user = await _userRepo.GetOne(1);
-        var token = _service.GenerateAccessToken(user);
+        var token = _service.GenerateAccessToken(user, out var expiration);
         ValidateToken(token, user, "access");
     }
 
@@ -38,7 +38,7 @@ public class JWTokenServiceTest
     public async Task ShouldGenerateRefreshTokenForAValidUser()
     {
         var user = await _userRepo.GetOne(1);
-        var token = _service.GenerateRefreshToken(user);
+        var token = _service.GenerateRefreshToken(user, out var expiration);
         ValidateToken(token, user, "refresh");
     }
 
@@ -46,7 +46,7 @@ public class JWTokenServiceTest
     public async Task ShouldReturnSuccessWithValidClaimsForValidRefreshToken()
     {
         var user = await _userRepo.GetOne(1);
-        var token = _service.GenerateRefreshToken(user);
+        var token = _service.GenerateRefreshToken(user, out var expiration);
         var result = _service.GetClaimsPrincipalFromRefreshToken(token);
         
         Assert.That(result.IsSuccess, Is.True);

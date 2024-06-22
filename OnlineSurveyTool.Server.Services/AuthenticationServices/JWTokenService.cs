@@ -23,7 +23,7 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             _signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
         }
 
-        public string GenerateAccessToken(User user)
+        public string GenerateAccessToken(User user, out DateTime expiration)
         {
             var claims = new[]
             {
@@ -34,13 +34,15 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             };
 
             string expiryString = _config["Jwt:AccessTokenExpiryMinutes"]!;
-            string token = GenerateToken(claims, int.Parse(expiryString));
+            int expiryMinutes = int.Parse(expiryString);
+            expiration = DateTime.UtcNow.AddMinutes(expiryMinutes);
+            string token = GenerateToken(claims, expiration);
             Logger.LogInformation(string.Format("New access token: {0} generated for user {1} at {2}", user.Login, token,
                 DateTime.Now.ToString(CultureInfo.InvariantCulture)));
             return token;
         }
 
-        public string GenerateRefreshToken(User user)
+        public string GenerateRefreshToken(User user, out DateTime expiration)
         {
             var claims = new[]
             {
@@ -51,7 +53,9 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             };
 
             string expiryString = _config["Jwt:RefreshTokenExpiryMinutes"]!;
-            string token = GenerateToken(claims, int.Parse(expiryString));
+            int expiryMinutes = int.Parse(expiryString);
+            expiration = DateTime.UtcNow.AddMinutes(expiryMinutes);
+            string token = GenerateToken(claims, expiration);
             Logger.LogInformation(string.Format("New refresh token: {0} generated for user {1} at {2}", user.Login, token,
                 DateTime.Now.ToString(CultureInfo.InvariantCulture)));
             return token;
@@ -88,12 +92,12 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             }
         }
 
-        private string GenerateToken(IEnumerable<Claim> claims, int expiresMinutes)
+        private string GenerateToken(IEnumerable<Claim> claims, DateTime expiration)
         {
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(expiresMinutes),
+                Expires = expiration,
                 SigningCredentials = new SigningCredentials(_signingKey,  SecurityAlgorithms.HmacSha256Signature),
                 Issuer = _config["Jwt:Issuer"],
                 Audience = _config["Jwt:Audience"]

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { UserRegisterDTO } from '../../../dtos/user.register.dto';
+import { UserRegisterDTO } from '../../models/user.register.dto';
 
 @Component({
   selector: 'register-component',
@@ -40,16 +40,16 @@ export class RegisterComponent {
       this.passwordErrorText = "";
 
       this.registerUser();
-      
+
     }
-    else {   
+    else {
       this.checkLogin();
       this.checkEmail();
       this.checkPassword();
     }
   }
 
-  
+
 
   registerUser() {
     this.responseMessage = '';

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserService } from '../../services/user.service';
-import { UserLoginDTO } from '../../../dtos/user.login.dto';
+import { UserLoginDTO } from '../../models/user.login.dto';
+import { LoginResponse } from "../../models/login.response";
 
 @Component({
   selector: 'login-component',
@@ -45,7 +46,7 @@ export class LoginComponent {
 
       this.userService.loginUser(loginDTO)
         .subscribe({
-          next: (response: any) => this.handleLoginResponse(response),
+          next: (response: LoginResponse) => this.handleLoginResponse(response),
           error: (error: any) => this.handleErrorResponse(error)
         });
     }
@@ -64,9 +65,7 @@ export class LoginComponent {
     this.isLoading = false;
   }
 
-  //TODO: HANDLE LOGGING IN
-  handleLoginResponse(response: any): void {
-    console.log("NOT IMPLEMENTED YET BUT LOGGED IN!");
+  handleLoginResponse(response: LoginResponse): void {
     console.log(response);
   }
 

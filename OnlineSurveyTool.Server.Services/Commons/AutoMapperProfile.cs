@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using OnlineSurveyTool.Server.DAL.Models;
-using OnlineSurveyTool.Server.Services.DTOs;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
+using OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 
 namespace OnlineSurveyTool.Server.Services.Commons
 {
@@ -11,6 +12,7 @@ namespace OnlineSurveyTool.Server.Services.Commons
             CreateMap<User, UserDTO>();
             CreateMap<UserDTO, User>();
             CreateMap<UserRegisterDTO, User>();
+            CreateMap<ChoiceOptionDTO, ChoiceOption>();
         }
     }
 }

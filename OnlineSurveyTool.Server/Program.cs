@@ -1,11 +1,7 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using OnlineSurveyTool.Server.DAL.Extensions;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.Extensions;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,10 +23,11 @@ builder.Services.AddAutoMapper();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularDev",
-        builder => builder.AllowAnyOrigin()
-        .AllowAnyHeader()
-        .AllowAnyMethod()
+    options.AddPolicy(name: "AllowAngular",
+        policy =>
+        {
+            policy.WithOrigins("https://127.0.0.1:4200").AllowAnyHeader().AllowAnyMethod();
+        }
     );
 });
 
@@ -40,8 +37,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-app.UseCors("AllowAngularDev");
+app.UseCors("AllowAngular");
 app.UseDefaultFiles();
 app.UseStaticFiles();
 

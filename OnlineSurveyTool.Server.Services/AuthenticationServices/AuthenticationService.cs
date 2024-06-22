@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
-using OnlineSurveyTool.Server.DTOs;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces;
 using OnlineSurveyTool.Server.Services.Utils;
 using OnlineSurveyTool.Server.Services.Utils.Interfaces;

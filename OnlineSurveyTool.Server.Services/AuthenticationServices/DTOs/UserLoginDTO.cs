@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OnlineSurveyTool.Server.DTOs
+namespace OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs
 {
     public class UserLoginDTO
     {

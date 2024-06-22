@@ -28,6 +28,4 @@ public abstract class AuthControllerTestBase<TD> : ControllerTestBase<AuthContro
     protected AuthControllerTestBase() : base(CreateController())
     {
     }
-    
-    
 }

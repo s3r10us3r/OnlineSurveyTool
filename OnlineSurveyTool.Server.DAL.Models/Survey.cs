@@ -8,7 +8,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
     [Index(nameof(Token), IsUnique = true)]
     public class Survey : EntityBase
     {
-        [Required]
+        [StringLength(256, MinimumLength = 256)]
         public string Token { get; set; }
 
         [Required]

@@ -12,7 +12,6 @@ builder.Services.AddDbContext<OstDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddJWTAuthentication(builder.Configuration);
-
 //repos
 builder.Services.AddRepos();
 

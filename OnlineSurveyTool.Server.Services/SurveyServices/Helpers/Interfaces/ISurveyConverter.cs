@@ -3,7 +3,8 @@ using OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 
 namespace OnlineSurveyTool.Server.Services.SurveyServices.Helpers.Interfaces;
 
-public interface IQuestionFactory
+public interface ISurveyConverter
 {
-    QuestionBase MakeQuestionBase(Question question);
+    SurveyDTO SurveyToDto(Survey survey);
+    Survey DtoToSurvey(SurveyDTO dto, User owner);
 }

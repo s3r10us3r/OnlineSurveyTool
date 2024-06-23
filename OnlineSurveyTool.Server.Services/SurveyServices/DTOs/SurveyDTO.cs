@@ -23,33 +23,4 @@ public class SurveyDTO
     
     [Required]
     public IEnumerable<QuestionBase> Questions { get; set; }
-
-    public SurveyDTO()
-    {
-    }
-
-    public SurveyDTO(Survey survey, IQuestionFactory factory)
-    {
-        Token = survey.Token;
-        Name = survey.Name;
-        OpeningDate = survey.OpeningDate;
-        ClosingDate = survey.ClosingDate;
-        IsOpen = survey.IsOpen;
-        Questions = survey.Questions.Select(factory.MakeQuestion);
-    }
-
-    public Survey ToSurvey(User owner, string surveyToken)
-    {
-        var survey = new Survey
-        {
-            Token = surveyToken,
-            Owner = owner,
-            Name = Name,
-            OpeningDate = OpeningDate,
-            ClosingDate = ClosingDate,
-            IsOpen = IsOpen,
-            Questions = Questions.Select(q => q.ToQuestion())
-        };
-        return survey;
-    }
 }

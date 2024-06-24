@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 

@@ -22,7 +22,7 @@ public class SurveyConverter : ISurveyConverter
         OpeningDate = survey.OpeningDate,
         ClosingDate = survey.ClosingDate,
         IsOpen = survey.IsOpen,
-        Questions = survey.Questions.Select(_questionFactory.MakeQuestionBase)
+        Questions = survey.Questions.Select(_questionFactory.MakeQuestionBase).ToList()
     };
 
     public Survey DtoToSurvey(SurveyDTO dto, User owner) => new()

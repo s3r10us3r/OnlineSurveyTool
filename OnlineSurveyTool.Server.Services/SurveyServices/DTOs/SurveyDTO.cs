@@ -1,6 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using OnlineSurveyTool.Server.DAL.Models;
-using OnlineSurveyTool.Server.Services.SurveyServices.Helpers.Interfaces;
 
 namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 
@@ -22,5 +20,5 @@ public class SurveyDTO
     public bool IsOpen { get; set; }
     
     [Required]
-    public IEnumerable<QuestionBase> Questions { get; set; }
+    public List<QuestionBase> Questions { get; set; }
 }

@@ -18,18 +18,27 @@ public class SurveyService: ISurveyService
     private readonly ISurveyRepo _surveyRepo;
     private readonly IConfiguration _config;
     private readonly ISurveyConverter _surveyConverter;
+    private readonly ISurveyValidator _surveyValidator;
     private readonly ILogger<ISurveyService> _logger;
-    
-    public SurveyService(ISurveyRepo surveyRepo, ISurveyConverter surveyConverter, IConfiguration config, ILogger<ISurveyService> logger)
+
+    public SurveyService(ISurveyRepo surveyRepo, ISurveyConverter surveyConverter, IConfiguration config,
+        ISurveyValidator surveyValidator, ILogger<ISurveyService> logger)
     {
         _surveyRepo = surveyRepo;
         _surveyConverter = surveyConverter;
+        _surveyValidator = surveyValidator;
         _config = config;
         _logger = logger;
     }
 
-    public async Task<SurveyDTO> AddSurvey(SurveyDTO surveyDto, User owner)
+    public async Task<IResult<SurveyDTO>> AddSurvey(SurveyDTO surveyDto, User owner)
     {
+        if (!_surveyValidator.ValidateSurvey(surveyDto, out string message))
+        {
+            _logger.LogWarning("Invalid surveyDTO supplied to AddSurvey() reason: {reason}", message);
+            return Result<SurveyDTO>.Failure(message);
+        }
+        
         var survey = _surveyConverter.DtoToSurvey(surveyDto, owner);
         survey.Token = await GenerateSurveyId();
         int res = await _surveyRepo.Add(survey);
@@ -40,18 +49,18 @@ public class SurveyService: ISurveyService
         }
         _logger.LogInformation("Survey added to the database survey id: {surveyId} owner: {ownerId}", survey.Id, owner.Id);
         var newDto = _surveyConverter.SurveyToDto(survey);
-        return newDto;
+        return Result<SurveyDTO>.Success(newDto);
     }
-
-    public async Task<IResult<SurveyDTO>> GetSurvey(string surveyId)
+    
+    public async Task<SurveyDTO?> GetSurvey(string surveyId)
     {
         var survey = await _surveyRepo.GetOne(surveyId);
         if (survey is null)
         {
-            return Result<SurveyDTO>.Failure("Survey with this id not found");
+            return null;
         }
         var dto = _surveyConverter.SurveyToDto(survey);
-        return Result<SurveyDTO>.Success(dto);
+        return dto;
     }
     
     private static readonly char[] Chars =

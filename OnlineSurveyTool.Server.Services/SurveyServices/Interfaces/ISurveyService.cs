@@ -6,6 +6,6 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.Interfaces;
 
 public interface ISurveyService
 {
-    Task<SurveyDTO> AddSurvey(SurveyDTO surveyDto, User owner);
-    Task<IResult<SurveyDTO>> GetSurvey(string surveyId);
+    Task<IResult<SurveyDTO>> AddSurvey(SurveyDTO surveyDto, User owner);
+    Task<SurveyDTO?> GetSurvey(string surveyId);
 }

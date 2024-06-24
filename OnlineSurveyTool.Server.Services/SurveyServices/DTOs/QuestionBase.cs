@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 
@@ -14,6 +13,7 @@ public abstract class QuestionBase
     [Required]
     public int Number { get; init; }
     [Required]
+    [StringLength(200)]
     public string Value { get; init; }
     [Required]
     public bool CanBeSkipped { get; init; }

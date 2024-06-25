@@ -7,7 +7,7 @@ public class ChoiceOptionDTO
 {
     [Required]
     [StringLength(300)]
-    public string Value { get; init; }
+    public string Value { get; set; }
     [Required]
-    public int Number { get; init; }
+    public int Number { get; set; }
 }

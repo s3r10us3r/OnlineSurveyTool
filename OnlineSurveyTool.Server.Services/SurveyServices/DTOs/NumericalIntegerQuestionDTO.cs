@@ -6,7 +6,7 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 public class NumericalIntegerQuestionDTO: QuestionBase
 {
     [Required]
-    public int MinimalAnswer { get; init; }
+    public int MinimalAnswer { get; set; }
     [Required]
-    public int MaximalAnswer { get; init; }
+    public int MaximalAnswer { get; set; }
 }

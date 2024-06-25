@@ -11,10 +11,10 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 public abstract class QuestionBase
 {
     [Required]
-    public int Number { get; init; }
+    public int Number { get; set; }
     [Required]
     [StringLength(200)]
-    public string Value { get; init; }
+    public string Value { get; set; }
     [Required]
-    public bool CanBeSkipped { get; init; }
+    public bool CanBeSkipped { get; set; }
 }

@@ -22,8 +22,4 @@
       <ProjectReference Include="..\OnlineSurveyTool.Server.Services\OnlineSurveyTool.Server.Services.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="SurveyServices\" />
-    </ItemGroup>
-
 </Project>

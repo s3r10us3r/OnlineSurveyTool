@@ -52,7 +52,7 @@ public class SurveyValidator : ISurveyValidator
 
     private bool ValidateMultipleChoiceQuestion(MultipleChoiceQuestionDTO dto, out string message)
     {
-        if (dto.MaximalChoices > dto.MinimalChoices)
+        if (dto.MaximalChoices < dto.MinimalChoices)
         {
             message = "MaximalChoices must be higher than MinimalChoices for a MultipleChoiceQuestion";
             return false;
@@ -141,6 +141,9 @@ public class SurveyValidator : ISurveyValidator
     private bool ValidateQuestionNumbers(List<QuestionBase> questions)
     {
         var numberSet = questions.Select(c => c.Number).ToHashSet();
-        return numberSet.Count == questions.Count;
+        var minNumber = questions.Select(c => c.Number).Min();
+        var maxNumber = questions.Select(c => c.Number).Max();
+        return numberSet.Count == questions.Count && questions.Count == maxNumber && minNumber == 1;
     }
+    
 }

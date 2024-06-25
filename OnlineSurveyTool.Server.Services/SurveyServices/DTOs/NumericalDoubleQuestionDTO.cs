@@ -6,7 +6,7 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 public class NumericalDoubleQuestionDTO : QuestionBase
 {
     [Required]
-    public double MinimalAnswer { get; init; }
+    public double MinimalAnswer { get; set; }
     [Required]
-    public double MaximalAnswer { get; init; }
+    public double MaximalAnswer { get; set; }
 }

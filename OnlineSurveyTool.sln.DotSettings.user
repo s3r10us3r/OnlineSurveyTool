@@ -11,5 +11,8 @@
     &lt;TestAncestor&gt;
       &lt;TestId&gt;NUnit3x::FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2::net8.0::OnlineSurveyTool.Server.Tests.Controllers.AuthControllerTest.AuthControllerLoginTest&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;7B278616-7C81-4986-8ABB-587E67C07E41/d:SurveyServices/d:Helpers/f:SurveyValidatorTest.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;7B278616-7C81-4986-8ABB-587E67C07E41/d:SurveyServices/d:Helpers/f:SurveyValidatorQuestionValidationTest.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;7B278616-7C81-4986-8ABB-587E67C07E41/d:SurveyServices/d:Helpers/f:SurveyValidatorSurveyValidationTest.cs&lt;/ProjectFile&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

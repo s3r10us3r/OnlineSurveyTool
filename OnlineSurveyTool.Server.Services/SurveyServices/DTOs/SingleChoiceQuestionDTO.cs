@@ -5,5 +5,5 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 public class SingleChoiceQuestionDTO: QuestionBase
 {
     [Required]
-    public List<ChoiceOptionDTO> ChoiceOptions { get; init; }
+    public List<ChoiceOptionDTO> ChoiceOptions { get; set; }
 }

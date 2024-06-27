@@ -24,6 +24,7 @@ public class QuestionFactory : IQuestionFactory
         return new SingleChoiceQuestionDTO()
         {
             Value = question.Value,
+            Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             ChoiceOptions = question.ChoiceOptions!.Select(ChoiceOptionToDto).ToList(),
         };
@@ -34,6 +35,7 @@ public class QuestionFactory : IQuestionFactory
         return new MultipleChoiceQuestionDTO()
         {
             Value = question.Value,
+            Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             ChoiceOptions = question.ChoiceOptions!.Select(ChoiceOptionToDto).ToList(),
             MinimalChoices = (int)question.Minimum!,
@@ -46,6 +48,7 @@ public class QuestionFactory : IQuestionFactory
         return new NumericalDoubleQuestionDTO()
         {
             Value = question.Value,
+            Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalAnswer = (double)question.Maximum!,
             MinimalAnswer = (double)question.Minimum!
@@ -57,6 +60,7 @@ public class QuestionFactory : IQuestionFactory
         return new NumericalIntegerQuestionDTO()
         {
             Value = question.Value,
+            Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalAnswer = (int)question.Maximum!,
             MinimalAnswer = (int)question.Minimum!
@@ -68,6 +72,7 @@ public class QuestionFactory : IQuestionFactory
         return new TextualQuestionDTO()
         {
             Value = question.Value,
+            Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalLength = (int)question.Maximum!,
             MinimalLength = (int)question.Minimum!

@@ -36,9 +36,9 @@ namespace OnlineSurveyTool.Server.DAL
             return await Table.Where(s => !s.IsArchived).ToListAsync();
         }
 
-        public new async Task<List<Survey>> GetOpen(int ownerId)
+        public new async Task<List<Survey>> GetAllSurveysOwnedBy(int ownerId)
         {
-            return await Table.Where(s => s.OwnerId == ownerId && !s.IsArchived && s.OwnerId == ownerId).ToListAsync();
+            return await Table.Where(s => s.OwnerId == ownerId && !s.IsArchived).ToListAsync();
         }
     }
 }

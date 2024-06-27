@@ -6,6 +6,6 @@ namespace OnlineSurveyTool.Server.DAL.Interfaces
     {
         Task<Survey?> GetOne(string token);
 
-        Task<List<Survey>> GetOpen(int userId);
+        Task<List<Survey>> GetAllSurveysOwnedBy(int userId);
     }
 }

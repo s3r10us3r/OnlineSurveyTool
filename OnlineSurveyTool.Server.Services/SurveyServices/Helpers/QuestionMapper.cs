@@ -63,7 +63,7 @@ public class QuestionMapper : IQuestionMapper
         Type = QuestionType.Textual,
         CanBeSkipped = dto.CanBeSkipped,
         Minimum = dto.MinimalLength,
-        Maximum = dto.MinimalLength
+        Maximum = dto.MaximalLength
     };
     
     private ChoiceOption DtoToChoiceOption(ChoiceOptionDTO dto) => new()

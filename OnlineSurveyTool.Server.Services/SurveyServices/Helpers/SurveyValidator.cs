@@ -1,5 +1,6 @@
 using System.Reflection.Metadata;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 using OnlineSurveyTool.Server.Services.SurveyServices.Helpers.Interfaces;
@@ -140,6 +141,10 @@ public class SurveyValidator : ISurveyValidator
 
     private bool ValidateQuestionNumbers(List<QuestionBase> questions)
     {
+        if (questions.IsNullOrEmpty())
+        {
+            return true;
+        }
         var numberSet = questions.Select(c => c.Number).ToHashSet();
         var minNumber = questions.Select(c => c.Number).Min();
         var maxNumber = questions.Select(c => c.Number).Max();

@@ -22,7 +22,7 @@ namespace OnlineSurveyTool.Server.DAL
 
         public new async Task<Survey?> GetOne(string token)
         {
-            var survey = await Table.FirstOrDefaultAsync(s => s.Token == token);
+            var survey = await Table.FirstOrDefaultAsync(s => s.ExternalId == token);
             if (survey is not null && !survey.IsArchived)
             {
                 return survey;

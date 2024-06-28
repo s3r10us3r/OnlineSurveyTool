@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace OnlineSurveyTool.Server.DAL.Models
 {
     [Table("Surveys")]
-    [Index(nameof(Token), IsUnique = true)]
+    [Index(nameof(ExternalId), IsUnique = true)]
     public class Survey : EntityBase
     {
-        [StringLength(256, MinimumLength = 256)]
-        public string Token { get; set; }
+        [StringLength(36)]
+        public string ExternalId { get; set; }
 
         [Required]
         [ForeignKey("Owner")]

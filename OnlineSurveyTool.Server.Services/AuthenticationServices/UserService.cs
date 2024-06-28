@@ -60,22 +60,19 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             return Result<UserDTO, UserCreationFailure>.Success(new UserDTO { Id = user.Id, Login = user.Login, Email = user.EMail });
         }
 
-        public async Task<User> GetUserFromClaimsPrincipal(ClaimsPrincipal claimsPrincipal)
+        public async Task<User?> GetUserFromClaimsPrincipal(ClaimsPrincipal claimsPrincipal)
         {
             var login = claimsPrincipal.FindFirst(JwtRegisteredClaimNames.Sub)?.Value;
             if (login is null)
             {
-                throw new ArgumentException("Invalid claims principal(does not have login!)");
+                return null;
             }
 
             var user = await _userRepo.GetOne(login);
-            if (user is null)
-            {
-                throw new ArgumentException("Invalid claims principal(user does not exist!)");
-            }
             return user;
         }
 
+        
         public async Task<bool> CheckIfLoginExists(string login)
         {
             return await _userRepo.GetOne(login) is not null;

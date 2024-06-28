@@ -4,9 +4,8 @@ namespace OnlineSurveyTool.Server.Services.SurveyServices.DTOs;
 
 public class SurveyDTO
 {
-    [Required]
-    [StringLength(256, MinimumLength = 256)]
-    public string Token { get; set; }
+    [StringLength(36)]
+    public string Id { get; set; }
     
     [Required(AllowEmptyStrings = false)]
     [StringLength(50, MinimumLength = 1)]

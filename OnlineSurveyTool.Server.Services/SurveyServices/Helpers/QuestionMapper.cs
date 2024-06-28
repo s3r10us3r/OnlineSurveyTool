@@ -24,7 +24,8 @@ public class QuestionMapper : IQuestionMapper
         CanBeSkipped = dto.CanBeSkipped,
         Minimum = dto.MinimalChoices,
         Maximum = dto.MaximalChoices,
-        ChoiceOptions = dto.ChoiceOptions.Select(DtoToChoiceOption)
+        ChoiceOptions = dto.ChoiceOptions.Select(DtoToChoiceOption),
+        ExternalId = dto.Id,
     };
 
     private Question SingleChoiceToQuestion(SingleChoiceQuestionDTO dto) => new()
@@ -33,7 +34,8 @@ public class QuestionMapper : IQuestionMapper
         Value = dto.Value,
         Type = QuestionType.SingleChoice,
         CanBeSkipped = dto.CanBeSkipped,
-        ChoiceOptions = dto.ChoiceOptions.Select(DtoToChoiceOption)
+        ChoiceOptions = dto.ChoiceOptions.Select(DtoToChoiceOption),
+        ExternalId = dto.Id,
     };
     
     private Question NumericalDoubleToQuestion(NumericalDoubleQuestionDTO dto) => new()
@@ -44,6 +46,7 @@ public class QuestionMapper : IQuestionMapper
         CanBeSkipped = dto.CanBeSkipped,
         Minimum = dto.MinimalAnswer,
         Maximum = dto.MaximalAnswer,
+        ExternalId = dto.Id,
     };
     
     private Question NumericalIntegerToQuestion(NumericalIntegerQuestionDTO dto) => new()
@@ -54,6 +57,7 @@ public class QuestionMapper : IQuestionMapper
         CanBeSkipped = dto.CanBeSkipped,
         Minimum = dto.MinimalAnswer,
         Maximum = dto.MaximalAnswer,
+        ExternalId = dto.Id,
     };
 
     private Question TextualToQuestion(TextualQuestionDTO dto) => new()
@@ -63,13 +67,15 @@ public class QuestionMapper : IQuestionMapper
         Type = QuestionType.Textual,
         CanBeSkipped = dto.CanBeSkipped,
         Minimum = dto.MinimalLength,
-        Maximum = dto.MaximalLength
+        Maximum = dto.MaximalLength,
+        ExternalId = dto.Id,
     };
     
     private ChoiceOption DtoToChoiceOption(ChoiceOptionDTO dto) => new()
     {
         Number = dto.Number,
-        Value = dto.Value
+        Value = dto.Value,
+        ExternalId = dto.Id
     };
 
 }

@@ -17,4 +17,7 @@ public abstract class QuestionBase
     public string Value { get; set; }
     [Required]
     public bool CanBeSkipped { get; set; }
+
+    [StringLength(36)] 
+    public string? Id { get; set; }
 }

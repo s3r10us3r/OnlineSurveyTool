@@ -27,6 +27,7 @@ public class QuestionFactory : IQuestionFactory
             Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             ChoiceOptions = question.ChoiceOptions!.Select(ChoiceOptionToDto).ToList(),
+            Id = question.ExternalId
         };
     }
 
@@ -39,7 +40,8 @@ public class QuestionFactory : IQuestionFactory
             CanBeSkipped = question.CanBeSkipped,
             ChoiceOptions = question.ChoiceOptions!.Select(ChoiceOptionToDto).ToList(),
             MinimalChoices = (int)question.Minimum!,
-            MaximalChoices = (int)question.Maximum!
+            MaximalChoices = (int)question.Maximum!,
+            Id = question.ExternalId
         };
     }
 
@@ -51,7 +53,8 @@ public class QuestionFactory : IQuestionFactory
             Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalAnswer = (double)question.Maximum!,
-            MinimalAnswer = (double)question.Minimum!
+            MinimalAnswer = (double)question.Minimum!,
+            Id = question.ExternalId
         };
     }
 
@@ -63,7 +66,8 @@ public class QuestionFactory : IQuestionFactory
             Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalAnswer = (int)question.Maximum!,
-            MinimalAnswer = (int)question.Minimum!
+            MinimalAnswer = (int)question.Minimum!,
+            Id = question.ExternalId
         };
     }
 
@@ -75,7 +79,8 @@ public class QuestionFactory : IQuestionFactory
             Number = question.Number,
             CanBeSkipped = question.CanBeSkipped,
             MaximalLength = (int)question.Maximum!,
-            MinimalLength = (int)question.Minimum!
+            MinimalLength = (int)question.Minimum!,
+            Id = question.ExternalId
         };
     }
     
@@ -84,7 +89,8 @@ public class QuestionFactory : IQuestionFactory
         return new()
         {
             Number = choiceOption.Number,
-            Value = choiceOption.Value
+            Value = choiceOption.Value,
+            Id = choiceOption.ExternalId
         };
     }
 }

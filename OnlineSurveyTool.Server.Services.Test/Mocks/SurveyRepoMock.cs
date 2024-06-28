@@ -16,7 +16,7 @@ public class SurveyRepoMock: BaseMock<Survey>, ISurveyRepo
                 IsArchived = false,
                 IsOpen = true,
                 Name = "Survey",
-                Token = "test",
+                ExternalId = "test",
                 Questions = [
                     new Question()
                     {
@@ -69,7 +69,7 @@ public class SurveyRepoMock: BaseMock<Survey>, ISurveyRepo
 
     public async Task<Survey?> GetOne(string token)
     {
-        return Entities.FirstOrDefault(s => s.Token == token);
+        return Entities.FirstOrDefault(s => s.ExternalId == token);
     }
 
     public async Task<List<Survey>> GetAllSurveysOwnedBy(int userId)

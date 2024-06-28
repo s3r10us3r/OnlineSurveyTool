@@ -13,7 +13,7 @@ internal class SurveyComparer
             Assert.That(dto.OpeningDate, Is.EqualTo(survey.OpeningDate));
             Assert.That(dto.IsOpen, Is.EqualTo(survey.IsOpen));
             Assert.That(dto.Name, Is.EqualTo(survey.Name));
-            Assert.That(dto.Token, Is.EqualTo(survey.Token));
+            Assert.That(dto.Id, Is.EqualTo(survey.ExternalId));
 
             var sortedDtoQuestions = dto.Questions.OrderBy(q => q.Number);
             var sortedQuestions = survey.Questions.OrderBy(q => q.Number);

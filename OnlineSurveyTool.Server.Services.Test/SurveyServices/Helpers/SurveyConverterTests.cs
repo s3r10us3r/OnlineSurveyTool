@@ -90,7 +90,7 @@ public class SurveyConverterTests
                     Value = "Question 5"
                 }
             ],
-            Token = "testSurvey"
+            Id = "testSurvey"
         };
     }
 

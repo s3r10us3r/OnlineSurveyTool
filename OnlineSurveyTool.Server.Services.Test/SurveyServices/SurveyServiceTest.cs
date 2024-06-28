@@ -83,7 +83,7 @@ public class SurveyServiceTest
                     Value = "Question 5"
                 }
             ],
-            Token = "testSurvey2"
+            Id = "testSurvey2"
         };
         var result = await _surveyService.AddSurvey(survey, new User(){Id = 2});
         Assert.That(result.IsSuccess, Is.True);

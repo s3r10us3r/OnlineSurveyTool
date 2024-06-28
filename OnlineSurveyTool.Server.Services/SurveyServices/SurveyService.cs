@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -33,14 +31,14 @@ public class SurveyService: ISurveyService
 
     public async Task<IResult<SurveyDTO>> AddSurvey(SurveyDTO surveyDto, User owner)
     {
-        if (!_surveyValidator.ValidateSurvey(surveyDto, out string message))
+        if (!_surveyValidator.ValidateSurvey(surveyDto, out var message))
         {
             _logger.LogWarning("Invalid surveyDTO supplied to AddSurvey() reason: {reason}", message);
             return Result<SurveyDTO>.Failure(message);
         }
         
         var survey = _surveyConverter.DtoToSurvey(surveyDto, owner);
-        survey.Token = await GenerateSurveyId();
+        survey.ExternalId = await GenerateGuid();
         int res = await _surveyRepo.Add(survey);
         if (res == 0)
         {
@@ -62,37 +60,55 @@ public class SurveyService: ISurveyService
         var dto = _surveyConverter.SurveyToDto(survey);
         return dto;
     }
-    
-    private static readonly char[] Chars =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
-    
-    private async Task<string> GenerateSurveyId()
+
+    public async Task<SurveyDTO?> GetSurveyFromUser(string surveyId, User user)
     {
-        while (true)
+        var survey = user.Surveys.FirstOrDefault(s => s.ExternalId == surveyId);
+        if (survey is null)
         {
-            int size = int.Parse(_config["Settings:SurveyIDLength"]!);
-            byte[] data = new byte[4 * size];
-            using (var crypto = RandomNumberGenerator.Create())
-            {
-                crypto.GetBytes(data);
-            }
+            return null;
+        }
+        var surveyDto = _surveyConverter.SurveyToDto(survey);
+        return surveyDto;
+    }
 
-            StringBuilder result = new StringBuilder(size);
-            for (int i = 0; i < size; i++)
-            {
-                var rnd = BitConverter.ToUInt32(data, i * 4);
-                var idx = rnd % Chars.Length;
+    //TODO: FIX THIS SHIT
+    public async Task<IResult<SurveyDTO, EditSurveyFailureReason>> EditSurvey(SurveyDTO surveyDto)
+    {
+        var survey = await _surveyRepo.GetOne(surveyDto.Id);
+        if (survey is null)
+        {
+            _logger.LogWarning("User tried to edit an unexistant survey with id {surveyId}", surveyDto.Id);
+            return Result<SurveyDTO, EditSurveyFailureReason>.Failure("Survey not found", EditSurveyFailureReason.NOT_FOUND);
+        }
 
-                result.Append(Chars[idx]);
-            }
+        var validated = _surveyValidator.ValidateSurvey(surveyDto, out var message);
+        if (!validated)
+        {
+            return Result<SurveyDTO, EditSurveyFailureReason>.Failure(message, EditSurveyFailureReason.BAD_REQUEST);
+        }
+        
+        var convertedDto = _surveyConverter.DtoToSurvey(surveyDto, survey.Owner);
+        survey.Name = convertedDto.Name;
+        survey.ClosingDate = convertedDto.ClosingDate;
+        survey.OpeningDate = convertedDto.OpeningDate;
 
-            var id = result.ToString();
-            if (await _surveyRepo.GetOne(id) is null)
+        foreach (var question in convertedDto.Questions)
+        {
+            if (question.ExternalId is null)
             {
-                return result.ToString();
+                question.ExternalId = await GenerateGuid();
+                
             }
         }
+
+        return null;
     }
-    
-    
+
+    private async Task<string> GenerateGuid()
+    {
+        var guid =  Guid.NewGuid().ToString();
+        return guid;
+    }
+
 }

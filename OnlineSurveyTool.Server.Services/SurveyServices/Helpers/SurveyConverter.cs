@@ -17,7 +17,7 @@ public class SurveyConverter : ISurveyConverter
 
     public SurveyDTO SurveyToDto(Survey survey) => new()
     {
-        Token = survey.Token,
+        Id = survey.ExternalId,
         Name = survey.Name,
         OpeningDate = survey.OpeningDate,
         ClosingDate = survey.ClosingDate,
@@ -27,7 +27,7 @@ public class SurveyConverter : ISurveyConverter
 
     public Survey DtoToSurvey(SurveyDTO dto, User owner) => new()
     {
-        Token = dto.Token,
+        ExternalId = dto.Id,
         IsOpen = dto.IsOpen,
         Name = dto.Name,
         OpeningDate = dto.OpeningDate,

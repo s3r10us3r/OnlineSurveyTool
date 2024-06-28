@@ -23,7 +23,7 @@ public class SurveyValidatorSurveyValidationTest
         {
             Name = "Test Survey",
             IsOpen = false,
-            Token = "t",
+            Id = "t",
             Questions = [
                 new SingleChoiceQuestionDTO()
                 {

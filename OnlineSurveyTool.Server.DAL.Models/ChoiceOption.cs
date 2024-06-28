@@ -13,12 +13,15 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public int Number { get; set; }
 
         [Required]
+        [StringLength(36)]
+        public string ExternalId { get; set; }
+        
+        [Required]
         [StringLength(1000, MinimumLength = 1)]
         public string Value { get; set; }
 
         [ForeignKey("Question")]
         public int QuestionId { get; set; }
-
         public virtual Question Question { get; set; }
 
         public virtual IEnumerable<Answer> Answers { get; set; }

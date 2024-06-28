@@ -6,12 +6,17 @@ namespace OnlineSurveyTool.Server.DAL.Models
 {
     [Table("Questions")]
     [Index(nameof(SurveyId))]
+    [Index(nameof(ExternalId))]
     public class Question : EntityBase
     {
         //Order inside survey
         [Required]
         public int Number { get; set; }
 
+        [Required]
+        [StringLength(36)]
+        public string ExternalId { get; set; }
+        
         [Required]
         public string Value { get; set; }
 

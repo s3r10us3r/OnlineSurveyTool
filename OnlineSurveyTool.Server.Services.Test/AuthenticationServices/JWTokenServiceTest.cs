@@ -22,7 +22,7 @@ public class JWTokenServiceTest
     {
         _config = ConfigurationCreator.MockConfig();
         _service = new JWTokenService(new LoggerMock<JWTokenService>(), _config);
-        _userRepo = new UserRepoMock();
+        _userRepo = new UserRepoMock(new UserPopulator());
         JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); 
     }
 

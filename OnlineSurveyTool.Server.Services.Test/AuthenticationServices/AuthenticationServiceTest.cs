@@ -11,7 +11,7 @@ public class AuthenticationServiceTest
 
     public AuthenticationServiceTest() 
     {
-        _authenticationService = new AuthenticationService(new UserRepoMock(), new LoggerMock<AuthenticationService>());
+        _authenticationService = new AuthenticationService(new UserRepoMock(new UserPopulator()), new LoggerMock<AuthenticationService>());
     }
 
     [Test]

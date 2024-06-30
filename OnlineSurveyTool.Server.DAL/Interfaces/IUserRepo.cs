@@ -2,8 +2,8 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface IUserRepo : IRepo<User>
+    public interface IUserRepo : IRepoNumericId<User>
     {
-        Task<User?> GetOne(string Login);
+        Task<User?> GetOne(string login);
     }
 }

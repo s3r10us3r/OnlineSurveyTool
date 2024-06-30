@@ -3,9 +3,9 @@ using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.DAL
 {
-    public class SurveyResultRepo : BaseRepo<SurveyResult>, ISurveyResultRepo
+    public class SurveyResult : BaseRepoNumericId<Models.SurveyResult>, ISurveyResult
     {
-        public SurveyResultRepo(OstDbContext dbContext) : base(dbContext)
+        public SurveyResult(OstDbContext dbContext) : base(dbContext)
         {
         }
     }

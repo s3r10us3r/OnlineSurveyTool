@@ -12,14 +12,15 @@ namespace OnlineSurveyTool.Server.Services.Test.AuthenticationServices;
 [TestFixture]
 public class UserServiceTest
 {
-    private readonly UserService _userService;
-    private readonly IUserRepo _userRepo;
-    
-    public UserServiceTest()
+    private UserService _userService;
+    private IUserRepo _userRepo;
+
+    [SetUp]
+    public void SetUp()
     {
-        _userRepo = new UserRepoMock();
+        _userRepo = new UserRepoMock(new UserPopulator());
         var logger = new LoggerMock<UserService>();
-        
+                
         var config = new MapperConfiguration(cfg =>
         {
             cfg.AddProfile<AutoMapperProfile>();
@@ -27,7 +28,7 @@ public class UserServiceTest
         var mapper = config.CreateMapper();
         _userService = new UserService(_userRepo, mapper, logger);
     }
-
+    
     [Test]
     public async Task ShouldSucceedForValidData()
     {
@@ -157,7 +158,7 @@ public class UserServiceTest
     }
 
     [Test]
-    public async Task ShouldThrowWhenLoginDoesNotExist()
+    public async Task ShouldReturnNullWhenLoginDoesNotExist()
     {
         const string login = "DoesNotExist!";
         var claims = new[]
@@ -166,15 +167,15 @@ public class UserServiceTest
         };
         var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(claims));
 
-        async Task Test() => await _userService.GetUserFromClaimsPrincipal(claimsPrincipal);
-        Assert.ThrowsAsync<ArgumentException>(Test);
+        var user = await _userService.GetUserFromClaimsPrincipal(claimsPrincipal);
+        Assert.That(user, Is.Null);
     }
 
-    [Test] public async Task ShouldThrowWhenLoginIsNull()
+    [Test] public async Task ShouldReturnNullWhenLoginIsNull()
     {
         var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity());
-        async Task Test() => await _userService.GetUserFromClaimsPrincipal(claimsPrincipal);
-        Assert.ThrowsAsync<ArgumentException>(Test);
+        var user = await _userService.GetUserFromClaimsPrincipal(claimsPrincipal);
+        Assert.That(user, Is.Null);
     }
     
     private async Task ShouldFailWithInvalidDataForValues(string login, string email, string password)

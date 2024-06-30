@@ -5,24 +5,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace OnlineSurveyTool.Server.DAL.Models
 {
     [Table("Questions")]
-    [Index(nameof(SurveyId))]
-    [Index(nameof(ExternalId))]
-    public class Question : EntityBase
+    public class Question : EntityBaseStringId
     {
         //Order inside survey
         [Required]
         public int Number { get; set; }
 
         [Required]
-        [StringLength(36)]
-        public string ExternalId { get; set; }
-        
-        [Required]
         public string Value { get; set; }
 
         [Required]
         [ForeignKey("Survey")]
-        public int SurveyId { get; set; }
+        public string SurveyId { get; set; }
 
         public QuestionType Type { get; set; }
 

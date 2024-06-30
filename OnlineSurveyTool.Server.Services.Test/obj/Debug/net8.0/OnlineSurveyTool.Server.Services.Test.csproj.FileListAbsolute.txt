@@ -113,9 +113,9 @@
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.AssemblyInfo.cs
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.CoreCompileInputs.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.sourcelink.json
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.CopyComplete
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.Test.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.genruntimeconfig.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.Test.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSu.FC73073F.Up2Date

@@ -158,9 +158,9 @@
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.AssemblyInfo.cs
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.CoreCompileInputs.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.sourcelink.json
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.CopyComplete
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Tests.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.genruntimeconfig.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Tests.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSu.6FA4D3E1.Up2Date

@@ -29,8 +29,8 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server.Services/ob
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.AssemblyInfo.cs
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.CoreCompileInputs.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.sourcelink.json
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.CopyComplete
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSu.45915776.Up2Date

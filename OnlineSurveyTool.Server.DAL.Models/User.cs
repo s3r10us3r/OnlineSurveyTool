@@ -6,7 +6,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
 {
     [Table("Users")]
     [Index(nameof(Login))]
-    public class User : EntityBase
+    public class User : EntityBaseIntegerId
     {
         [Required]
         [StringLength(32, MinimumLength = 8)]

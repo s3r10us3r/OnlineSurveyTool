@@ -56,13 +56,13 @@ namespace OnlineSurveyTool.Server.DAL.Models
                 .WithMany(e => e.Results)
                 .HasForeignKey(e => e.SurveyId)
                 .OnDelete(DeleteBehavior.NoAction);
-
+            
             modelBuilder.Entity<ChoiceOption>()
                 .HasOne(e => e.Question)
                 .WithMany(e => e.ChoiceOptions)
                 .HasForeignKey(e => e.QuestionId)
                 .OnDelete(DeleteBehavior.Cascade);
-
+            
             modelBuilder.Entity<Question>()
                 .HasOne(e => e.Survey)
                 .WithMany(e => e.Questions)
@@ -74,6 +74,14 @@ namespace OnlineSurveyTool.Server.DAL.Models
                 .WithMany(e => e.Surveys)
                 .HasForeignKey(e => e.OwnerId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Question>()
+                .HasIndex(q => new { q.SurveyId, q.Number })
+                .IsUnique();
+
+            modelBuilder.Entity<ChoiceOption>()
+                .HasIndex(co => new { co.QuestionId, co.Number })
+                .IsUnique();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)

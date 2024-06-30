@@ -290,7 +290,6 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/n
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.OnlineSurveyTool.Server.props
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/staticwebassets.pack.json
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/scopedcss/bundle/OnlineSurveyTool.Server.styles.css
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.CopyComplete
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.pdb
@@ -298,3 +297,4 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/n
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/MySqlConnector.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSu.B3DD68FB.Up2Date

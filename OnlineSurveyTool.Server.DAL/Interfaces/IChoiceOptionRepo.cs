@@ -2,7 +2,8 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface IChoiceOptionRepo : IRepo<ChoiceOption>
+    public interface IChoiceOptionRepo : IRepoStringId<ChoiceOption>
+
     {
     }
 }

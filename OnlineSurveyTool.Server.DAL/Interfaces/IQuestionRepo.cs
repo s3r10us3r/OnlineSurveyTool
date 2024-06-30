@@ -2,7 +2,7 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface IQuestionRepo : IRepo<Question>
+    public interface IQuestionRepo : IRepoStringId<Question>
     {
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kBUAodaIYx9xxTcIGYg03AO73XowtUbCjReG4m+oWwDdEo+zWkYnr9D2+vXOazihxw6k6EAzbTyOpPLgb3w4VQ==",
+  "dgSpecHash": "CPxGFk99BdjZymFeDs/D4mJ82uqcKXJZ2Hzkckp7QGcRbrLZrQxi3tLw1G6zEgf/MGF1qfj829isSDed6c9HKQ==",
   "success": true,
   "projectFilePath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Services/OnlineSurveyTool.Server.Services.csproj",
   "expectedPackageFiles": [

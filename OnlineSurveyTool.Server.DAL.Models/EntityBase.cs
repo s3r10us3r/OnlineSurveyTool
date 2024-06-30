@@ -1,10 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-namespace OnlineSurveyTool.Server.DAL.Models
+namespace OnlineSurveyTool.Server.DAL.Models;
+
+public abstract class EntityBase<TId>
 {
-    public abstract class EntityBase
-    {
-        [Key]
-        public int Id { get; set; }
-    }
+    [Key]
+    public TId Id { get; set; }
 }

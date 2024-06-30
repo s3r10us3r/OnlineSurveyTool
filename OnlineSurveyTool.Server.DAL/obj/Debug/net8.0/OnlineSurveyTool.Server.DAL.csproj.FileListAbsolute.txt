@@ -25,8 +25,8 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Deb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.AssemblyInfo.cs
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.csproj.CoreCompileInputs.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.sourcelink.json
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.csproj.CopyComplete
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.DAL.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.DAL.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSu.A3770AD9.Up2Date

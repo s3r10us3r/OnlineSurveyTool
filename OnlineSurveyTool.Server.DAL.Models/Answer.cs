@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
-    public class Answer : EntityBase
+    public class Answer : EntityBaseIntegerId
     {
         public QuestionType Type { get; set; }
 

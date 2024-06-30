@@ -2,7 +2,7 @@
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
-    public class AnswerOption : EntityBase
+    public class AnswerOption : EntityBaseIntegerId
     {
         [ForeignKey(nameof(Answer))]
         public int AnswerId { get; set; }

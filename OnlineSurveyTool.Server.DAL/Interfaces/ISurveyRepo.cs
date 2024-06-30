@@ -2,10 +2,7 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface ISurveyRepo : IRepo<Survey>
+    public interface ISurveyRepo : IRepoStringId<Survey>
     {
-        Task<Survey?> GetOne(string token);
-
-        Task<List<Survey>> GetAllSurveysOwnedBy(int userId);
     }
 }

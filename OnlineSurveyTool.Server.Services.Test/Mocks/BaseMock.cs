@@ -3,98 +3,80 @@ using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.Services.Test.Mocks;
 
-public abstract class BaseMock<T>: IRepo<T> where T : EntityBase
+public abstract class BaseMock<T, TId>: IBaseRepo<T, TId> where T : EntityBase<TId>, new()
 {
-    protected List<T> Entities => entities;
-    
-    private List<T> entities;
-    private int changeTracker;
-
-    protected BaseMock()
+    private readonly List<T> _entities;
+    protected readonly object _entitiesLock;
+    protected List<T> Entities => _entities;
+    public BaseMock(IPopulator<T, TId> populator)
     {
-        entities = new List<T>();
-        changeTracker = 0;
-        Populate();
+        _entities = populator.Populate();
     }
-
-    protected abstract void Populate();
     
     public async Task<int> SaveChanges()
     {
-        int result =  changeTracker;
-        changeTracker = 0;
-        return result;
+        return 0;
     }
 
-    public async Task<T?> GetOne(int id)
+    public async Task<T?> GetOne(TId id)
     {
-        return entities.Find(e => e.Id == id);
+        return _entities.Find(e => Equals(e.Id, id));
+    }
+
+    public async Task<int> Remove(TId id)
+    {
+        lock (_entitiesLock)
+        return _entities.RemoveAll(e => Equals(e.Id, id));
     }
 
     public async Task<List<T>> GetAll()
     {
-        return new List<T>(entities);
+        return _entities.ToList();
     }
 
     public async Task<int> Add(T entity)
     {
-        if (entity.Id == 0)
+        Console.WriteLine(entity.Id);
+        var ent = await GetOne(entity.Id);
+        if (ent is not null)
         {
-            lock (entities)
-            {
-                entity.Id = entities.Count;
-                entities.Add(entity);
-                return 1;
-            }
+            return 0;
         }
-        if (await GetOne(entity.Id) is null)
-        {
-            lock (entities)
-            {
-                entities.Add(entity);
-                return 1; 
-            }
-        }
-        return 0;
+        _entities.Add(ent);
+        return 1;
     }
 
     public async Task<int> AddRange(IList<T> entities)
     {
-        int result = 0;
+        int sum = 0;
         foreach (var entity in entities)
         {
-            result += await Add(entity);
+            sum += await Add(entity);
         }
 
-        return result;
+        return sum;
     }
 
     public async Task<int> Update(T entity)
     {
-        var existingEntity = await GetOne(entity.Id);
-        if (existingEntity is null)
+        var ent = await GetOne(entity.Id);
+        if (ent is null)
         {
             return 0;
         }
 
-        entities.Remove(existingEntity);
-        entities.Add(entity);
-        return 1;
-    }
-
-    public async Task<int> Remove(int id)
-    {
-        entities.RemoveAll(e => e.Id == id);
+        _entities.Remove(ent);
+        _entities.Add(entity);
         return 1;
     }
 
     public async Task<int> Remove(T entity)
     {
-        bool wasRemoved = entities.Remove(entity);
-        return wasRemoved ? 1 : 0;
+        return _entities.Remove(entity) ? 1 : 0;
     }
     
-    public void Dispose() 
+    
+    public void Dispose()
     {
     }
 }

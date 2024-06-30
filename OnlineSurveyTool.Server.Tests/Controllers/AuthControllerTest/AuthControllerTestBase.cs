@@ -15,7 +15,7 @@ public abstract class AuthControllerTestBase<TD> : ControllerTestBase<AuthContro
             cfg.AddProfile<AutoMapperProfile>();
         });
         var mapper = config.CreateMapper();
-        var userRepo = new UserRepoMock();
+        var userRepo = new UserRepoMock(new UserPopulator());
         var userService = new UserService(userRepo, mapper, new LoggerMock<UserService>());
         var jwTokenService = new JWTokenService(new LoggerMock<JWTokenService>(), ConfigurationCreator.MockConfig());
         var authenticationService = new AuthenticationService(userRepo, new LoggerMock<AuthenticationService>());

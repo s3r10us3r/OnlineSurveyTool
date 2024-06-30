@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace OnlineSurveyTool.Server.DAL.Models
 {
     [Table("Results")]
-    public class SurveyResult : EntityBase
+    public class SurveyResult : EntityBaseIntegerId
     {
         [ForeignKey("Survey")]
         public int SurveyId;

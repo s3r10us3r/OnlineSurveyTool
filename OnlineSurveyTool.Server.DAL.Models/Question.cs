@@ -18,6 +18,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
         [ForeignKey("Survey")]
         public string SurveyId { get; set; }
 
+        [Required]
         public QuestionType Type { get; set; }
 
         //If Type is SingleChoice these properties do not mean anything

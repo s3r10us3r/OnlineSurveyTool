@@ -6,7 +6,6 @@ namespace OnlineSurveyTool.Server.Services.Test.Mocks;
 public abstract class BaseMock<T, TId>: IBaseRepo<T, TId> where T : EntityBase<TId>, new()
 {
     private readonly List<T> _entities;
-    protected readonly object _entitiesLock;
     protected List<T> Entities => _entities;
     public BaseMock(IPopulator<T, TId> populator)
     {
@@ -25,7 +24,6 @@ public abstract class BaseMock<T, TId>: IBaseRepo<T, TId> where T : EntityBase<T
 
     public async Task<int> Remove(TId id)
     {
-        lock (_entitiesLock)
         return _entities.RemoveAll(e => Equals(e.Id, id));
     }
 

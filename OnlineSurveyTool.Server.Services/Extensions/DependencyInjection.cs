@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.Extensions;
+using OnlineSurveyTool.Server.Services.SurveyServices.Extensions;
 
 namespace OnlineSurveyTool.Server.Services.Extensions
 {
@@ -35,6 +36,7 @@ namespace OnlineSurveyTool.Server.Services.Extensions
         public static void AddServices(this IServiceCollection services)
         {
             services.AddAuthenticationServices();
+            services.AddSurveyServices();
         }
 
         public static void AddAutoMapper(this IServiceCollection services)

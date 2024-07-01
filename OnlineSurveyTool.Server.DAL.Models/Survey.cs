@@ -12,7 +12,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public int OwnerId { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        [StringLength(50, MinimumLength = 1)]
+        [StringLength(100, MinimumLength = 1)]
         public string Name { get; set; }
 
         public DateTime? OpeningDate { get; set; }

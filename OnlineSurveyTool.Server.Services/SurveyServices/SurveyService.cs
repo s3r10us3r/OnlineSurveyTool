@@ -134,29 +134,96 @@ public class SurveyService : ISurveyService
             }
 
             await _unitOfWork.CommitTransactionAsync();
-            var finalSurvey = _surveyConverter.SurveyToDto(await _surveyRepo.GetOne(survey.Id));
+            var finalSurvey = _surveyConverter.SurveyToDto((await _surveyRepo.GetOne(survey.Id))!);
             return Result<SurveyDTO, EditSurveyFailureReason>.Success(finalSurvey);
         }
-        catch
+        catch (Exception e)
         {
+            _logger.LogError("Error in EditSurvey {e}", e);
             await _unitOfWork.RollbackTransactionAsync();
             throw;
         }
     }
 
-    public async Task<IResult> DeleteSurvey(string surveyId)
+    
+    public async Task<IResult> DeleteSurvey(string ownerLogin, string surveyId)
     {
-        throw new NotImplementedException();
+        var user = await _userRepo.GetOne(ownerLogin);
+        if (user is null)
+        {
+            _logger.LogCritical("User with login {oL} supplied to SurveyService.DeleteSurvey", ownerLogin);
+            throw new ArgumentException();
+        }
+        var survey = await _surveyRepo.GetOne(surveyId);
+        if (survey is null)
+        {
+            _logger.LogWarning("Nonexistent survey {sId} supplied to SurveyService.DeleteSurvey", surveyId);
+            return Result.Failure("Survey does not exist.");
+        }
+
+        if (survey.OwnerId != user.Id)
+        {
+            _logger.LogWarning("User {ownerLogin} tried to delete a survey that they do not won {surveyId}",
+                ownerLogin, surveyId);
+            return Result.Failure("User does not have access to this survey.");
+        }
+        
+        await _surveyRepo.Remove(surveyId);
+        return Result.Success();
     }
 
-    public async Task<IResult> OpenSurvey(string surveyId)
+    public async Task<IResult> OpenSurvey(string ownerLogin, string surveyId)
     {
-        throw new NotImplementedException();
+        var user = await _userRepo.GetOne(ownerLogin);
+        if (user is null)
+        {
+            _logger.LogCritical("User with login {oL} supplied to SurveyService.CloseSurvey", ownerLogin);
+            throw new ArgumentException();
+        }
+        var survey = await _surveyRepo.GetOne(surveyId);
+        if (survey is null)
+        {
+            _logger.LogWarning("Nonexistent survey {sId} supplied to SurveyService.CloseSurvey", surveyId);
+            return Result.Failure("Survey does not exist.");
+        }
+
+        if (survey.OwnerId != user.Id)
+        {
+            _logger.LogWarning("User {ownerLogin} tried to open a survey that they do not own {surveyId}", ownerLogin,
+                surveyId);
+            return Result.Failure("User does not have access to this survey.");
+        }
+
+        survey.IsOpen = true;
+        await _surveyRepo.Update(survey);
+        return Result.Success();
     }
 
-    public async Task<IResult> CloseSurvey(string surveyId)
-    {
-        throw new NotImplementedException();
+    public async Task<IResult> CloseSurvey(string ownerLogin, string surveyId)
+    { 
+        var user = await _userRepo.GetOne(ownerLogin);
+        if (user is null)
+        {
+            _logger.LogCritical("User with login {oL} supplied to SurveyService.CloseSurvey", ownerLogin);
+            throw new ArgumentException();
+        }
+        var survey = await _surveyRepo.GetOne(surveyId);
+        if (survey is null)
+        {
+            _logger.LogWarning("Nonexistent survey {sId} supplied to SurveyService.CloseSurvey", surveyId);
+            return Result.Failure("Survey does not exist.");
+        }
+ 
+        if (survey.OwnerId != user.Id)
+        {
+            _logger.LogWarning("User {ownerLogin} tried to close a survey that they do not own {surveyId}", ownerLogin,
+                surveyId);
+            return Result.Failure("User does not have access to this survey.");
+        }
+ 
+        survey.IsOpen = false;
+        await _surveyRepo.Update(survey);
+        return Result.Success();       
     }
 
     private async Task MapEditToQuestion(Question question, QuestionEditDto dto)

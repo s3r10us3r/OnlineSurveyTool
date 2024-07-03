@@ -36,6 +36,7 @@ namespace OnlineSurveyTool.Server.Services.Utils
         public new static Result<T> Success(T value) => new(true, default, value);
     }
 
+    
     public class Result<T, TE> : Result<T>, IResult<T, TE> where TE : Enum
     {
         private readonly TE? _reason;

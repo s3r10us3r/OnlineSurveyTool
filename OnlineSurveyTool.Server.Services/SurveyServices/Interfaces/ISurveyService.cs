@@ -7,9 +7,9 @@ public interface ISurveyService
 {
     Task<IResult<SurveyDTO>> AddSurvey(string ownerLogin, SurveyDTO surveyDto);
     Task<IResult<SurveyDTO, EditSurveyFailureReason>> EditSurvey(string ownerLogin, SurveyEditDto editedSurvey);
-    Task<IResult> DeleteSurvey(string surveyId);
-    Task<IResult> OpenSurvey(string surveyId);
-    Task<IResult> CloseSurvey(string surveyId);
+    Task<IResult> DeleteSurvey(string ownerLogin, string surveyId);
+    Task<IResult> OpenSurvey(string ownerLogin, string surveyId);
+    Task<IResult> CloseSurvey(string ownerLogin, string surveyId);
 }
 
 public enum EditSurveyFailureReason

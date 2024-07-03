@@ -1,11 +1,12 @@
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Logging;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
 using OnlineSurveyTool.Server.Services.SurveyServices.Interfaces;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils;
+using OnlineSurveyTool.Server.Services.SurveyServices.Utils.Interfaces;
 using OnlineSurveyTool.Server.Services.Utils;
 using OnlineSurveyTool.Server.Services.Utils.Interfaces;
 
@@ -17,19 +18,28 @@ public class SurveyService : ISurveyService
     private readonly ISurveyValidator _surveyValidator;
     private readonly ISurveyConverter _surveyConverter;
     private readonly IQuestionRepo _questionRepo;
+    private readonly IQuestionConverter _questionConverter;
     private readonly ISurveyRepo _surveyRepo;
     private readonly IUserRepo _userRepo;
+    private readonly IChoiceOptionRepo _choiceOptionRepo;
+    private readonly IEditSurveyValidator _editSurveyValidator;
+    private readonly IChoiceOptionConverter _choiceOptionConverter;
     private readonly ILogger<SurveyService> _logger;
 
     public SurveyService(IUnitOfWork unitOfWork, ISurveyValidator surveyValidator, ISurveyConverter surveyConverter,
-        ILogger<SurveyService> logger)
+        IQuestionConverter questionConverter, IEditSurveyValidator editSurveyValidator,
+        IChoiceOptionConverter choiceOptionConverter, ILogger<SurveyService> logger)
     {
         _unitOfWork = unitOfWork;
         _surveyValidator = surveyValidator;
+        _questionConverter = questionConverter;
         _questionRepo = _unitOfWork.QuestionRepo;
         _surveyRepo = _unitOfWork.SurveyRepo;
         _userRepo = _unitOfWork.UserRepo;
+        _choiceOptionRepo = _unitOfWork.ChoiceOptionRepo;
         _surveyConverter = surveyConverter;
+        _editSurveyValidator = editSurveyValidator;
+        _choiceOptionConverter = choiceOptionConverter;
         _logger = logger;
     }
     
@@ -50,41 +60,88 @@ public class SurveyService : ISurveyService
 
         var survey = _surveyConverter.DtoToSurvey(surveyDto);
         survey.OwnerId = user.Id;
-        var addResult = await _surveyRepo.Add(survey);
-        if (addResult == 0)
-        {
-            _logger.LogError("Survey could not be added to the database in SurveyService.AddSurvey");
-            throw new DbUpdateException("Could not add survey to the database.");
-        }
-
+        await _surveyRepo.Add(survey);
         var resultDto = _surveyConverter.SurveyToDto(survey);
         return Result<SurveyDTO>.Success(resultDto);
     }
 
-    public async Task<IResult<SurveyDTO>> EditSurvey(string ownerLogin, SurveyDTO editedSurvey)
+    public async Task<IResult<SurveyDTO, EditSurveyFailureReason>> EditSurvey(string ownerLogin, SurveyEditDto editedSurvey)
     {
-        if (editedSurvey.Id is null)
-        {
-            _logger.LogWarning("Survey supplied to surveyDto has no id.");
-            return Result<SurveyDTO>.Failure("editedSurvey has no Id");
-        }
         var survey = await _surveyRepo.GetOne(editedSurvey.Id);
         if (survey is null)
         {
-            _logger.LogWarning("Survey with incorrect id supplied to SurveyService.EditSurvey id: {id}",
-                editedSurvey.Id);
-            return Result<SurveyDTO>.Failure("Survey with this id does not exist!");
+            _logger.LogWarning("Nonexistent survey with id {id} supplied to EditSurvey", editedSurvey.Id);
+            return Result<SurveyDTO, EditSurveyFailureReason>.Failure("SurveyId does not exist",
+                EditSurveyFailureReason.DoesNotExist);
         }
 
-        var user = survey.Owner;
-        if (user.Login != ownerLogin)
+        var user = await _userRepo.GetOne(ownerLogin);
+        if (user is null)
         {
-            _logger.LogWarning("User {uL} supplied to EditSurvey is not the owner of survey {sId}", ownerLogin,
-                survey.Id);
-            return Result<SurveyDTO>.Failure("Survey with this id is owned by another user.");
+            //if this is triggered it means that somehow authentication was bypassed
+            _logger.LogCritical("Nonexistent user login {login} supplied to SurveyService.EditSurvey", ownerLogin);
+            throw new ArgumentException($"User with login {ownerLogin} does not exist");
         }
-        
-        
+
+        if (user.Id != survey.OwnerId)
+        {
+            _logger.LogWarning("Survey {sId} with owner {oId} was tried to be edited by user {uId}", survey.Id,
+                survey.OwnerId, user.Id);
+            return Result<SurveyDTO, EditSurveyFailureReason>.Failure("User does not have access to this survey.",
+                EditSurveyFailureReason.NotAuthorized);
+        }
+
+
+        var isValid = _editSurveyValidator.ValidateSurveyEdit(editedSurvey, survey, out var validationMessage);
+        if (!isValid)
+        {
+            await _unitOfWork.RollbackTransactionAsync();
+            _logger.LogWarning("Invalid edit model sent to SurveyService.EditSurvey, message {e}", validationMessage);
+            return Result<SurveyDTO, EditSurveyFailureReason>.Failure(validationMessage,
+                EditSurveyFailureReason.InvalidRequest);
+        }
+
+        //from now on I assume that everything is valid
+        await using var transaction = await _unitOfWork.BeginTransactionAsync();
+        try
+        {
+            if (editedSurvey.Name is not null)
+            {
+                survey.Name = editedSurvey.Name;
+                await _surveyRepo.Update(survey);
+            }
+
+            await Task.WhenAll(editedSurvey.DeletedQuestions!.Select(id => _questionRepo.Remove(id)));
+            if (editedSurvey.EditedQuestions is not null)
+            {
+                var pairs = editedSurvey.EditedQuestions.Join(survey.Questions, e => e.Id, q => q.Id,
+                    (e, q) => (q, e));
+
+                foreach (var (q, e) in pairs)
+                {
+                    await MapEditToQuestion(q, e);
+                    await _questionRepo.Update(q);
+                }
+            }
+
+            if (editedSurvey.NewQuestions is not null)
+            {
+                var questions = editedSurvey.NewQuestions
+                    .Select(q => _questionConverter.DtoToQuestion(q))
+                    .ToList();
+                questions.ForEach(q => q.SurveyId = survey.Id);
+                await _questionRepo.AddRange(questions);
+            }
+
+            await _unitOfWork.CommitTransactionAsync();
+            var finalSurvey = _surveyConverter.SurveyToDto(await _surveyRepo.GetOne(survey.Id));
+            return Result<SurveyDTO, EditSurveyFailureReason>.Success(finalSurvey);
+        }
+        catch
+        {
+            await _unitOfWork.RollbackTransactionAsync();
+            throw;
+        }
     }
 
     public async Task<IResult> DeleteSurvey(string surveyId)
@@ -102,4 +159,19 @@ public class SurveyService : ISurveyService
         throw new NotImplementedException();
     }
 
+    private async Task MapEditToQuestion(Question question, QuestionEditDto dto)
+    {
+        question.Number = dto.Number ?? question.Number;
+        question.Minimum = dto.Minimum ?? question.Minimum;
+        question.Maximum = dto.Maximum ?? question.Maximum;
+        question.Value = dto.Value ?? question.Value;
+        question.CanBeSkipped = dto.CanBeSkipped ?? question.CanBeSkipped;
+
+        if (dto.ChoiceOptions is not null)
+        {
+            await Task.WhenAll(question.ChoiceOptions!.Select(co => _choiceOptionRepo!.Remove(co)));
+            var convertedChoiceOptions = dto.ChoiceOptions.Select(co => _choiceOptionConverter.DtoToChoiceOption(co));
+            await _choiceOptionRepo.AddRange(convertedChoiceOptions.ToList());
+        }
+    }
 }

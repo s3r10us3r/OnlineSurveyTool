@@ -11,9 +11,9 @@ public class SurveyEditDto
     [StringLength(100, MinimumLength = 1)]
     public string? Name { get; set; }
     
-    public List<QuestionDTO> NewQuestions { get; set; }
+    public List<QuestionDTO>? NewQuestions { get; set; }
     
-    public List<QuestionDTO>? EditedQuestions { get; set; }
+    public List<QuestionEditDto>? EditedQuestions { get; set; }
     
     //this list contains ids only
     public List<string>? DeletedQuestions { get; set; }

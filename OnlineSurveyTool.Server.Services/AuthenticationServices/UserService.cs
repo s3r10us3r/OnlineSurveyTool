@@ -41,22 +41,17 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             
             var passwordHash = HashPassword(userDTO.Password);
             user.PasswordHash = passwordHash;
-            int result;
             try
             {
-                result = await _userRepo.Add(user);
+                await _userRepo.Add(user);
             }
             catch (Exception e)
             {
                 Logger.LogError(e, "Error occured while adding user to db.");
                 throw new Exception("Error adding user to the database.", e);
             }
-            if (result == 0)
-            {
-                Logger.LogError("User could not be added to the database.");
-                throw new Exception("User could not be added to the database.");
-            }
 
+            Logger.LogInformation("User {uId}, {uLogin} has been added to the database", user.Id, user.Login);
             return Result<UserDTO, UserCreationFailure>.Success(new UserDTO { Id = user.Id, Login = user.Login, Email = user.EMail });
         }
 

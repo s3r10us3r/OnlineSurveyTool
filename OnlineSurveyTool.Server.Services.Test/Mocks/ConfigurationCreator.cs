@@ -13,7 +13,7 @@ public static class ConfigurationCreator
             {"Jwt:Audience", "TestAudience"},
             {"Jwt:RefreshTokenExpiryMinutes", "10080"},
             {"Jwt:AccessTokenExpiryMinutes", "30"},
-            {"Settings:SurveyIDLength", "20"}
+            {"Settings:TextualQuestionMaximumLength", "1000"}
         };
         
         var builder = new ConfigurationBuilder();

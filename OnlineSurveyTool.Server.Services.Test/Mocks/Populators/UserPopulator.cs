@@ -15,7 +15,6 @@ public class UserPopulator : IPopulator<User, int>
                 EMail = "test@mail.com",
                 PasswordHash = HashPassword("TestPassword1!")
             },
-
             new User()
             {
                 Id = 2,
@@ -23,8 +22,6 @@ public class UserPopulator : IPopulator<User, int>
                 EMail = "test@mail.com",
                 PasswordHash = HashPassword("TestPassword2!")
             },
-
-
             new User()
             {
                 Id = 3,
@@ -32,8 +29,6 @@ public class UserPopulator : IPopulator<User, int>
                 EMail = "test@mail.com",
                 PasswordHash = HashPassword("TestPassword3!")
             },
-
-
             new User()
             {
                 Id = 4,
@@ -41,8 +36,6 @@ public class UserPopulator : IPopulator<User, int>
                 EMail = "test@mail.com",
                 PasswordHash = HashPassword("TestPassword4!")
             },
-
-
             new User()
             {
                 Id = 5,
@@ -50,7 +43,6 @@ public class UserPopulator : IPopulator<User, int>
                 EMail = "test@mail.com",
                 PasswordHash = HashPassword("TestPassword5!")
             }
-
         ];
 
         return entities;

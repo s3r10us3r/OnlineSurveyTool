@@ -37,6 +37,7 @@ public class EditSurveyValidator : IEditSurveyValidator
             if (!ValidateEditQuestions(survey.Questions, edit.EditedQuestions))
             {
                 message = "One or more questions from edited questions does not exist in the survey.";
+                return false;
             }
             edit.EditedQuestions.ForEach(e => MapEditToQuestionDto(e, surveyDto.Questions.Find(q => q.Id == e.Id)!));
         }

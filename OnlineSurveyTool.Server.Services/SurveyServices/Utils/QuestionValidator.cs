@@ -16,6 +16,7 @@ public class QuestionValidator : IQuestionValidator
     public bool ValidateQuestions(List<QuestionDTO> questions, out string message)
     {
         message = "";
+        questions.Sort((q1, q2) => q1.Number - q2.Number);
         for (int i = 0; i < questions.Count; i++)
         {
             if (questions[i].Number != i)

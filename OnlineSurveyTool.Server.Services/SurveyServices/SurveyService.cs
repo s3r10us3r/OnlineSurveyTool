@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Authorization.Infrastructure;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
@@ -64,15 +62,17 @@ public class SurveyService : ISurveyService
         var resultDto = _surveyConverter.SurveyToDto(survey);
         return Result<SurveyDTO>.Success(resultDto);
     }
-
-    public async Task<IResult<SurveyDTO, EditSurveyFailureReason>> EditSurvey(string ownerLogin, SurveyEditDto editedSurvey)
+    
+    public async Task<IResult<SurveyDTO, SurveyServiceFailureReason>> EditSurvey(string ownerLogin, SurveyEditDto editedSurvey)
     {
+        Console.WriteLine(editedSurvey.Id);
+        var surveys = await _surveyRepo.GetAll();
         var survey = await _surveyRepo.GetOne(editedSurvey.Id);
         if (survey is null)
         {
             _logger.LogWarning("Nonexistent survey with id {id} supplied to EditSurvey", editedSurvey.Id);
-            return Result<SurveyDTO, EditSurveyFailureReason>.Failure("SurveyId does not exist",
-                EditSurveyFailureReason.DoesNotExist);
+            return Result<SurveyDTO, SurveyServiceFailureReason>.Failure("SurveyId does not exist",
+                SurveyServiceFailureReason.DoesNotExist);
         }
 
         var user = await _userRepo.GetOne(ownerLogin);
@@ -87,18 +87,17 @@ public class SurveyService : ISurveyService
         {
             _logger.LogWarning("Survey {sId} with owner {oId} was tried to be edited by user {uId}", survey.Id,
                 survey.OwnerId, user.Id);
-            return Result<SurveyDTO, EditSurveyFailureReason>.Failure("User does not have access to this survey.",
-                EditSurveyFailureReason.NotAuthorized);
+            return Result<SurveyDTO, SurveyServiceFailureReason>.Failure("User does not have access to this survey.",
+                SurveyServiceFailureReason.NotAuthorized);
         }
 
 
         var isValid = _editSurveyValidator.ValidateSurveyEdit(editedSurvey, survey, out var validationMessage);
         if (!isValid)
         {
-            await _unitOfWork.RollbackTransactionAsync();
             _logger.LogWarning("Invalid edit model sent to SurveyService.EditSurvey, message {e}", validationMessage);
-            return Result<SurveyDTO, EditSurveyFailureReason>.Failure(validationMessage,
-                EditSurveyFailureReason.InvalidRequest);
+            return Result<SurveyDTO, SurveyServiceFailureReason>.Failure(validationMessage,
+                SurveyServiceFailureReason.InvalidRequest);
         }
 
         //from now on I assume that everything is valid
@@ -135,7 +134,7 @@ public class SurveyService : ISurveyService
 
             await _unitOfWork.CommitTransactionAsync();
             var finalSurvey = _surveyConverter.SurveyToDto((await _surveyRepo.GetOne(survey.Id))!);
-            return Result<SurveyDTO, EditSurveyFailureReason>.Success(finalSurvey);
+            return Result<SurveyDTO, SurveyServiceFailureReason>.Success(finalSurvey);
         }
         catch (Exception e)
         {

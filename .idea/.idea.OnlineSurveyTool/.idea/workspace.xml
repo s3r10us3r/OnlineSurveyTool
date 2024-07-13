@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9d715488-7bb0-43ca-8ad1-722fa20c618c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineSurveyTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineSurveyTool/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/EntityBaseStringId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/EntityBaseStringId.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfo.cs" afterDir="false" />
@@ -32,7 +34,7 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/Utils/EditSurveyValidatorTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/Utils/EditSurveyValidatorTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/Mocks/BaseMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/Mocks/BaseMock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
@@ -50,8 +52,8 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/EditSurveyValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/EditSurveyValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/QuestionValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/QuestionValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Interfaces/ISurveyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Interfaces/ISurveyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/SurveyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/SurveyService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
@@ -242,6 +244,8 @@
       <workItem from="1720079457757" duration="4120000" />
       <workItem from="1720122548956" duration="5919000" />
       <workItem from="1720197329248" duration="2924000" />
+      <workItem from="1720276332806" duration="5125000" />
+      <workItem from="1720863736239" duration="10627000" />
     </task>
     <servers />
   </component>
@@ -257,42 +261,42 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net8.0) 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net8.0) 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net8.0) 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net8.0) 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net8.0) 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="SurveyServices 50% 220/438" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net8.0) 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="SurveyServices 61% 172/438" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 51% 984/2013" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="(1.0.0.0, net8.0) 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="OnlineSurveyTool.Server.Services 64% 261/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="SurveyServices 50% 220/438" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="SurveyService 0% 164/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 53% 991/2107" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="(1.0.0.0, net8.0) 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="OnlineSurveyTool.Server.Services 71% 208/729" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="SurveyServices 61% 172/438" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="SurveyService 18% 134/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />

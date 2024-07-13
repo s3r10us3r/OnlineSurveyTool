@@ -17,9 +17,10 @@ public abstract class BaseMock<T, TId>: IBaseRepo<T, TId> where T : EntityBase<T
         return 0;
     }
 
-    public async Task<T?> GetOne(TId id)
+    public virtual Task<T?> GetOne(TId id)
     {
-        return _entities.Find(e => Equals(e.Id, id));
+        Console.WriteLine(_entities.Count);
+        return Task.FromResult(_entities.Find(e => Equals(id, e.Id)));
     }
 
     public async Task<int> Remove(TId id)
@@ -36,7 +37,7 @@ public abstract class BaseMock<T, TId>: IBaseRepo<T, TId> where T : EntityBase<T
     {
         Console.WriteLine(entity.Id);
         var ent = await GetOne(entity.Id);
-        if (ent is not null)
+        if (ent is null)
         {
             return 0;
         }

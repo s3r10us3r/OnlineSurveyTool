@@ -1,8 +1,8 @@
 namespace OnlineSurveyTool.Server.Services.SurveyServices.Utils;
 
-public class GuidGenerator : IGuidGenerator
+public static class GuidGenerator
 {
-    public string GenerateGuid()
+    public static string GenerateGuid()
     {
         Guid guid = Guid.NewGuid();
         return guid.ToString();

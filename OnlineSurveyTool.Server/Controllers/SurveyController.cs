@@ -181,4 +181,26 @@ public class SurveyController : ControllerBase
             return StatusCode(500, "Internal server error!");
         }
     }
+
+
+    [HttpGet("get/{id}")]
+    public async Task<IActionResult> GetSurvey(string id)
+    {
+        try
+        {
+            var result = await _surveyService.GetSurvey(id);
+            if (result.IsSuccess)
+            {
+                var survey = result.Value;
+                return Ok(survey);
+            }
+
+            return NotFound("Survey not found.");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error occured while getting survey");
+            return StatusCode(500, new {Message = "Internal server error"});
+        }
+    }
 }

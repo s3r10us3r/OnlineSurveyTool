@@ -17,12 +17,8 @@ public class EditSurveyValidatorTest
     public void SetUp()
     {
         var qValidator = new QuestionValidator(ConfigurationCreator.MockConfig());
-        var guidGenerator = new GuidGenerator();
-        var cOConverter = new ChoiceOptionConverter(guidGenerator);
-        var questionConverter = new QuestionConverter(guidGenerator, cOConverter);
-        var sConverter = new SurveyConverter(questionConverter, guidGenerator);
         var sValidator = new SurveyValidator(qValidator);
-        _editSurveyValidator = new EditSurveyValidator(qValidator, sConverter, sValidator);
+        _editSurveyValidator = new EditSurveyValidator(qValidator, sValidator);
         _survey = new SurveyPopulator().Populate()[0];
         _dto = new SurveyEditDto()
         {

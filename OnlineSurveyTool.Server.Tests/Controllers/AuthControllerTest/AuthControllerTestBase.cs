@@ -8,7 +8,7 @@ namespace OnlineSurveyTool.Server.Tests.Controllers.AuthControllerTest;
 
 public abstract class AuthControllerTestBase<TD> : ControllerTestBase<AuthController, TD>
 {
-    private static AuthController CreateController()
+    protected override AuthController CreateController()
     {
         var config = new MapperConfiguration(cfg =>
         { 
@@ -23,9 +23,5 @@ public abstract class AuthControllerTestBase<TD> : ControllerTestBase<AuthContro
         var controller = new AuthController(authenticationService, userService, jwTokenService,
             new LoggerMock<AuthController>());
         return controller;
-    }
-
-    protected AuthControllerTestBase() : base(CreateController())
-    {
     }
 }

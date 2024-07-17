@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
+using OnlineSurveyTool.Server.Services.SurveyServices.Extensions;
 using OnlineSurveyTool.Server.Services.SurveyServices.Interfaces;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils.Interfaces;
@@ -14,31 +15,36 @@ public class SurveyService : ISurveyService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly ISurveyValidator _surveyValidator;
-    private readonly ISurveyConverter _surveyConverter;
     private readonly IQuestionRepo _questionRepo;
-    private readonly IQuestionConverter _questionConverter;
     private readonly ISurveyRepo _surveyRepo;
     private readonly IUserRepo _userRepo;
     private readonly IChoiceOptionRepo _choiceOptionRepo;
     private readonly IEditSurveyValidator _editSurveyValidator;
-    private readonly IChoiceOptionConverter _choiceOptionConverter;
     private readonly ILogger<SurveyService> _logger;
 
-    public SurveyService(IUnitOfWork unitOfWork, ISurveyValidator surveyValidator, ISurveyConverter surveyConverter,
-        IQuestionConverter questionConverter, IEditSurveyValidator editSurveyValidator,
-        IChoiceOptionConverter choiceOptionConverter, ILogger<SurveyService> logger)
+    public SurveyService(IUnitOfWork unitOfWork, ISurveyValidator surveyValidator,
+        IEditSurveyValidator editSurveyValidator, ILogger<SurveyService> logger)
     {
         _unitOfWork = unitOfWork;
         _surveyValidator = surveyValidator;
-        _questionConverter = questionConverter;
         _questionRepo = _unitOfWork.QuestionRepo;
         _surveyRepo = _unitOfWork.SurveyRepo;
         _userRepo = _unitOfWork.UserRepo;
         _choiceOptionRepo = _unitOfWork.ChoiceOptionRepo;
-        _surveyConverter = surveyConverter;
         _editSurveyValidator = editSurveyValidator;
-        _choiceOptionConverter = choiceOptionConverter;
         _logger = logger;
+    }
+
+    public async Task<IResult<SurveyDTO>> GetSurvey(string id)
+    {
+        var survey = await _surveyRepo.GetOne(id);
+        if (survey is null || !survey.IsOpen)
+        {
+            return Result<SurveyDTO>.Failure("Survey not found");
+        }
+
+        var dto = survey.SurveyToDto();
+        return Result<SurveyDTO>.Success(dto);
     }
     
     public async Task<IResult<SurveyDTO>> AddSurvey(string ownerLogin, SurveyDTO surveyDto)
@@ -56,10 +62,10 @@ public class SurveyService : ISurveyService
             return Result<SurveyDTO>.Failure("User with this login does not exist.");
         }
 
-        var survey = _surveyConverter.DtoToSurvey(surveyDto);
+        var survey = surveyDto.DtoToSurvey();
         survey.OwnerId = user.Id;
         await _surveyRepo.Add(survey);
-        var resultDto = _surveyConverter.SurveyToDto(survey);
+        var resultDto = survey.SurveyToDto();
         return Result<SurveyDTO>.Success(resultDto);
     }
     
@@ -126,15 +132,16 @@ public class SurveyService : ISurveyService
             if (editedSurvey.NewQuestions is not null)
             {
                 var questions = editedSurvey.NewQuestions
-                    .Select(q => _questionConverter.DtoToQuestion(q))
+                    .Select(q => q.DtoToQuestion())
                     .ToList();
                 questions.ForEach(q => q.SurveyId = survey.Id);
                 await _questionRepo.AddRange(questions);
             }
 
             await _unitOfWork.CommitTransactionAsync();
-            var finalSurvey = _surveyConverter.SurveyToDto((await _surveyRepo.GetOne(survey.Id))!);
-            return Result<SurveyDTO, SurveyServiceFailureReason>.Success(finalSurvey);
+            var finalSurvey = await _surveyRepo.GetOne(survey.Id);
+            var finalSurveyDto = finalSurvey!.SurveyToDto();
+            return Result<SurveyDTO, SurveyServiceFailureReason>.Success(finalSurveyDto);
         }
         catch (Exception e)
         {
@@ -236,7 +243,7 @@ public class SurveyService : ISurveyService
         if (dto.ChoiceOptions is not null)
         {
             await Task.WhenAll(question.ChoiceOptions!.Select(co => _choiceOptionRepo!.Remove(co)));
-            var convertedChoiceOptions = dto.ChoiceOptions.Select(co => _choiceOptionConverter.DtoToChoiceOption(co));
+            var convertedChoiceOptions = dto.ChoiceOptions.Select(co => co.DtoToChoiceOption());
             await _choiceOptionRepo.AddRange(convertedChoiceOptions.ToList());
         }
     }

@@ -30,11 +30,12 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
+                    b.Property<string>("QuestionId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
-                    b.Property<int?>("SingleChoiceOptionId")
-                        .HasColumnType("int");
+                    b.Property<string>("SingleChoiceOptionId")
+                        .HasColumnType("varchar(36)");
 
                     b.Property<int>("SurveyResultId")
                         .HasColumnType("int");
@@ -64,8 +65,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.Property<int>("AnswerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ChoiceOptionId")
-                        .HasColumnType("int");
+                    b.Property<string>("ChoiceOptionId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
                     b.HasKey("Id");
 
@@ -78,17 +80,16 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.ChoiceOption", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
+                    b.Property<string>("QuestionId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -104,11 +105,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Question", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.Property<bool>("CanBeSkipped")
                         .HasColumnType("tinyint(1)");
@@ -122,8 +121,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int>("SurveyId")
-                        .HasColumnType("int");
+                    b.Property<string>("SurveyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -141,11 +141,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Survey", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.Property<DateTime?>("ClosingDate")
                         .HasColumnType("datetime(6)");
@@ -158,8 +156,8 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<DateTime?>("OpeningDate")
                         .HasColumnType("datetime(6)");
@@ -167,16 +165,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.Property<int>("OwnerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OwnerId");
-
-                    b.HasIndex("Token")
-                        .IsUnique();
 
                     b.ToTable("Surveys");
                 });
@@ -189,8 +180,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("SurveyId")
-                        .HasColumnType("int");
+                    b.Property<string>("SurveyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
                     b.Property<DateTime>("TimeStamp")
                         .HasColumnType("datetime(6)");

@@ -18,15 +18,9 @@ public class SurveyServiceTest
         var uow = new UnitOfWorkMock();
         var questionValidator = new QuestionValidator(ConfigurationCreator.MockConfig());
         var surveyValidator = new SurveyValidator(questionValidator);
-        var guidGenerator = new GuidGenerator();
-        var choiceOptionConverter = new ChoiceOptionConverter(guidGenerator);
-        var questionConverter = new QuestionConverter(guidGenerator, choiceOptionConverter);
-        var surveyConverter = new SurveyConverter(questionConverter, guidGenerator);
-        var editSurveyValidator = new EditSurveyValidator(questionValidator, surveyConverter, surveyValidator);
+        var editSurveyValidator = new EditSurveyValidator(questionValidator, surveyValidator);
         var logger = new LoggerMock<Services.SurveyServices.SurveyService>();
-        _surveyService = new Services.SurveyServices.SurveyService(uow, surveyValidator, surveyConverter,
-            questionConverter, editSurveyValidator, choiceOptionConverter, logger);
-
+        _surveyService = new Services.SurveyServices.SurveyService(uow, surveyValidator, editSurveyValidator, logger);
         _sampleSurvey = ProvideSampleSurvey();
         _sampleEdit = ProvideSampleEdit();
     }

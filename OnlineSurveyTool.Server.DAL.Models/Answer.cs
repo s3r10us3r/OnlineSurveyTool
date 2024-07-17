@@ -9,13 +9,13 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public QuestionType Type { get; set; }
 
         [ForeignKey(nameof(Question))]
-        public int QuestionId { get; set; }
+        public string QuestionId { get; set; }
 
         [ForeignKey(nameof(SurveyResultId))]
         public int SurveyResultId { get; set; }
 
         [ForeignKey(nameof(SingleChoiceOption))]
-        public int? SingleChoiceOptionId { get; set; }
+        public string? SingleChoiceOptionId { get; set; }
 
         public virtual SurveyResult? SurveyResult { get; set; }
         public virtual ChoiceOption? SingleChoiceOption { get; set; }

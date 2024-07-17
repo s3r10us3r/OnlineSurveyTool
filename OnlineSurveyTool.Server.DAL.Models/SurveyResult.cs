@@ -7,7 +7,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
     public class SurveyResult : EntityBaseIntegerId
     {
         [ForeignKey("Survey")]
-        public int SurveyId;
+        public string SurveyId;
 
         [Required]
         public DateTime TimeStamp { get; set; }

@@ -9,7 +9,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public Answer Answer { get; set; }
 
         [ForeignKey(nameof(ChoiceOption))]
-        public int ChoiceOptionId { get; set; }
+        public string ChoiceOptionId { get; set; }
         public ChoiceOption ChoiceOption { get; set; }
     }
 }

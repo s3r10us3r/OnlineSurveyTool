@@ -1,5 +1,6 @@
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
+using OnlineSurveyTool.Server.Services.SurveyServices.Extensions;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils.Interfaces;
 
 namespace OnlineSurveyTool.Server.Services.SurveyServices.Utils;
@@ -8,19 +9,16 @@ public class EditSurveyValidator : IEditSurveyValidator
 {
     private readonly IQuestionValidator _questionValidator;
     private readonly ISurveyValidator _surveyValidator;
-    private readonly ISurveyConverter _surveyConverter;
 
-    public EditSurveyValidator(IQuestionValidator questionValidator, ISurveyConverter surveyConverter,
-        ISurveyValidator surveyValidator)
+    public EditSurveyValidator(IQuestionValidator questionValidator, ISurveyValidator surveyValidator)
     {
         _questionValidator = questionValidator;
-        _surveyConverter = surveyConverter;
         _surveyValidator = surveyValidator;
     }
     
     public bool ValidateSurveyEdit(SurveyEditDto edit, Survey survey, out string message)
     {
-        var surveyDto = _surveyConverter.SurveyToDto(survey);
+        var surveyDto = survey.SurveyToDto(); 
         if (edit.DeletedQuestions is not null)
         {
             if (!ValidateDeletedQuestions(survey.Questions, edit.DeletedQuestions))

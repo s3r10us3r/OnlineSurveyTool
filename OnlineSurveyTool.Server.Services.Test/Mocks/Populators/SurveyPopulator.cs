@@ -16,6 +16,16 @@ public class SurveyPopulator : IPopulator<Survey, string>
                 IsOpen = false,
                 OwnerId = 1,
                 Questions = new QuestionPopulator().Populate()
+            },
+            
+            new Survey()
+            {
+                Name = "Survey 2",
+                Id = "survey2",
+                IsArchived = false,
+                IsOpen = true,
+                OwnerId = 1,
+                Questions = new QuestionPopulator().Populate()
             }
         ];
     }

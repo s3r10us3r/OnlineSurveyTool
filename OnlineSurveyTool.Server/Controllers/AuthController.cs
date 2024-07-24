@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineSurveyTool.Server.Requests;
 using OnlineSurveyTool.Server.Responses;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
@@ -84,8 +85,9 @@ namespace OnlineSurveyTool.Server.Controllers
         }
 
         [HttpPost("refresh")]
-        public async Task<IActionResult> Refresh([FromBody] string refreshToken)
+        public async Task<IActionResult> Refresh([FromBody] RefreshRequest request)
         {
+            string refreshToken = request.RefreshToken;
             var claimsPrincipalResult = _jwTokenService.GetClaimsPrincipalFromRefreshToken(refreshToken);
             if (!claimsPrincipalResult.IsSuccess)
             {

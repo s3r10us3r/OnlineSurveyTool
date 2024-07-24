@@ -10,19 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d715488-7bb0-43ca-8ad1-722fa20c618c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/onlinesurveytool.client/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineSurveyTool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineSurveyTool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Answer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Answer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/AnswerOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/AnswerOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Migrations/20240619135511_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Migrations/20240619135511_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Migrations/OstDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/Migrations/OstDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/OstDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/OstDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/SurveyResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/SurveyResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.sourcelink.json" afterDir="false" />
@@ -33,6 +26,8 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL.Models/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/Extensions/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/Extensions/DependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
@@ -45,39 +40,14 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/OnlineSurveyTool.Server.DAL.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/Mocks/Populators/SurveyPopulator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/Mocks/Populators/SurveyPopulator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/SurveyServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/SurveyServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/Utils/EditSurveyValidatorTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/Utils/EditSurveyValidatorTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/SurveyServices/Utils/GuidGeneratorTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.DAL/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Interfaces/ISurveyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Interfaces/ISurveyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/SurveyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/SurveyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/ChoiceOptionConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/EditSurveyValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/EditSurveyValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Extensions/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Extensions/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/GuidGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/GuidGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Interfaces/IChoiceOptionConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Interfaces/IGuidGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Interfaces/IQuestionConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/Interfaces/ISurveyConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/QuestionConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/SurveyServices/Utils/SurveyConverter.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
@@ -87,46 +57,35 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/OnlineSurveyTool.Server.Services.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/Controllers/AuthControllerTest/AuthControllerTestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/Controllers/AuthControllerTest/AuthControllerTestBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/Controllers/ControllerTestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/Controllers/ControllerTestBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.Test.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.Tests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Services/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/Controllers/SurveyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/Controllers/SurveyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server.Tests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.AspNetCore.SpaProxy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.AspNetCore.SpaProxy.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.Models.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.dll" afterDir="false" />
@@ -134,6 +93,17 @@
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/Debug/net8.0/refint/OnlineSurveyTool.Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/OnlineSurveyTool.Server.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/OnlineSurveyTool.Server.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineSurveyTool.Server/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/src/app/components/loginpage/loginpage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/src/app/components/loginpage/loginpage.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinesurveytool.client/src/app/components/registerpage/registerpage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onlinesurveytool.client/src/app/components/registerpage/registerpage.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +130,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/OnlineSurveyTool.Server.Services.Test/Mocks/Populators/QuestionPopulator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/onlinesurveytool.client/package-lock.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -175,6 +146,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.OnlineSurveyTool.Server: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.OnlineSurveyTool.Server: https.executor&quot;: &quot;Run&quot;,
     &quot;0dff8373-47a9-440a-a823-74c33b58bbac.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -183,6 +155,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.onlinesurveytool.client: start.executor&quot;: &quot;Run&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/tradeckm/RiderProjects/OnlineSurveyTool/onlinesurveytool.client/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -195,7 +168,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.OnlineSurveyTool.Server: http">
+  <component name="RunManager" selected="npm.onlinesurveytool.client: start">
     <configuration name="OnlineSurveyTool.Server: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OnlineSurveyTool.Server/OnlineSurveyTool.Server.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -278,6 +251,12 @@
       <workItem from="1720863736239" duration="10627000" />
       <workItem from="1720895731895" duration="68000" />
       <workItem from="1721225916738" duration="14929000" />
+      <workItem from="1721725298880" duration="2623000" />
+      <workItem from="1721728123251" duration="11410000" />
+      <workItem from="1721777639982" duration="1364000" />
+      <workItem from="1721809886505" duration="1932000" />
+      <workItem from="1721848661947" duration="2472000" />
+      <workItem from="1721851552777" duration="5255000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserService } from '../../services/user.service';
-import { UserLoginDTO } from '../../models/user.login.dto';
 import { LoginResponse } from "../../models/login.response";
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'login-component',
@@ -11,7 +13,7 @@ import { LoginResponse } from "../../models/login.response";
 })
 export class LoginComponent {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   responseMessage : string = '';
   isLoading : boolean = false;
@@ -39,12 +41,7 @@ export class LoginComponent {
         throw new Error("Login and password cannot be null!")
       }
 
-      let loginDTO : UserLoginDTO = new UserLoginDTO(
-        loginString,
-        passwordString
-      );
-
-      this.userService.loginUser(loginDTO)
+      this.authService.login(loginString, passwordString)
         .subscribe({
           next: (response: LoginResponse) => this.handleLoginResponse(response),
           error: (error: any) => this.handleErrorResponse(error)
@@ -66,11 +63,16 @@ export class LoginComponent {
   }
 
   handleLoginResponse(response: LoginResponse): void {
-    console.log(response);
+    this.router.navigate(['/main']);
   }
 
   handleErrorResponse(error: any): void {
-    this.responseMessage = "Invalid credentials!"
+    if (error instanceof HttpErrorResponse && error.status === 401) {
+      this.responseMessage = "Invalid credentials!"
+    } else {
+      console.error(error);
+      this.router.navigate(['/error'])
+    }
   }
 
 }

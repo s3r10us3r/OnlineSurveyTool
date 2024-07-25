@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserService } from '../../services/user.service';
-import { LoginResponse } from "../../models/login.response";
-import {AuthService} from "../../services/auth.service";
+import {AuthService, LoginResponse} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {HttpErrorResponse} from "@angular/common/http";
 
@@ -64,6 +63,7 @@ export class LoginComponent {
 
   handleLoginResponse(response: LoginResponse): void {
     this.router.navigate(['/main']);
+    console.log("logged in");
   }
 
   handleErrorResponse(error: any): void {

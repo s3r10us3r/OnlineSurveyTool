@@ -1,0 +1,22 @@
+.newSurveyButton {
+  background-color: limegreen;
+  color: lightgreen;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+  font-family: 'Montserrat', sans-serif;
+  border-width: 0;
+  border-style: solid;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vh;
+  border-radius: 50%;
+  position: fixed;
+  bottom:5vh;
+  right:5vw;
+  cursor: pointer;
+}
+
+.newSurveyButton:hover {
+  border-width: 2px;
+}

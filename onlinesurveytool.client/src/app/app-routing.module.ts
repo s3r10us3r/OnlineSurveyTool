@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/registerpage/registerpage.compon
 import {ErrorPageComponent} from "./components/errorpage/errorpage.component";
 import {MainPageComponent} from "./components/mainpage/main.page.component";
 import {canUseRoute} from "./services/auth.service";
+import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'error', component: ErrorPageComponent},
   { path: 'main', component: MainPageComponent, canActivate: [canUseRoute]},
+  { path: 'newsurvey', component: NewSurveyPage, canActivate: [canUseRoute]},
   { path: '**', redirectTo: '/error'}
 ];
 

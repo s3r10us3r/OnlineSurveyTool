@@ -75,7 +75,7 @@ namespace OnlineSurveyTool.Server.Controllers
                 return Ok(new LoginResponse
                 {
                     AccessToken = accessToken, AccessTokenExpirationDateTime = accessExpiration,
-                    RefreshToken = refreshToken, RefresTokenExpirationDateTime = refreshExpiration
+                    RefreshToken = refreshToken, RefreshTokenExpirationDateTime = refreshExpiration
                 });
             } catch (Exception e)
             {

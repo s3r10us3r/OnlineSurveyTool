@@ -9,10 +9,11 @@ import { LoginComponent } from './components/loginpage/loginpage.component';
 import { RegisterComponent } from './components/registerpage/registerpage.component'
 import {ErrorPageComponent} from "./components/errorpage/errorpage.component";
 import {MainPageComponent} from "./components/mainpage/main.page.component";
+import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, RegisterComponent, ErrorPageComponent, MainPageComponent
+    AppComponent, LoginComponent, RegisterComponent, ErrorPageComponent, MainPageComponent, NewSurveyPage
   ],
   imports: [
     BrowserModule, HttpClientModule,

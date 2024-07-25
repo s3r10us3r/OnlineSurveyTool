@@ -6,16 +6,16 @@ import {Observable} from "rxjs";
 import {jwtDecode} from "jwt-decode";
 import {ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from "@angular/router";
 
-interface LoginResponse {
+export interface LoginResponse {
   accessToken: string;
-  accessExpirationDateTime: Date;
+  accessTokenExpirationDateTime: Date;
   refreshToken: string;
-  refreshExpirationDateTime: Date;
+  refreshTokenExpirationDateTime: Date;
 }
 
-interface RefreshResponse {
+export interface RefreshResponse {
   accessToken: string;
-  accessExpirationDateTime: Date;
+  accessTokenExpirationDateTime: Date;
 }
 
 @Injectable({
@@ -96,14 +96,14 @@ export class AuthService {
 
   private setSession(authResult: LoginResponse) {
     localStorage.setItem('accToken', authResult.accessToken);
-    localStorage.setItem('accExpiresAt', authResult.accessExpirationDateTime.toString());
+    localStorage.setItem('accExpiresAt', authResult.accessTokenExpirationDateTime.toString());
     localStorage.setItem('rToken', authResult.refreshToken);
-    localStorage.setItem('rExpiresAt', authResult.refreshExpirationDateTime.toString());
+    localStorage.setItem('rExpiresAt', authResult.refreshTokenExpirationDateTime.toString());
   }
 
   private setAccessToken(refResult: RefreshResponse) {
     localStorage.setItem('accToken', refResult.accessToken);
-    localStorage.setItem('accExpiresAt', refResult.accessExpirationDateTime.toString());
+    localStorage.setItem('accExpiresAt', refResult.accessTokenExpirationDateTime.toString());
   }
 
   private getAccessExpirationDateTime() : Date | null {
@@ -121,7 +121,7 @@ export const canUseRoute: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
 ) => {
-  if (inject(AuthService).isAccessValid()) {
+  if (inject(AuthService).isLoggedIn()) {
     return true;
   } else {
     inject(Router).navigate(['/login']);

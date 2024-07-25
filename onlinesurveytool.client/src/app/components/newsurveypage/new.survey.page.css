@@ -1,0 +1,41 @@
+div.surveyRoot {
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  min-height: 10vh;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vh;
+}
+
+input.surveyName {
+  width: 75%;
+  border-width: 0 0 2px 0;
+  font-size: 3vh;
+  text-align: center;
+}
+
+button.addQuestionButton {
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  border-width: 0.3vh;
+  border-style: solid;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4vh;
+  border-radius: 50%;
+  background-color: white;
+  color: gray;
+  border-color: gray;
+  margin-top: 3vh;
+  cursor: pointer;
+}
+
+button.addQuestionButton:hover {
+  border-width: 0.5vh;
+}

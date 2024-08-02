@@ -5,9 +5,7 @@ import {map, Observable} from 'rxjs';
 import {UserRegisterDTO} from '../models/user.register.dto';
 import {UserLoginDTO} from '../models/user.login.dto';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
   private apiUrl = API_URL + '/Auth'
 

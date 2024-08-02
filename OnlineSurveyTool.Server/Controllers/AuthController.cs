@@ -72,10 +72,21 @@ namespace OnlineSurveyTool.Server.Controllers
 
                 string accessToken = _jwTokenService.GenerateAccessToken(user, out var accessExpiration);
                 string refreshToken = _jwTokenService.GenerateRefreshToken(user, out var refreshExpiration);
+
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false, //Should be true, but I do not have https configured :(
+                    SameSite = SameSiteMode.Strict,
+                    Path = "/api/Auth/refresh",
+                    Expires = DateTimeOffset.UtcNow.AddDays(1)
+                };
+                
+                Response.Cookies.Append("RefreshToken", refreshToken, cookieOptions);
+                
                 return Ok(new LoginResponse
                 {
                     AccessToken = accessToken, AccessTokenExpirationDateTime = accessExpiration,
-                    RefreshToken = refreshToken, RefreshTokenExpirationDateTime = refreshExpiration
                 });
             } catch (Exception e)
             {
@@ -84,10 +95,14 @@ namespace OnlineSurveyTool.Server.Controllers
             }
         }
 
-        [HttpPost("refresh")]
-        public async Task<IActionResult> Refresh([FromBody] RefreshRequest request)
+        [HttpGet("refresh")]
+        public async Task<IActionResult> Refresh()
         {
-            string refreshToken = request.RefreshToken;
+            var refreshToken = Request.Cookies["refreshToken"];
+            if (refreshToken is null)
+            {
+                return Unauthorized(new {ErrorMessage = "The 'refreshToken' cookie ha snot been set!"});
+            }
             var claimsPrincipalResult = _jwTokenService.GetClaimsPrincipalFromRefreshToken(refreshToken);
             if (!claimsPrincipalResult.IsSuccess)
             {
@@ -100,7 +115,7 @@ namespace OnlineSurveyTool.Server.Controllers
             try
             {
                 var user = await _userService.GetUserFromClaimsPrincipal(claimsPrincipalResult.Value);
-                var accessToken = _jwTokenService.GenerateAccessToken(user, out var expiration);
+                var accessToken = _jwTokenService.GenerateAccessToken(user!, out var expiration);
                 return Ok(new { AccessToken = accessToken, AccessTokenExpirationDateTime = expiration });
             }
             catch (ArgumentException e)

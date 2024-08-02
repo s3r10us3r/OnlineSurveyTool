@@ -68,7 +68,6 @@ export class RegisterComponent {
   handleRegisterResponse(response: any) {
     this.responseColor = 'lime';
     this.responseMessage = 'User registered succesfully! You can go back and log in now!';
-    console.log(response);
   }
 
   handleError(error: any) {
@@ -79,7 +78,6 @@ export class RegisterComponent {
     else {
       this.responseColor = 'red';
       this.responseMessage = 'Something went wrong! Try again later.'
-      console.log(error);
     }
 
       this.loading = false;

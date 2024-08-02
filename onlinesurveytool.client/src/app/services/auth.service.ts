@@ -1,16 +1,14 @@
 import {inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {API_URL} from '../constants';
-import {shareReplay, tap} from 'rxjs/operators'
-import {Observable} from "rxjs";
+import {tap} from 'rxjs/operators'
+import {catchError, map, Observable, of} from "rxjs";
 import {jwtDecode} from "jwt-decode";
 import {ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from "@angular/router";
 
 export interface LoginResponse {
   accessToken: string;
   accessTokenExpirationDateTime: Date;
-  refreshToken: string;
-  refreshTokenExpirationDateTime: Date;
 }
 
 export interface RefreshResponse {
@@ -18,10 +16,11 @@ export interface RefreshResponse {
   accessTokenExpirationDateTime: Date;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
+
+  private static accessToken: string | undefined = undefined;
+  private static accessTokenExpiration: Date | undefined = undefined;
 
   constructor(private http: HttpClient) {
   }
@@ -30,15 +29,12 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${API_URL}/Auth/login`, {login, password})
       .pipe(
         tap(res => this.setSession(res)),
-        shareReplay()
-      )
+      );
   }
 
-  public logout() {
-    localStorage.removeItem('accToken');
-    localStorage.removeItem('accExpiresAt');
-    localStorage.removeItem('rToken');
-    localStorage.removeItem('rExpiresAt');
+  public logout() : void {
+    AuthService.accessToken = undefined;
+    AuthService.accessTokenExpiration = undefined;
   }
 
   public isAccessValid() : boolean {
@@ -49,31 +45,37 @@ export class AuthService {
     return token != null && expirationDate != null && expirationDate > dateNow;
   }
 
-  public isLoggedIn() : boolean {
-    const token = this.getRefreshToken();
-    const expirationDate = this.getRefreshExpirationDateTime();
-    const dateNow = new Date();
-
-    return token != null && expirationDate != null && expirationDate > dateNow;
-  }
-
-
-  public getAccessToken(): string | null {
-    return localStorage.getItem('accToken');
-  }
-
-  public getRefreshToken(): string | null {
-    return localStorage.getItem('rToken');
+  public getAccessToken(): string | undefined {
+    return AuthService.accessToken;
   }
 
   public refreshAccess(): Observable<RefreshResponse> {
-    const refreshToken = localStorage.getItem('rToken');
-
-    return this.http.post<RefreshResponse>(`${API_URL}/Auth/refresh`, {refreshToken})
+    return this.http.get<RefreshResponse>(`${API_URL}/Auth/refresh`)
       .pipe(
-        tap(res => this.setAccessToken(res)),
-        shareReplay()
+        tap(res => this.setAccessToken(res.accessToken, res.accessTokenExpirationDateTime)),
       );
+  }
+
+  public clearAccessToken() {
+    AuthService.accessToken = undefined;
+    AuthService.accessTokenExpiration = undefined;
+  }
+
+  public isLoggedIn(): Observable<boolean> {
+    if (this.isAccessValid()) {
+      return of(true);
+    }
+
+    return this.refreshAccess().pipe(
+      map(res => {
+        return true;
+      }),
+      catchError(err => {
+        this.clearAccessToken();
+        return of(false);
+      })
+    );
+
   }
 
   public getUserName(): string | null {
@@ -94,26 +96,18 @@ export class AuthService {
     return null;
   }
 
-  private setSession(authResult: LoginResponse) {
-    localStorage.setItem('accToken', authResult.accessToken);
-    localStorage.setItem('accExpiresAt', authResult.accessTokenExpirationDateTime.toString());
-    localStorage.setItem('rToken', authResult.refreshToken);
-    localStorage.setItem('rExpiresAt', authResult.refreshTokenExpirationDateTime.toString());
+  private setSession(authResult: LoginResponse) : void {
+    AuthService.accessToken = authResult.accessToken;
+    AuthService.accessTokenExpiration = authResult.accessTokenExpirationDateTime;
   }
 
-  private setAccessToken(refResult: RefreshResponse) {
-    localStorage.setItem('accToken', refResult.accessToken);
-    localStorage.setItem('accExpiresAt', refResult.accessTokenExpirationDateTime.toString());
+  private setAccessToken(token: string, expiration: Date) : void {
+    AuthService.accessToken = token;
+    AuthService.accessTokenExpiration = expiration;
   }
 
-  private getAccessExpirationDateTime() : Date | null {
-    const expirationDateString = localStorage.getItem('accExpiresAt');
-    return expirationDateString ? new Date(expirationDateString) : null;
-  }
-
-  private getRefreshExpirationDateTime() : Date | null {
-    const expirationDateString = localStorage.getItem('rExpiresAt');
-    return expirationDateString ? new Date(expirationDateString) : null;
+  private getAccessExpirationDateTime() : Date | undefined {
+    return AuthService.accessTokenExpiration;
   }
 }
 

@@ -10,6 +10,8 @@ import { RegisterComponent } from './components/registerpage/registerpage.compon
 import {ErrorPageComponent} from "./components/errorpage/errorpage.component";
 import {MainPageComponent} from "./components/mainpage/main.page.component";
 import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
+import {AuthService} from "./services/auth.service";
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
     BrowserModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

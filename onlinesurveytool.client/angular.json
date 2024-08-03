@@ -70,7 +70,8 @@
               "buildTarget": "onlinesurveytool.client:build:production"
             },
             "development": {
-              "buildTarget": "onlinesurveytool.client:build:development"
+              "buildTarget": "onlinesurveytool.client:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development",

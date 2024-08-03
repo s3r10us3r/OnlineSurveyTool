@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlineSurveyTool.Server.Requests;
 using OnlineSurveyTool.Server.Responses;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
@@ -76,13 +75,13 @@ namespace OnlineSurveyTool.Server.Controllers
                 var cookieOptions = new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = false, //Should be true, but I do not have https configured :(
-                    SameSite = SameSiteMode.Strict,
-                    Path = "/api/Auth/refresh",
-                    Expires = DateTimeOffset.UtcNow.AddDays(1)
+                    Secure = true, //Should be true, but I do not have https configured :(
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTimeOffset.UtcNow.AddDays(1),
+                    Domain = "127.0.0.1:4200"
                 };
                 
-                Response.Cookies.Append("RefreshToken", refreshToken, cookieOptions);
+                Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
                 
                 return Ok(new LoginResponse
                 {
@@ -101,7 +100,7 @@ namespace OnlineSurveyTool.Server.Controllers
             var refreshToken = Request.Cookies["refreshToken"];
             if (refreshToken is null)
             {
-                return Unauthorized(new {ErrorMessage = "The 'refreshToken' cookie ha snot been set!"});
+                return Unauthorized(new {ErrorMessage = "The 'refreshToken' cookie has not been set!"});
             }
             var claimsPrincipalResult = _jwTokenService.GetClaimsPrincipalFromRefreshToken(refreshToken);
             if (!claimsPrincipalResult.IsSuccess)

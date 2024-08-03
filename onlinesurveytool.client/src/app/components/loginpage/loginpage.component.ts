@@ -12,7 +12,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 })
 export class LoginComponent {
 
-  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   responseMessage : string = '';
   isLoading : boolean = false;
@@ -62,6 +62,8 @@ export class LoginComponent {
   }
 
   handleLoginResponse(response: LoginResponse): void {
+    console.debug(response);
+    this.authService.setSession(response.accessToken, response.accessTokenExpirationDateTime);
     this.router.navigate(['/main']);
     console.log("logged in");
   }

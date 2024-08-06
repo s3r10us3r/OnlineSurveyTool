@@ -1,4 +1,7 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.Controllers;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.Commons;
@@ -22,6 +25,13 @@ public abstract class AuthControllerTestBase<TD> : ControllerTestBase<AuthContro
 
         var controller = new AuthController(authenticationService, userService, jwTokenService,
             new LoggerMock<AuthController>());
+
+        var context = new DefaultHttpContext();
+        
+        controller.ControllerContext = new ControllerContext
+        {
+            HttpContext = context
+        };
         return controller;
     }
 }

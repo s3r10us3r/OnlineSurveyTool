@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let co of choiceOptions">
+    <input  #inputElem (change)="co.value = inputElem.value; emitChange()" type="text" class="co"/>
+    <button (click)="removeCo(co.number)">remove</button>
+    <button *ngIf="co.number > 0" (click)="moveUp(co.number)">move up</button>
+    <button *ngIf="co.number < choiceOptions.length - 1" (click)="moveDown(co.number)">move down</button>
+  </div>
+  <button (click)="addCo()">Add choice option</button>
+</div>

@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,14 +12,18 @@ import {MainPageComponent} from "./components/mainpage/main.page.component";
 import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
 import {AuthService} from "./services/auth.service";
 import {UserService} from "./services/user.service";
+import {NewQuestionComponent} from "./components/newquestioncomponent/new.question.component";
+import {NewSingleChoiceComponent} from "./components/new-single-choice/new-single-choice.component";
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, RegisterComponent, ErrorPageComponent, MainPageComponent, NewSurveyPage
+    AppComponent, LoginComponent, RegisterComponent,
+    ErrorPageComponent, MainPageComponent, NewSurveyPage,
+    NewQuestionComponent, NewSingleChoiceComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule, ReactiveFormsModule
+    AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
   providers: [AuthService, UserService],
   bootstrap: [AppComponent]

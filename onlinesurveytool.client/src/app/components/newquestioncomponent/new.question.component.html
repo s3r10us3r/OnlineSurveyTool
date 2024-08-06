@@ -1,0 +1,12 @@
+<div>
+  <form [formGroup]="newQuestionForm">
+
+    <button type="button" (click)="switchTypeLeft()"> < </button>
+    <button type="button" (click)="switchTypeRight()"> > </button>
+    <input [formControl]="newQuestionForm.controls['value']"/>
+    <div [ngSwitch]="types[chosenType].value">
+      <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)"></new-single-choice>
+    </div>
+
+  </form>
+</div>

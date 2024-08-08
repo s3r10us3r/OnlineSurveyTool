@@ -1,6 +1,7 @@
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
+using OnlineSurveyTool.Test.Utils.Mocks;
+using OnlineSurveyTool.Test.Utils.Populators;
 
 namespace OnlineSurveyTool.Server.Services.Test.AuthenticationServices;
 

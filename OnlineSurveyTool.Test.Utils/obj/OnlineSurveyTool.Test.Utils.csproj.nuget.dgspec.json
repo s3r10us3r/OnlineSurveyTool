@@ -1,0 +1,200 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj": {}
+  },
+  "projects": {
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj",
+        "projectName": "OnlineSurveyTool.Server.DAL.Models",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/tradeckm/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj",
+        "projectName": "OnlineSurveyTool.Server.DAL",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/tradeckm/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj",
+        "projectName": "OnlineSurveyTool.Test.Utils",
+        "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj",
+        "packagesPath": "/home/tradeckm/.nuget/packages/",
+        "outputPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tradeckm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL.Models/OnlineSurveyTool.Server.DAL.Models.csproj"
+              },
+              "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj": {
+                "projectPath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.DAL/OnlineSurveyTool.Server.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0-preview.6.24327.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/tradeckm/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

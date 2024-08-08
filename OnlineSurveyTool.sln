@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Server.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Server.Tests", "OnlineSurveyTool.Server.Tests\OnlineSurveyTool.Server.Tests.csproj", "{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineSurveyTool.Test.Utils", "OnlineSurveyTool.Test.Utils\OnlineSurveyTool.Test.Utils.csproj", "{F3AF3F8A-A62E-4EF5-87E5-90CA9FEA808F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE93B7A2-ABD0-4AC1-9BCB-5CBB8CD9EBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3AF3F8A-A62E-4EF5-87E5-90CA9FEA808F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AF3F8A-A62E-4EF5-87E5-90CA9FEA808F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AF3F8A-A62E-4EF5-87E5-90CA9FEA808F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AF3F8A-A62E-4EF5-87E5-90CA9FEA808F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

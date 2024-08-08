@@ -2,8 +2,6 @@ using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils.Interfaces;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
-using OnlineSurveyTool.Server.Services.Test.Mocks.Populators;
 
 namespace OnlineSurveyTool.Server.Services.Test.SurveyServices.Utils;
 

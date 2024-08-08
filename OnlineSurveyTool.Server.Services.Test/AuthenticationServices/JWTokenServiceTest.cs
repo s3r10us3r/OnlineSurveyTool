@@ -1,13 +1,13 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
+using OnlineSurveyTool.Test.Utils.Mocks;
+using OnlineSurveyTool.Test.Utils.Populators;
 
 namespace OnlineSurveyTool.Server.Services.Test.AuthenticationServices;
 

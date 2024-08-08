@@ -198,7 +198,7 @@
       "Microsoft.EntityFrameworkCore.Relational/8.0.6": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0-preview.6.24327.7"
         },
         "runtime": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
@@ -222,7 +222,7 @@
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "8.0.0"
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.6.24327.7"
         }
       },
       "Microsoft.Extensions.Caching.Memory/8.0.0": {
@@ -231,12 +231,30 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
           "Microsoft.Extensions.Options": "8.0.0",
-          "Microsoft.Extensions.Primitives": "8.0.0"
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.6.24327.7"
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
+      "Microsoft.Extensions.Configuration/9.0.0-preview.6.24327.7": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "8.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0-preview.6.24327.7",
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.6.24327.7"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.32707"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.0-preview.6.24327.7": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.6.24327.7"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.32707"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/8.0.0": {
@@ -260,10 +278,17 @@
       "Microsoft.Extensions.Options/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Primitives": "8.0.0"
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.6.24327.7"
         }
       },
-      "Microsoft.Extensions.Primitives/8.0.0": {},
+      "Microsoft.Extensions.Primitives/9.0.0-preview.6.24327.7": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.32707"
+          }
+        }
+      },
       "Microsoft.Identity.Client/4.56.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "7.1.2"
@@ -947,10 +972,21 @@
           "NUnit3TestAdapter": "4.2.1",
           "OnlineSurveyTool.Server.DAL": "1.0.0",
           "OnlineSurveyTool.Server.Services": "1.0.0",
+          "OnlineSurveyTool.Test.Utils": "1.0.0",
           "coverlet.collector": "6.0.0"
         },
         "runtime": {
           "OnlineSurveyTool.Server.Services.Test.dll": {}
+        }
+      },
+      "OnlineSurveyTool.Test.Utils/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "9.0.0-preview.6.24327.7",
+          "OnlineSurveyTool.Server.DAL": "1.0.0",
+          "OnlineSurveyTool.Server.DAL.Models": "1.0.0"
+        },
+        "runtime": {
+          "OnlineSurveyTool.Test.Utils.dll": {}
         }
       }
     }
@@ -1094,12 +1130,19 @@
       "path": "microsoft.extensions.caching.memory/8.0.0",
       "hashPath": "microsoft.extensions.caching.memory.8.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
+    "Microsoft.Extensions.Configuration/9.0.0-preview.6.24327.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3lE/iLSutpgX1CC0NOW70FJoGARRHbyKmG7dc0klnUZ9Dd9hS6N/POPWhKhMLCEuNN5nXEY5agmlFtH562vqhQ==",
-      "path": "microsoft.extensions.configuration.abstractions/8.0.0",
-      "hashPath": "microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512"
+      "sha512": "sha512-dssSMh8GFVW1YIh3AY4wFegOjrCfZAEgJzSTo0DKLpucqLfSj5iU7pfXqLy9VfBIEy0bf2iPXR0Dayjypbk97w==",
+      "path": "microsoft.extensions.configuration/9.0.0-preview.6.24327.7",
+      "hashPath": "microsoft.extensions.configuration.9.0.0-preview.6.24327.7.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.0-preview.6.24327.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kdy2gRkktBI9H00j1cqhnd5NG2VCdjpswkWRdWGBDvf5wRhIQcGHJ2vBmPmupIfE7peFV1WMnBRnw4RVUyuQTg==",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.0-preview.6.24327.7",
+      "hashPath": "microsoft.extensions.configuration.abstractions.9.0.0-preview.6.24327.7.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/8.0.0": {
       "type": "package",
@@ -1136,12 +1179,12 @@
       "path": "microsoft.extensions.options/8.0.0",
       "hashPath": "microsoft.extensions.options.8.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Primitives/8.0.0": {
+    "Microsoft.Extensions.Primitives/9.0.0-preview.6.24327.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g==",
-      "path": "microsoft.extensions.primitives/8.0.0",
-      "hashPath": "microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+      "sha512": "sha512-VogVd1RpBK7/KjpKIxNQPiPgAvh84tgiTvQmk5mXDFCR0sINvyyIZSO9cE0dRtAQBqkd1jlmcfTwoGVS5EaMUg==",
+      "path": "microsoft.extensions.primitives/9.0.0-preview.6.24327.7",
+      "hashPath": "microsoft.extensions.primitives.9.0.0-preview.6.24327.7.nupkg.sha512"
     },
     "Microsoft.Identity.Client/4.56.0": {
       "type": "package",
@@ -1507,6 +1550,11 @@
       "sha512": ""
     },
     "OnlineSurveyTool.Server.Services.Test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineSurveyTool.Test.Utils/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

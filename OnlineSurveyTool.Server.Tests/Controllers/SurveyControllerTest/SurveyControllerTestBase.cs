@@ -1,7 +1,7 @@
 using OnlineSurveyTool.Server.Controllers;
 using OnlineSurveyTool.Server.Services.SurveyServices;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
+using OnlineSurveyTool.Test.Utils.Mocks;
 
 namespace OnlineSurveyTool.Server.Tests.Controllers.SurveyControllerTest;
 

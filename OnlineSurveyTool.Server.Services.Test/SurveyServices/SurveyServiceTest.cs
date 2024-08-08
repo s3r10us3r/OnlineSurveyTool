@@ -1,7 +1,6 @@
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
 using OnlineSurveyTool.Server.Services.SurveyServices.Interfaces;
 using OnlineSurveyTool.Server.Services.SurveyServices.Utils;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
 
 namespace OnlineSurveyTool.Server.Services.Test.SurveyServices;
 

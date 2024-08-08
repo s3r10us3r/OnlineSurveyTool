@@ -164,3 +164,8 @@
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSurveyTool.Server.Tests.genruntimeconfig.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/ref/OnlineSurveyTool.Server.Tests.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/obj/Debug/net8.0/OnlineSu.6FA4D3E1.Up2Date
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Test.Utils.dll
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server.Tests/bin/Debug/net8.0/OnlineSurveyTool.Test.Utils.pdb

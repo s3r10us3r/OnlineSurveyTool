@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "j3+o7f2d53gKWFBLpXWgRdajKXK6sgDI3w3b43bpFPK/iBBcCPjxZNTYAl4GuJKpW2rdBrpkPFA/WiFfb033gg==",
+  "success": true,
+  "projectFilePath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj",
+  "expectedPackageFiles": [
+    "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore/8.0.6/microsoft.entityframeworkcore.8.0.6.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.6/microsoft.entityframeworkcore.abstractions.8.0.6.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.6/microsoft.entityframeworkcore.analyzers.8.0.6.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore.relational/8.0.2/microsoft.entityframeworkcore.relational.8.0.2.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.configuration/9.0.0-preview.6.24327.7/microsoft.extensions.configuration.9.0.0-preview.6.24327.7.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0-preview.6.24327.7/microsoft.extensions.configuration.abstractions.9.0.0-preview.6.24327.7.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/microsoft.extensions.primitives/9.0.0-preview.6.24327.7/microsoft.extensions.primitives.9.0.0-preview.6.24327.7.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
+    "/home/tradeckm/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.2/pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

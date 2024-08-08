@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.Controllers;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.Commons;
-using OnlineSurveyTool.Server.Services.Test.Mocks;
+using OnlineSurveyTool.Test.Utils.Mocks;
+using OnlineSurveyTool.Test.Utils.Populators;
 
 namespace OnlineSurveyTool.Server.Tests.Controllers.AuthControllerTest;
 

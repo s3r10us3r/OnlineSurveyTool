@@ -1,9 +1,10 @@
 <div class="surveyRoot">
-  <div class="surveyTitle">
-    <input type="text" class="surveyName" placeholder="your survey name"/>
-  </div>
+  <input type="text" class="surveyName" placeholder="your survey name"/>
 
-  <new-question-component *ngFor="let q of questions; let i = index" [number]="i" (questionChange)="getQuestion($event)"></new-question-component>
+  <div class="questionHolder" *ngFor="let q of questions; let i = index">
+    <new-question-component class="nqc" [(question)]="questions[i]"></new-question-component>
+    <button class="removeQuestionButton" (click)="removeQuestion(i)">X</button>
+  </div>
 
   <button class="addQuestionButton" (click)="addQuestion()">+</button>
 </div>

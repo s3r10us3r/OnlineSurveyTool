@@ -19,12 +19,12 @@ export interface Question {
     choiceOptions?: Array<ChoiceOption>
 }
 
-export function questionPrototype(number: number, type: QuestionType): Question{
+export function questionPrototype(type: QuestionType, number: number = 0, value: string = ''): Question{
   switch(type) {
     case QuestionType.SingleChoice:
       return {
-        number: 0,
-        value: '',
+        number: number,
+        value: value,
         type: QuestionType.SingleChoice,
         canBeSkipped: true,
         choiceOptions: []
@@ -32,8 +32,8 @@ export function questionPrototype(number: number, type: QuestionType): Question{
 
     case QuestionType.MultipleChoice:
       return {
-        number: 0,
-        value: '',
+        number: number,
+        value: value,
         type: QuestionType.SingleChoice,
         canBeSkipped: true,
         choiceOptions: [],
@@ -43,8 +43,8 @@ export function questionPrototype(number: number, type: QuestionType): Question{
 
     case QuestionType.NumericalDouble:
       return {
-        number: 0,
-        value: '',
+        number: number,
+        value: value,
         type: QuestionType.NumericalDouble,
         canBeSkipped: true,
         minimum: 0,
@@ -53,8 +53,8 @@ export function questionPrototype(number: number, type: QuestionType): Question{
 
     case QuestionType.NumericalInteger:
       return {
-        number: 0,
-        value: '',
+        number: number,
+        value: value,
         type: QuestionType.NumericalInteger,
         canBeSkipped: true,
         minimum: 0,
@@ -63,8 +63,8 @@ export function questionPrototype(number: number, type: QuestionType): Question{
 
     case QuestionType.Textual:
       return {
-        number: 0,
-        value: '',
+        number: number,
+        value: value,
         type: QuestionType.Textual,
         canBeSkipped: true,
         minimum: 0,

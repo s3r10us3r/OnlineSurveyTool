@@ -75,10 +75,10 @@ namespace OnlineSurveyTool.Server.Controllers
                 var cookieOptions = new CookieOptions
                 {
                     HttpOnly = true,
-                    Secure = true, //Should be true, but I do not have https configured :(
+                    Secure = true,
                     SameSite = SameSiteMode.None,
                     Expires = DateTimeOffset.UtcNow.AddDays(1),
-                    Domain = "127.0.0.1:4200"
+                    Path = "/",
                 };
                 
                 Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);

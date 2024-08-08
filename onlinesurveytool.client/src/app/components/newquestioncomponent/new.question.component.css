@@ -1,0 +1,33 @@
+div.topBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.stretch {
+  display: flex;
+  width: 80%;
+}
+
+div.newQuestionRoot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input.questionValue {
+  width: 75%;
+  border-width: 0 0 2px 0;
+  font-size: 2vh;
+  text-align: center;
+}

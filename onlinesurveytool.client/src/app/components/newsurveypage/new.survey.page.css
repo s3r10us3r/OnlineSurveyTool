@@ -1,7 +1,7 @@
 div.surveyRoot {
   position: relative;
   background-color: white;
-  width: 50vw;
+  width: 70vw;
   min-height: 10vh;
   margin-top: 10vh;
   display: flex;
@@ -13,8 +13,13 @@ div.surveyRoot {
 input.surveyName {
   width: 75%;
   border-width: 0 0 2px 0;
-  font-size: 3vh;
+  font-size: 4vh;
   text-align: center;
+}
+
+input.surveyName:focus {
+  border-color: black;
+  outline: none;
 }
 
 button.addQuestionButton {
@@ -38,4 +43,20 @@ button.addQuestionButton {
 
 button.addQuestionButton:hover {
   border-width: 0.5vh;
+}
+
+
+.questionHolder {
+  border-width: 1px;
+  border-color: black;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nqc {
+  display: flex;
+  width: 100%;
 }

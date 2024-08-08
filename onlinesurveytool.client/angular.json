@@ -71,7 +71,10 @@
             },
             "development": {
               "buildTarget": "onlinesurveytool.client:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "proxyConfig": "src/proxy.conf.json",
+              "ssl": true,
+              "sslCert": "/home/tradeckm/.aspnet/https/onlinesurveytool.client.pem",
+              "sslKey": "/home/tradeckm/.aspnet/https/onlinesurveytool.client.key"
             }
           },
           "defaultConfiguration": "development",

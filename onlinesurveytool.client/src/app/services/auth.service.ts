@@ -10,11 +10,6 @@ export interface LoginResponse {
   accessTokenExpirationDateTime: string;
 }
 
-export interface RefreshResponse {
-  accessToken: string;
-  accessTokenExpirationDateTime: string;
-}
-
 @Injectable()
 export class AuthService {
 

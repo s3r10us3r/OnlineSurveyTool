@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {Question} from "../../models/question";
+import {Question, questionPrototype, QuestionType} from "../../models/question";
 
 @Component({
   selector: 'new-survey-page',
@@ -9,12 +9,17 @@ import {Question} from "../../models/question";
 export class NewSurveyPage {
   constructor() {}
 
-  questions: Array<Question | null> = []
+  questions: Array<Question> = []
+
   addQuestion() {
-    this.questions.push(null);
+    this.questions.push(questionPrototype(QuestionType.SingleChoice, this.questions.length));
   }
 
   getQuestion(question: Question) {
     this.questions[question.number] = question;
+  }
+
+  removeQuestion(ind: number) {
+    this.questions.splice(ind, 1)
   }
 }

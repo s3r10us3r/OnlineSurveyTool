@@ -3,7 +3,7 @@
 
   <div class="questionHolder" *ngFor="let q of questions; let i = index">
     <new-question-component class="nqc" [(question)]="questions[i]"></new-question-component>
-    <button class="removeQuestionButton" (click)="removeQuestion(i)">X</button>
+    <button class="removeQuestionButton" (click)="removeQuestion(i)">Remove question</button>
   </div>
 
   <button class="addQuestionButton" (click)="addQuestion()">+</button>

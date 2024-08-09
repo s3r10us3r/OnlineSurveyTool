@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core"
+import {Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild} from "@angular/core"
 import {FormControl, FormGroup} from "@angular/forms";
 import {Question, questionPrototype, QuestionType} from "../../models/question";
 
@@ -15,7 +15,10 @@ interface IType{
 export class NewQuestionComponent {
   @Input() question: Question = questionPrototype(QuestionType.SingleChoice);
   @Output() questionChange = new EventEmitter<Question>();
-  constructor() {}
+
+  @ViewChild('questionValue') questionValue!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
 
   chosenType: number = 0;
 
@@ -83,6 +86,12 @@ export class NewQuestionComponent {
       'Textual': 'textual question'
     };
     return displayNames[type];
+  }
+
+  autoResize() {
+    const nativeElem = this.questionValue.nativeElement;
+    this.renderer.setStyle(nativeElem, 'height', 'auto');
+    this.renderer.setStyle(nativeElem, 'height', nativeElem.scrollHeight + 'px');
   }
 
   protected readonly QuestionType = QuestionType;

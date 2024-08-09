@@ -1,12 +1,15 @@
 <div class="newQuestionRoot">
   <form class="center-content stretch" [formGroup]="newQuestionForm">
 
-    <div class="topBox">
-      <button type="button" (click)="switchTypeLeft()"> < </button>
-      <p>{{ getTypeDisplayName(question.type) }}</p>
-      <button type="button" (click)="switchTypeRight()"> > </button>
+    <textarea #questionValue (input)="autoResize()" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
+
+    <div class="topBox" >
+      <p style="">Question type:</p>
+      <button class="typeButton" type="button" (click)="switchTypeLeft()"> < </button>
+      <p style="margin-left: 0.25vw; margin-right: 0.25vw">{{ getTypeDisplayName(question.type) }}</p>
+      <button  class="typeButton" type="button" (click)="switchTypeRight()"> > </button>
     </div>
-    <input class="questionValue" [formControl]="newQuestionForm.controls['value']"/>
+
     <div [ngSwitch]="question.type">
       <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)"></new-single-choice>
     </div>

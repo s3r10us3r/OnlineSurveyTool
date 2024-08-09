@@ -18,6 +18,7 @@ div.newQuestionRoot {
   justify-content: center;
 }
 
+
 .center-content {
   display: flex;
   flex-direction: column;
@@ -25,9 +26,35 @@ div.newQuestionRoot {
   justify-content: center;
 }
 
-input.questionValue {
+textarea.questionValue {
   width: 75%;
   border-width: 0 0 2px 0;
-  font-size: 2vh;
+  font-size: 3vh;
   text-align: center;
+  resize: none;
+  overflow-y: hidden;
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
 }
+
+input.questionValue:focus {
+  border-color: black;
+  outline: none;
+}
+
+button.typeButton {
+  visibility: hidden;
+  border-style: none;
+  background-color: transparent;
+  font-size: 2.5vh;
+  color: gray;
+}
+
+div.topBox:hover button.typeButton {
+  visibility: visible;
+}
+
+button.typeButton:hover {
+  color: black;
+}
+

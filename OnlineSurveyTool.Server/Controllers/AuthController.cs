@@ -76,9 +76,8 @@ namespace OnlineSurveyTool.Server.Controllers
                 {
                     HttpOnly = true,
                     Secure = true,
-                    SameSite = SameSiteMode.None,
+                    SameSite = SameSiteMode.Strict,
                     Expires = DateTimeOffset.UtcNow.AddDays(1),
-                    Path = "/",
                 };
                 
                 Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
@@ -94,7 +93,7 @@ namespace OnlineSurveyTool.Server.Controllers
             }
         }
 
-        [HttpGet("refresh")]
+        [HttpPost("refresh")]
         public async Task<IActionResult> Refresh()
         {
             var refreshToken = Request.Cookies["refreshToken"];

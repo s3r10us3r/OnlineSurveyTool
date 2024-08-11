@@ -27,13 +27,12 @@ div.newQuestionRoot {
 }
 
 textarea.questionValue {
-  width: 75%;
+  width: 100%;
   border-width: 0 0 2px 0;
   font-size: 3vh;
   text-align: center;
   resize: none;
   overflow-y: hidden;
-  height: auto;
   font-family: 'Montserrat', sans-serif;
 }
 

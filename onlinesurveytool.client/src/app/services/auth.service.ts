@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   public refreshAccess(): Observable<any> {
-    return this.http.get(`${API_URL}/Auth/refresh`, { withCredentials: true });
+    return this.http.post(`${API_URL}/Auth/refresh`, {}, { withCredentials: true });
   }
 
   public clearAccessToken() {

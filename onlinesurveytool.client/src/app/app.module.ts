@@ -14,12 +14,13 @@ import {AuthService} from "./services/auth.service";
 import {UserService} from "./services/user.service";
 import {NewQuestionComponent} from "./components/newquestioncomponent/new.question.component";
 import {NewSingleChoiceComponent} from "./components/new-single-choice/new-single-choice.component";
+import {NewMultipleChoiceComponent} from "./components/new-multiple-choice/new-multiple-choice.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, RegisterComponent,
     ErrorPageComponent, MainPageComponent, NewSurveyPage,
-    NewQuestionComponent, NewSingleChoiceComponent
+    NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

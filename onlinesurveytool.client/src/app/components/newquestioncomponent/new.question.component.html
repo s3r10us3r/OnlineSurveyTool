@@ -1,7 +1,7 @@
 <div class="newQuestionRoot">
   <form class="center-content stretch" [formGroup]="newQuestionForm">
 
-    <textarea #questionValue (input)="autoResize()" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
+    <textarea #questionValue  placeholder="question" (input)="autoResize()" rows="1" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
 
     <div class="topBox" >
       <p style="">Question type:</p>
@@ -10,8 +10,9 @@
       <button  class="typeButton" type="button" (click)="switchTypeRight()"> > </button>
     </div>
 
-    <div [ngSwitch]="question.type">
+    <div [ngSwitch]="question.type" style="width: 100%">
       <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)"></new-single-choice>
+      <new-multiple-choice *ngSwitchCase="QuestionType.MultipleChoice" (onChange)="mapProperties($event)"></new-multiple-choice>
     </div>
 
   </form>

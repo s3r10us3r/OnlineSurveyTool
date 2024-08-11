@@ -1,4 +1,14 @@
-import {Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild} from "@angular/core"
+import {
+  AfterContentInit, AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  Renderer2,
+  ViewChild
+} from "@angular/core"
 import {FormControl, FormGroup} from "@angular/forms";
 import {Question, questionPrototype, QuestionType} from "../../models/question";
 
@@ -12,7 +22,7 @@ interface IType{
   templateUrl: 'new.question.component.html',
   styleUrl: 'new.question.component.css',
 })
-export class NewQuestionComponent {
+export class NewQuestionComponent implements AfterViewInit{
   @Input() question: Question = questionPrototype(QuestionType.SingleChoice);
   @Output() questionChange = new EventEmitter<Question>();
 
@@ -20,11 +30,16 @@ export class NewQuestionComponent {
 
   constructor(private renderer: Renderer2) {}
 
+  ngAfterViewInit() {
+    this.autoResize();
+  }
+
   chosenType: number = 0;
 
   newQuestionForm = new FormGroup({
     value: new FormControl(''),
   })
+
 
   switchTypeLeft() {
     this.chosenType--
@@ -91,7 +106,7 @@ export class NewQuestionComponent {
   autoResize() {
     const nativeElem = this.questionValue.nativeElement;
     this.renderer.setStyle(nativeElem, 'height', 'auto');
-    this.renderer.setStyle(nativeElem, 'height', nativeElem.scrollHeight + 'px');
+    this.renderer.setStyle(nativeElem, 'height', nativeElem.scrollHeight  + 'px');
   }
 
   protected readonly QuestionType = QuestionType;

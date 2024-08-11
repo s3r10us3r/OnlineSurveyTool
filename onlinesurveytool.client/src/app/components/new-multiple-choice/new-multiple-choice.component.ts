@@ -5,14 +5,14 @@ import {
   Renderer2,
 } from '@angular/core';
 import {ChoiceOption} from "../../models/choice.option";
-import {Question, questionPrototype, QuestionType} from "../../models/question";
+import {Question} from "../../models/question";
 
 @Component({
-  selector: 'new-single-choice',
-  templateUrl: './new-single-choice.component.html',
-  styleUrl: './new-single-choice.component.css'
+  selector: 'new-multiple-choice',
+  templateUrl: './new-multiple-choice.component.html',
+  styleUrl: './new-multiple-choice.component.css'
 })
-export class NewSingleChoiceComponent{
+export class NewMultipleChoiceComponent{
   @Output() onChange = new EventEmitter<Partial<Question>>();
 
   constructor(private renderer: Renderer2) {}

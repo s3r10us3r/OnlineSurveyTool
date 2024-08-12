@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: row;
+}
+
+.display {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+button {
+  border-style: none;
+  background-color: transparent;
+  visibility: hidden;
+}
+
+.root:hover button {
+  visibility: visible;
+}

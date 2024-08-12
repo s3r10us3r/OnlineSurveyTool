@@ -6,16 +6,20 @@ import {
 } from '@angular/core';
 import {ChoiceOption} from "../../models/choice.option";
 import {Question} from "../../models/question";
+import {FormControl, FormGroup} from "@angular/forms";
+import {NumberService} from "../../services/number.service";
+import {min} from "rxjs";
 
 @Component({
   selector: 'new-multiple-choice',
   templateUrl: './new-multiple-choice.component.html',
   styleUrl: './new-multiple-choice.component.css'
 })
-export class NewMultipleChoiceComponent{
+export class NewMultipleChoiceComponent {
   @Output() onChange = new EventEmitter<Partial<Question>>();
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private numberService: NumberService) {
+  }
 
   choiceOptions: Array<ChoiceOption> = [];
 
@@ -42,7 +46,7 @@ export class NewMultipleChoiceComponent{
     this.emitChange();
   }
 
-  updateNumbers(){
+  updateNumbers() {
     this.choiceOptions.forEach((co, i) => {
       co.number = i;
     });
@@ -61,5 +65,4 @@ export class NewMultipleChoiceComponent{
       elem.rows += 1;
     }
   }
-
 }

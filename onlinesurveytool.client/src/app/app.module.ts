@@ -15,18 +15,21 @@ import {UserService} from "./services/user.service";
 import {NewQuestionComponent} from "./components/newquestioncomponent/new.question.component";
 import {NewSingleChoiceComponent} from "./components/new-single-choice/new-single-choice.component";
 import {NewMultipleChoiceComponent} from "./components/new-multiple-choice/new-multiple-choice.component";
+import {NumberService} from "./services/number.service";
+import {CoMinMaxComponent} from "./components/co-min-max/co-min-max.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, RegisterComponent,
     ErrorPageComponent, MainPageComponent, NewSurveyPage,
-    NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent
+    NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
+    CoMinMaxComponent, CoMinMaxComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [AuthService, UserService],
+  providers: [AuthService, UserService, NumberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,13 +14,16 @@ namespace OnlineSurveyTool.Server.Controllers
         private readonly IJWTokenService _jwTokenService;
         private readonly IUserService _userService;
         private readonly ILogger<AuthController> _logger;
+        private readonly CookieOptions _cookieOptions;
 
-        public AuthController(IAuthenticationService authService, IUserService userService, IJWTokenService jwTokenService, ILogger<AuthController> logger)
+        public AuthController(IAuthenticationService authService, IUserService userService,
+            IJWTokenService jwTokenService, ILogger<AuthController> logger, ICookieOptionsProvider cookieOptionsProvider)
         {
             _userService = userService;
             _authService = authService;
             _jwTokenService = jwTokenService;
             _logger = logger;
+            _cookieOptions = cookieOptionsProvider.GetCookieOptions();
         }
 
         [HttpPost("register")]
@@ -72,15 +75,7 @@ namespace OnlineSurveyTool.Server.Controllers
                 string accessToken = _jwTokenService.GenerateAccessToken(user, out var accessExpiration);
                 string refreshToken = _jwTokenService.GenerateRefreshToken(user, out var refreshExpiration);
 
-                var cookieOptions = new CookieOptions
-                {
-                    HttpOnly = true,
-                    Secure = true,
-                    SameSite = SameSiteMode.Strict,
-                    Expires = DateTimeOffset.UtcNow.AddDays(1),
-                };
-                
-                Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+                Response.Cookies.Append("refresh-token", refreshToken, _cookieOptions);
                 
                 return Ok(new LoginResponse
                 {
@@ -96,10 +91,10 @@ namespace OnlineSurveyTool.Server.Controllers
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh()
         {
-            var refreshToken = Request.Cookies["refreshToken"];
+            var refreshToken = Request.Cookies["refresh-token"];
             if (refreshToken is null)
             {
-                return Unauthorized(new {ErrorMessage = "The 'refreshToken' cookie has not been set!"});
+                return Unauthorized(new {ErrorMessage = "The 'refresh-token' cookie has not been set!"});
             }
             var claimsPrincipalResult = _jwTokenService.GetClaimsPrincipalFromRefreshToken(refreshToken);
             if (!claimsPrincipalResult.IsSuccess)

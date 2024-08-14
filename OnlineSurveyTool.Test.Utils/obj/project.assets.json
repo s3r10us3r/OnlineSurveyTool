@@ -2,6 +2,423 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Microsoft.AspNetCore.App.Ref/8.0.8": {
+        "type": "package",
+        "compile": {
+          "ref/net8.0/Microsoft.AspNetCore.Antiforgery.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.BearerToken.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.Cookies.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.Core.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.OAuth.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authentication.dll": {
+            "related": ".Abstractions.xml;.BearerToken.xml;.Cookies.xml;.Core.xml;.OAuth.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authorization.Policy.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Authorization.dll": {
+            "related": ".Policy.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.Endpoints.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.Forms.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.Server.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.Web.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Components.dll": {
+            "related": ".Authorization.xml;.Endpoints.xml;.Forms.xml;.Server.xml;.Web.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.CookiePolicy.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Cors.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.DataProtection.Extensions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.DataProtection.dll": {
+            "related": ".Abstractions.xml;.Extensions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Diagnostics.dll": {
+            "related": ".Abstractions.xml;.HealthChecks.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.HostFiltering.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Hosting.dll": {
+            "related": ".Abstractions.xml;.Server.Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Html.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Connections.Common.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Connections.dll": {
+            "related": ".Common.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Extensions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.Results.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Http.dll": {
+            "related": ".Abstractions.xml;.Connections.Common.xml;.Connections.xml;.Extensions.xml;.Features.xml;.Results.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.HttpLogging.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.HttpOverrides.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.HttpsPolicy.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Identity.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Localization.Routing.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Localization.dll": {
+            "related": ".Routing.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Metadata.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.ApiExplorer.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Core.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Cors.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Json.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Localization.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.Razor.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.RazorPages.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Mvc.dll": {
+            "related": ".Abstractions.xml;.ApiExplorer.xml;.Core.xml;.Cors.xml;.DataAnnotations.xml;.Formatters.Json.xml;.Formatters.Xml.xml;.Localization.xml;.Razor.xml;.RazorPages.xml;.TagHelpers.xml;.ViewFeatures.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.OutputCaching.dll": {},
+          "ref/net8.0/Microsoft.AspNetCore.RateLimiting.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Razor.Runtime.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Razor.dll": {
+            "related": ".Runtime.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.RequestDecompression.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.ResponseCompression.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Rewrite.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Routing.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Routing.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.HttpSys.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.IIS.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.IISIntegration.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Core.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.dll": {
+            "related": ".Core.xml;.Transport.NamedPipes.xml;.Transport.Quic.xml;.Transport.Sockets.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.Session.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.SignalR.Common.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.SignalR.Core.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.SignalR.dll": {
+            "related": ".Common.xml;.Core.xml;.Protocols.Json.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.StaticFiles.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.WebSockets.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.WebUtilities.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.AspNetCore.dll": {
+            "related": ".Antiforgery.xml;.Authentication.Abstractions.xml;.Authentication.BearerToken.xml;.Authentication.Cookies.xml;.Authentication.Core.xml;.Authentication.OAuth.xml;.Authentication.xml;.Authorization.Policy.xml;.Authorization.xml;.Components.Authorization.xml;.Components.Endpoints.xml;.Components.Forms.xml;.Components.Server.xml;.Components.Web.xml;.Components.xml;.Connections.Abstractions.xml;.CookiePolicy.xml;.Cors.xml;.Cryptography.Internal.xml;.Cryptography.KeyDerivation.xml;.DataProtection.Abstractions.xml;.DataProtection.Extensions.xml;.DataProtection.xml;.Diagnostics.Abstractions.xml;.Diagnostics.HealthChecks.xml;.Diagnostics.xml;.HostFiltering.xml;.Hosting.Abstractions.xml;.Hosting.Server.Abstractions.xml;.Hosting.xml;.Html.Abstractions.xml;.Http.Abstractions.xml;.Http.Connections.Common.xml;.Http.Connections.xml;.Http.Extensions.xml;.Http.Features.xml;.Http.Results.xml;.Http.xml;.HttpLogging.xml;.HttpOverrides.xml;.HttpsPolicy.xml;.Identity.xml;.Localization.Routing.xml;.Localization.xml;.Metadata.xml;.Mvc.Abstractions.xml;.Mvc.ApiExplorer.xml;.Mvc.Core.xml;.Mvc.Cors.xml;.Mvc.DataAnnotations.xml;.Mvc.Formatters.Json.xml;.Mvc.Formatters.Xml.xml;.Mvc.Localization.xml;.Mvc.Razor.xml;.Mvc.RazorPages.xml;.Mvc.TagHelpers.xml;.Mvc.ViewFeatures.xml;.Mvc.xml;.RateLimiting.xml;.Razor.Runtime.xml;.Razor.xml;.RequestDecompression.xml;.ResponseCaching.Abstractions.xml;.ResponseCaching.xml;.ResponseCompression.xml;.Rewrite.xml;.Routing.Abstractions.xml;.Routing.xml;.Server.HttpSys.xml;.Server.IIS.xml;.Server.IISIntegration.xml;.Server.Kestrel.Core.xml;.Server.Kestrel.Transport.NamedPipes.xml;.Server.Kestrel.Transport.Quic.xml;.Server.Kestrel.Transport.Sockets.xml;.Server.Kestrel.xml;.Session.xml;.SignalR.Common.xml;.SignalR.Core.xml;.SignalR.Protocols.Json.xml;.SignalR.xml;.StaticFiles.xml;.WebSockets.xml;.WebUtilities.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.Ini.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.Json.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.KeyPerFile.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.Xml.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".Abstractions.xml;.Binder.xml;.CommandLine.xml;.EnvironmentVariables.xml;.FileExtensions.xml;.Ini.xml;.Json.xml;.KeyPerFile.xml;.UserSecrets.xml;.xml;.Xml.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Diagnostics.dll": {
+            "related": ".Abstractions.xml;.HealthChecks.Abstractions.xml;.HealthChecks.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Features.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.FileProviders.Composite.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Hosting.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Identity.Core.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Identity.Stores.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Localization.dll": {
+            "related": ".Abstractions.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.Configuration.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.Console.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.Debug.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.EventLog.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.EventSource.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.TraceSource.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".Abstractions.xml;.Configuration.xml;.Console.xml;.Debug.xml;.EventLog.xml;.EventSource.xml;.TraceSource.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Options.DataAnnotations.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Options.dll": {
+            "related": ".ConfigurationExtensions.xml;.DataAnnotations.xml;.xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Extensions.WebEncoders.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.JSInterop.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/Microsoft.Net.Http.Headers.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/System.Security.Cryptography.Xml.dll": {
+            "related": ".xml"
+          },
+          "ref/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore/8.0.6": {
         "type": "package",
         "dependencies": {
@@ -318,6 +735,343 @@
     }
   },
   "libraries": {
+    "Microsoft.AspNetCore.App.Ref/8.0.8": {
+      "sha512": "QV7ktsH/7bSzobomIrgc+kqFTzQD57BQa55TEYkxFw9PH1AX8yMi3SJN7+ArejHZa4b2/sJFx5ZMpCN5c75JRA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.app.ref/8.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.App.CodeFixes.dll",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.Http.RequestDelegateGenerator.dll",
+        "analyzers/dotnet/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.dll",
+        "analyzers/dotnet/cs/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/de/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/es/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/fr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/it/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ja/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ko/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/pl/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/ru/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/tr/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/zh-Hans/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/cs/zh-Hant/Microsoft.Extensions.Configuration.Binder.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "data/FrameworkList.xml",
+        "data/PackageOverrides.txt",
+        "data/PlatformManifest.txt",
+        "microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.app.ref.nuspec",
+        "ref/net8.0/Microsoft.AspNetCore.Antiforgery.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Antiforgery.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.BearerToken.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.BearerToken.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Cookies.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Cookies.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Core.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.Core.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.OAuth.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.OAuth.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authentication.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authorization.Policy.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authorization.Policy.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Authorization.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Authorization.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Authorization.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Authorization.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Endpoints.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Endpoints.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Forms.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Forms.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Server.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Server.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Web.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.Web.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Components.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Components.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Connections.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.CookiePolicy.dll",
+        "ref/net8.0/Microsoft.AspNetCore.CookiePolicy.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Cors.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Cors.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.Extensions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.Extensions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.dll",
+        "ref/net8.0/Microsoft.AspNetCore.DataProtection.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Diagnostics.xml",
+        "ref/net8.0/Microsoft.AspNetCore.HostFiltering.dll",
+        "ref/net8.0/Microsoft.AspNetCore.HostFiltering.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Hosting.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Html.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Html.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Connections.Common.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Connections.Common.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Connections.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Connections.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Extensions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Extensions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Features.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Features.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Results.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.Results.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Http.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Http.xml",
+        "ref/net8.0/Microsoft.AspNetCore.HttpLogging.dll",
+        "ref/net8.0/Microsoft.AspNetCore.HttpLogging.xml",
+        "ref/net8.0/Microsoft.AspNetCore.HttpOverrides.dll",
+        "ref/net8.0/Microsoft.AspNetCore.HttpOverrides.xml",
+        "ref/net8.0/Microsoft.AspNetCore.HttpsPolicy.dll",
+        "ref/net8.0/Microsoft.AspNetCore.HttpsPolicy.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Identity.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Identity.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Localization.Routing.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Localization.Routing.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Localization.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Localization.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Metadata.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Metadata.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.ApiExplorer.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.ApiExplorer.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Core.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Core.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Cors.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Cors.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.DataAnnotations.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Json.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Json.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Localization.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Localization.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Razor.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.Razor.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.RazorPages.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.RazorPages.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.TagHelpers.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.ViewFeatures.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.ViewFeatures.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Mvc.xml",
+        "ref/net8.0/Microsoft.AspNetCore.OutputCaching.dll",
+        "ref/net8.0/Microsoft.AspNetCore.RateLimiting.dll",
+        "ref/net8.0/Microsoft.AspNetCore.RateLimiting.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Razor.Runtime.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Razor.Runtime.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Razor.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Razor.xml",
+        "ref/net8.0/Microsoft.AspNetCore.RequestDecompression.dll",
+        "ref/net8.0/Microsoft.AspNetCore.RequestDecompression.xml",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.dll",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCaching.xml",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCompression.dll",
+        "ref/net8.0/Microsoft.AspNetCore.ResponseCompression.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Rewrite.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Rewrite.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Routing.Abstractions.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Routing.Abstractions.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Routing.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Routing.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.HttpSys.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.HttpSys.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.IIS.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.IIS.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.IISIntegration.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.IISIntegration.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Core.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Core.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Server.Kestrel.xml",
+        "ref/net8.0/Microsoft.AspNetCore.Session.dll",
+        "ref/net8.0/Microsoft.AspNetCore.Session.xml",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Common.dll",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Common.xml",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Core.dll",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Core.xml",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.Protocols.Json.xml",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.dll",
+        "ref/net8.0/Microsoft.AspNetCore.SignalR.xml",
+        "ref/net8.0/Microsoft.AspNetCore.StaticFiles.dll",
+        "ref/net8.0/Microsoft.AspNetCore.StaticFiles.xml",
+        "ref/net8.0/Microsoft.AspNetCore.WebSockets.dll",
+        "ref/net8.0/Microsoft.AspNetCore.WebSockets.xml",
+        "ref/net8.0/Microsoft.AspNetCore.WebUtilities.dll",
+        "ref/net8.0/Microsoft.AspNetCore.WebUtilities.xml",
+        "ref/net8.0/Microsoft.AspNetCore.dll",
+        "ref/net8.0/Microsoft.AspNetCore.xml",
+        "ref/net8.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Caching.Memory.dll",
+        "ref/net8.0/Microsoft.Extensions.Caching.Memory.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.CommandLine.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Ini.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Ini.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Json.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Json.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.KeyPerFile.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.KeyPerFile.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.UserSecrets.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Xml.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.Xml.xml",
+        "ref/net8.0/Microsoft.Extensions.Configuration.dll",
+        "ref/net8.0/Microsoft.Extensions.Configuration.xml",
+        "ref/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "ref/net8.0/Microsoft.Extensions.DependencyInjection.xml",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.dll",
+        "ref/net8.0/Microsoft.Extensions.Diagnostics.xml",
+        "ref/net8.0/Microsoft.Extensions.Features.dll",
+        "ref/net8.0/Microsoft.Extensions.Features.xml",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Composite.dll",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Composite.xml",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "ref/net8.0/Microsoft.Extensions.FileProviders.Physical.xml",
+        "ref/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "ref/net8.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "ref/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Hosting.dll",
+        "ref/net8.0/Microsoft.Extensions.Hosting.xml",
+        "ref/net8.0/Microsoft.Extensions.Http.dll",
+        "ref/net8.0/Microsoft.Extensions.Http.xml",
+        "ref/net8.0/Microsoft.Extensions.Identity.Core.dll",
+        "ref/net8.0/Microsoft.Extensions.Identity.Core.xml",
+        "ref/net8.0/Microsoft.Extensions.Identity.Stores.dll",
+        "ref/net8.0/Microsoft.Extensions.Identity.Stores.xml",
+        "ref/net8.0/Microsoft.Extensions.Localization.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Localization.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Localization.dll",
+        "ref/net8.0/Microsoft.Extensions.Localization.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.Configuration.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.Configuration.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.Console.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.Console.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.Debug.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.Debug.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.EventLog.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.EventLog.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.EventSource.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.EventSource.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.TraceSource.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.TraceSource.xml",
+        "ref/net8.0/Microsoft.Extensions.Logging.dll",
+        "ref/net8.0/Microsoft.Extensions.Logging.xml",
+        "ref/net8.0/Microsoft.Extensions.ObjectPool.dll",
+        "ref/net8.0/Microsoft.Extensions.ObjectPool.xml",
+        "ref/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "ref/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "ref/net8.0/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "ref/net8.0/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "ref/net8.0/Microsoft.Extensions.Options.dll",
+        "ref/net8.0/Microsoft.Extensions.Options.xml",
+        "ref/net8.0/Microsoft.Extensions.Primitives.dll",
+        "ref/net8.0/Microsoft.Extensions.Primitives.xml",
+        "ref/net8.0/Microsoft.Extensions.WebEncoders.dll",
+        "ref/net8.0/Microsoft.Extensions.WebEncoders.xml",
+        "ref/net8.0/Microsoft.JSInterop.dll",
+        "ref/net8.0/Microsoft.JSInterop.xml",
+        "ref/net8.0/Microsoft.Net.Http.Headers.dll",
+        "ref/net8.0/Microsoft.Net.Http.Headers.xml",
+        "ref/net8.0/System.Diagnostics.EventLog.dll",
+        "ref/net8.0/System.Diagnostics.EventLog.xml",
+        "ref/net8.0/System.IO.Pipelines.dll",
+        "ref/net8.0/System.IO.Pipelines.xml",
+        "ref/net8.0/System.Security.Cryptography.Xml.dll",
+        "ref/net8.0/System.Security.Cryptography.Xml.xml",
+        "ref/net8.0/System.Threading.RateLimiting.dll",
+        "ref/net8.0/System.Threading.RateLimiting.xml"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/8.0.6": {
       "sha512": "Ms5e5QuBAjVIuQsGumeLvkgMiOpnj6wxPvwBIoe1NfTkseWK4NZYztnhgDlpkCPkrUmJEXLv69kl349Ours30Q==",
       "type": "package",
@@ -795,6 +1549,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNetCore.App.Ref >= 8.0.8",
       "Microsoft.Extensions.Configuration >= 9.0.0-preview.6.24327.7",
       "OnlineSurveyTool.Server.DAL >= 1.0.0",
       "OnlineSurveyTool.Server.DAL.Models >= 1.0.0"
@@ -844,6 +1599,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.App.Ref": {
+            "target": "Package",
+            "version": "[8.0.8, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[9.0.0-preview.6.24327.7, )"
@@ -868,5 +1627,16 @@
         "runtimeIdentifierGraphPath": "/home/tradeckm/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "The package Microsoft.AspNetCore.App.Ref 8.0.8 has a package type DotnetPlatform that is incompatible with this project. ",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

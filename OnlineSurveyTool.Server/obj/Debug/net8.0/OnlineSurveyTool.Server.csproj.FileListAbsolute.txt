@@ -149,7 +149,6 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/n
 C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/AutoMapper.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/appsettings.Development.json
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/appsettings.json
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/spa.proxy.json
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.deps.json
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.runtimeconfig.json
@@ -161,7 +160,6 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/n
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/BCrypt.Net-Next.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Humanizer.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.AspNetCore.SpaProxy.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
@@ -274,7 +272,6 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/n
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.Services.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.DAL.pdb
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.csproj.AssemblyReference.cache
-/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/spa.proxy.json
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.GeneratedMSBuildEditorConfig.editorconfig
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfoInputs.cache
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSurveyTool.Server.AssemblyInfo.cs
@@ -298,3 +295,4 @@ C:/Users/jedyn/source/repos/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/n
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/MySqlConnector.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
 /home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/obj/Debug/net8.0/OnlineSu.B3DD68FB.Up2Date
+/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/bin/Debug/net8.0/OnlineSurveyTool.Server.staticwebassets.runtime.json

@@ -19,6 +19,8 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.AspNetCore.App.Ref" Version="8.0.8" /> 
     </ItemGroup>
 
+    
 </Project>

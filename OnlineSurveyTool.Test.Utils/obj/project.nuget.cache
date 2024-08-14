@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "j3+o7f2d53gKWFBLpXWgRdajKXK6sgDI3w3b43bpFPK/iBBcCPjxZNTYAl4GuJKpW2rdBrpkPFA/WiFfb033gg==",
-  "success": true,
+  "dgSpecHash": "hmen89c3/644UQiIE/lO1fsL585nx3IAj/Tj74OBkYoEqydIQZjyKq7KXvxl8UGjp1NM5BMr25oxA5GvwbUW+Q==",
+  "success": false,
   "projectFilePath": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Test.Utils/OnlineSurveyTool.Test.Utils.csproj",
   "expectedPackageFiles": [
+    "/home/tradeckm/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512",
     "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore/8.0.6/microsoft.entityframeworkcore.8.0.6.nupkg.sha512",
     "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.6/microsoft.entityframeworkcore.abstractions.8.0.6.nupkg.sha512",
     "/home/tradeckm/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.6/microsoft.entityframeworkcore.analyzers.8.0.6.nupkg.sha512",
@@ -21,5 +22,15 @@
     "/home/tradeckm/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
     "/home/tradeckm/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.2/pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1213",
+      "level": "Error",
+      "message": "The package Microsoft.AspNetCore.App.Ref 8.0.8 has a package type DotnetPlatform that is incompatible with this project. ",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

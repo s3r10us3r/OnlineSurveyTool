@@ -422,10 +422,6 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.AspNetCore.SpaProxy": {
-              "target": "Package",
-              "version": "[8.*-*, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -509,6 +505,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.App.Ref": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[9.0.0-preview.6.24327.7, )"

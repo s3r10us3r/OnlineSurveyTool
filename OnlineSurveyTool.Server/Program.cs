@@ -4,7 +4,7 @@ using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddDirectoryBrowser();
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("LocalConnectionString");
 
@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "AllowAngular",
         policy =>
         {
-            policy.WithOrigins("https://localhost:4200")
+            policy.WithOrigins("https://localhost:4200", "https://127.0.0.1:4200")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -38,9 +38,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-app.UseCors("AllowAngular");
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -51,9 +56,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
-app.MapControllers();
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapFallbackToFile("index.html");
+});
 
 app.Run();

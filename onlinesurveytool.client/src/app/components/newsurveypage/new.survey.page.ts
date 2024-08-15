@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {Question, questionPrototype, QuestionType} from "../../models/question";
+import {ErrorObj} from "../newquestioncomponent/new.question.component";
 
 @Component({
   selector: 'new-survey-page',
@@ -9,9 +10,11 @@ import {Question, questionPrototype, QuestionType} from "../../models/question";
 export class NewSurveyPage {
   constructor() {}
 
-  questions: Array<Question> = []
+  questions: Array<Question> = [];
+  errors: Array<boolean> = [];
 
   addQuestion() {
+    this.errors.push(false);
     this.questions.push(questionPrototype(QuestionType.SingleChoice, this.questions.length));
   }
 
@@ -20,6 +23,12 @@ export class NewSurveyPage {
   }
 
   removeQuestion(ind: number) {
+    this.errors.splice(ind, 1);
     this.questions.splice(ind, 1)
   }
+
+  processError(err: ErrorObj) {
+    this.errors[err.num] = err.value;
+  }
+
 }

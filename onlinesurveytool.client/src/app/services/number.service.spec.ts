@@ -24,4 +24,5 @@ describe('NumberService', () => {
     expect(service.isValidNumber('12 12')).toBeFalse();
     expect(service.isValidNumber('12a12')).toBeFalse();
   });
+
 })

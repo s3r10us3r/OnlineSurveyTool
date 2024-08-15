@@ -1,0 +1,87 @@
+import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Question} from "../../models/question";
+import {NumberService} from "../../services/number.service";
+
+@Component({
+  selector: 'min-max-question-component',
+  templateUrl: 'min-max-question.component.html',
+  styleUrl: 'min-max-question.component.css'
+})
+export class MinMaxQuestionComponent{
+  @Input() minText!: string;
+  @Input() maxText!: string;
+  @Input() min!: number;
+  @Input() max!: number;
+  @Input() numType!: 'decimal' | 'double';
+
+  @Output() onChange = new EventEmitter<Partial<Question>>();
+  @Output() error = new EventEmitter<string>();
+
+  minValue: string = '';
+  maxValue: string = '';
+
+  constructor(private numberService: NumberService) {}
+
+  updateMin(event: Event) {
+    this.minValue = this.extractValueFromEvent(event);
+    this.emitValues();
+  }
+
+  updateMax(event: Event) {
+    this.maxValue = this.extractValueFromEvent(event);
+    this.emitValues();
+  }
+
+  extractValueFromEvent(event: Event) {
+    const inputElem = event.target as HTMLInputElement;
+    return inputElem.value;
+  }
+
+  emitValues() {
+    const err1 = this.checkValue(this.minValue);
+    if (err1) {
+      this.error.emit(err1);
+      return;
+    }
+
+    const err2 = this.checkValue(this.maxValue);
+    if (err2) {
+      this.error.emit(err2);
+      return;
+    }
+
+    const [min, max] = this.parseNums();
+    if (max < min) {
+      this.error.emit('Minimum must be higher than maximum!');
+    }
+
+    const question = this.makeQuestion(min, max);
+    this.onChange.emit(question);
+  }
+
+  makeQuestion(minNum: number, maxNum: number): Partial<Question>{
+    return {
+      minimum: minNum,
+      maximum: maxNum
+    }
+  }
+
+
+  parseNums(): [number, number] {
+    return [Number(this.minValue), Number(this.maxValue)];
+  }
+
+  checkValue(val: string): string {
+    if (this.numType === 'decimal') {
+      if (this.numberService.isValidInteger(val)) {
+        return '';
+      }
+      return 'Both numbers must be valid integers!';
+    }
+
+    if (this.numberService.isValidDouble(val)) {
+      return '';
+    }
+    return 'Both numbers must be valid!';
+  }
+}

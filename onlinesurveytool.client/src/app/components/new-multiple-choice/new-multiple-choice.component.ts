@@ -1,6 +1,6 @@
 import {
   Component,
-  EventEmitter,
+  EventEmitter, OnInit,
   Output,
   Renderer2,
 } from '@angular/core';
@@ -8,19 +8,26 @@ import {ChoiceOption} from "../../models/choice.option";
 import {Question} from "../../models/question";
 import {FormControl, FormGroup} from "@angular/forms";
 import {NumberService} from "../../services/number.service";
-import {min} from "rxjs";
+import {max, min} from "rxjs";
 
 @Component({
   selector: 'new-multiple-choice',
   templateUrl: './new-multiple-choice.component.html',
   styleUrl: './new-multiple-choice.component.css'
 })
-export class NewMultipleChoiceComponent {
+export class NewMultipleChoiceComponent implements OnInit{
   @Output() onChange = new EventEmitter<Partial<Question>>();
+  @Output() error = new EventEmitter<string>();
 
   constructor(private renderer: Renderer2, private numberService: NumberService) {
   }
 
+  ngOnInit(): void {
+    this.error.emit('There must be at least one choice option!');
+  }
+
+  minimum: number = 0;
+  maximum: number = 0;
   choiceOptions: Array<ChoiceOption> = [];
 
   addCo() {
@@ -53,6 +60,11 @@ export class NewMultipleChoiceComponent {
   }
 
   emitChange() {
+    if (this.choiceOptions.length === 0) {
+      this.error.emit('There must be at least one choice option!');
+      return;
+    }
+
     this.onChange.emit({
       choiceOptions: this.choiceOptions
     })
@@ -65,4 +77,7 @@ export class NewMultipleChoiceComponent {
       elem.rows += 1;
     }
   }
+
+  protected readonly max = max;
+  protected readonly Math = Math;
 }

@@ -6,17 +6,23 @@
 .display {
   font-family: 'Montserrat', sans-serif;
   font-size: 2vh;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
+  width: 2vw;
+  text-align: center;
+  border-style: none;
 }
 
 button {
   border-style: none;
   background-color: transparent;
   visibility: hidden;
+  font-size: 0.75vh;
 }
 
 .root:hover button {
   visibility: visible;
+}
+
+.buttonHolder {
+  display: flex;
+  flex-direction: column;
 }

@@ -12,9 +12,9 @@ import {
 import {FormControl, FormGroup} from "@angular/forms";
 import {Question, questionPrototype, QuestionType} from "../../models/question";
 
-interface IType{
-  display: string,
-  value: QuestionType
+export interface ErrorObj{
+  num: number,
+  value: boolean
 }
 
 @Component({
@@ -25,6 +25,7 @@ interface IType{
 export class NewQuestionComponent implements AfterViewInit{
   @Input() question: Question = questionPrototype(QuestionType.SingleChoice);
   @Output() questionChange = new EventEmitter<Question>();
+  @Output() error = new EventEmitter<ErrorObj>();
 
   @ViewChild('questionValue') questionValue!: ElementRef;
 
@@ -35,6 +36,7 @@ export class NewQuestionComponent implements AfterViewInit{
   }
 
   chosenType: number = 0;
+  errorMessage: string = '';
 
   newQuestionForm = new FormGroup({
     value: new FormControl(''),
@@ -107,6 +109,35 @@ export class NewQuestionComponent implements AfterViewInit{
     const nativeElem = this.questionValue.nativeElement;
     this.renderer.setStyle(nativeElem, 'height', 'auto');
     this.renderer.setStyle(nativeElem, 'height', nativeElem.scrollHeight  + 'px');
+  }
+
+  processError(error: string): void {
+    if (this.question.value === '') {
+      this.errorMessage = 'Question cannot be empty!';
+      this.emitError();
+      return;
+    }
+
+    this.errorMessage = error;
+    if (error) {
+      this.emitError();
+    } else {
+      this.emitNoError();
+    }
+  }
+
+  emitError() {
+    this.error.emit({
+      num: this.question.number,
+      value: true
+    });
+  }
+
+  emitNoError() {
+    this.error.emit({
+      num: this.question.number,
+      value: false
+    });
   }
 
   protected readonly QuestionType = QuestionType;

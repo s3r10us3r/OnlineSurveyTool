@@ -1,6 +1,16 @@
 <div class="coRoot">
 
-  <co-min-max [min]="0" [max]="10"></co-min-max>
+
+  <div class="minMaxHolder">
+    <div class="minMaxHolder">
+      <p>Minimum choices: </p>
+      <co-min-max [min]="0" [max]="maximum"  (number)="minimum = $event"></co-min-max>
+    </div>
+    <div class="minMaxHolder">
+      <p>Maximum choices: </p>
+      <co-min-max [min]="Math.max(minimum + 1, choiceOptions.length)" [max]="choiceOptions.length" (number)="maximum = $event"></co-min-max>
+    </div>
+  </div>
 
   <div class="co" *ngFor="let co of choiceOptions">
     <div class="dot"></div>

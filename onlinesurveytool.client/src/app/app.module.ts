@@ -17,13 +17,14 @@ import {NewSingleChoiceComponent} from "./components/new-single-choice/new-singl
 import {NewMultipleChoiceComponent} from "./components/new-multiple-choice/new-multiple-choice.component";
 import {NumberService} from "./services/number.service";
 import {CoMinMaxComponent} from "./components/co-min-max/co-min-max.component";
+import {MinMaxQuestionComponent} from "./components/min-max-question-component/min-max-question.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, RegisterComponent,
     ErrorPageComponent, MainPageComponent, NewSurveyPage,
     NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
-    CoMinMaxComponent, CoMinMaxComponent
+    CoMinMaxComponent, MinMaxQuestionComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

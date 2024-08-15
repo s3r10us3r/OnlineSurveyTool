@@ -11,8 +11,8 @@
     </div>
 
     <div [ngSwitch]="question.type" style="width: 100%">
-      <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)"></new-single-choice>
-      <new-multiple-choice *ngSwitchCase="QuestionType.MultipleChoice" (onChange)="mapProperties($event)"></new-multiple-choice>
+      <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)" (error)="processError($event)"></new-single-choice>
+      <new-multiple-choice *ngSwitchCase="QuestionType.MultipleChoice" (onChange)="mapProperties($event)" (error)="processError($event)"></new-multiple-choice>
     </div>
 
   </form>

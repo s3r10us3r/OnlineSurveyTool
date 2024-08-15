@@ -1,6 +1,6 @@
 import {
   Component,
-  EventEmitter,
+  EventEmitter, OnInit,
   Output,
   Renderer2,
 } from '@angular/core';
@@ -12,10 +12,15 @@ import {Question, questionPrototype, QuestionType} from "../../models/question";
   templateUrl: './new-single-choice.component.html',
   styleUrl: './new-single-choice.component.css'
 })
-export class NewSingleChoiceComponent{
+export class NewSingleChoiceComponent implements OnInit{
   @Output() onChange = new EventEmitter<Partial<Question>>();
+  @Output() error = new EventEmitter<string>();
 
   constructor(private renderer: Renderer2) {}
+
+  ngOnInit(): void {
+    this.error.emit('There must be at least one choice option!');
+  }
 
   choiceOptions: Array<ChoiceOption> = [];
 
@@ -49,6 +54,12 @@ export class NewSingleChoiceComponent{
   }
 
   emitChange() {
+    if (this.choiceOptions.length === 0) {
+      this.error.emit('There must be at least one choice option.');
+      return;
+    }
+
+    this.error.emit('');
     this.onChange.emit({
       choiceOptions: this.choiceOptions
     })

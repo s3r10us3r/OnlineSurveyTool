@@ -1,10 +1,9 @@
 import {
-  AfterContentInit, AfterViewInit,
+  OnChanges, AfterViewInit,
   Component,
   ElementRef,
   EventEmitter,
   Input,
-  OnInit,
   Output,
   Renderer2,
   ViewChild
@@ -22,7 +21,7 @@ export interface ErrorObj{
   templateUrl: 'new.question.component.html',
   styleUrl: 'new.question.component.css',
 })
-export class NewQuestionComponent implements AfterViewInit{
+export class NewQuestionComponent implements AfterViewInit, OnChanges{
   @Input() question: Question = questionPrototype(QuestionType.SingleChoice);
   @Output() questionChange = new EventEmitter<Question>();
   @Output() error = new EventEmitter<ErrorObj>();
@@ -33,10 +32,17 @@ export class NewQuestionComponent implements AfterViewInit{
 
   ngAfterViewInit() {
     this.autoResize();
+    this.checkErrors();
+  }
+
+  ngOnChanges() {
+    this.checkErrors();
   }
 
   chosenType: number = 0;
   errorMessage: string = '';
+  childError: string = '';
+  isEmpty: boolean = true;
 
   newQuestionForm = new FormGroup({
     value: new FormControl(''),
@@ -44,20 +50,24 @@ export class NewQuestionComponent implements AfterViewInit{
 
 
   switchTypeLeft() {
+    this.childError = '';
     this.chosenType--
     if (this.chosenType <= -1) {
       this.chosenType = this.types.length - 1;
     }
     this.question.type = this.prevType(this.question.type);
     this.sendQuestion();
+    this.checkErrors();
   }
 
   switchTypeRight() {
+    this.childError = '';
     if (this.chosenType >= this.types.length) {
       this.chosenType = 0;
     }
     this.question.type = this.nextType(this.question.type);
     this.sendQuestion();
+    this.checkErrors();
   }
 
   sendQuestion() {
@@ -111,19 +121,30 @@ export class NewQuestionComponent implements AfterViewInit{
     this.renderer.setStyle(nativeElem, 'height', nativeElem.scrollHeight  + 'px');
   }
 
+  checkValue() {
+    const val = this.questionValue.nativeElement.value;
+    this.isEmpty = !val;
+    this.checkErrors();
+  }
+
   processError(error: string): void {
-    if (this.question.value === '') {
-      this.errorMessage = 'Question cannot be empty!';
-      this.emitError();
-      return;
+    this.childError = error;
+    this.checkErrors();
+  }
+
+  checkErrors() {
+    this.errorMessage = '';
+    if (this.isEmpty) {
+      this.errorMessage = 'Question must not be empty!';
     }
 
-    this.errorMessage = error;
-    if (error) {
-      this.emitError();
-    } else {
-      this.emitNoError();
+    if (this.childError) {
+      this.errorMessage = this.childError;
     }
+    if (this.errorMessage)
+      this.emitError();
+    else
+      this.emitNoError();
   }
 
   emitError() {
@@ -139,6 +160,7 @@ export class NewQuestionComponent implements AfterViewInit{
       value: false
     });
   }
+
 
   protected readonly QuestionType = QuestionType;
 }

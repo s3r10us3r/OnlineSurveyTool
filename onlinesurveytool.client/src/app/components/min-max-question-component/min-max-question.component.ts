@@ -15,7 +15,7 @@ export class MinMaxQuestionComponent{
   @Input() numType!: 'decimal' | 'double';
 
   @Output() onChange = new EventEmitter<Partial<Question>>();
-  @Output() error = new EventEmitter<string>();
+  @Output() errorChange = new EventEmitter<string>();
 
   minValue: string = '';
   maxValue: string = '';
@@ -40,20 +40,23 @@ export class MinMaxQuestionComponent{
   emitValues() {
     const err1 = this.checkValue(this.minValue);
     if (err1) {
-      this.error.emit(err1);
+      this.errorChange.emit(err1);
       return;
     }
 
     const err2 = this.checkValue(this.maxValue);
     if (err2) {
-      this.error.emit(err2);
+      this.errorChange.emit(err2);
       return;
     }
 
     const [min, max] = this.parseNums();
     if (max < min) {
-      this.error.emit('Minimum must be higher than maximum!');
+      this.errorChange.emit('Minimum must be higher than maximum!');
+      return;
     }
+
+    this.errorChange.emit('');
 
     const question = this.makeQuestion(min, max);
     this.onChange.emit(question);
@@ -83,5 +86,9 @@ export class MinMaxQuestionComponent{
       return '';
     }
     return 'Both numbers must be valid!';
+  }
+
+  checkErrors(): void {
+
   }
 }

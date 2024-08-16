@@ -17,13 +17,13 @@ import {max, min} from "rxjs";
 })
 export class NewMultipleChoiceComponent implements OnInit{
   @Output() onChange = new EventEmitter<Partial<Question>>();
-  @Output() error = new EventEmitter<string>();
+  @Output() errorChange = new EventEmitter<string>();
 
   constructor(private renderer: Renderer2, private numberService: NumberService) {
   }
 
   ngOnInit(): void {
-    this.error.emit('There must be at least one choice option!');
+    this.errorChange.emit('There must be at least one choice option!');
   }
 
   minimum: number = 0;
@@ -61,10 +61,11 @@ export class NewMultipleChoiceComponent implements OnInit{
 
   emitChange() {
     if (this.choiceOptions.length === 0) {
-      this.error.emit('There must be at least one choice option!');
+      this.errorChange.emit('There must be at least one choice option!');
       return;
     }
 
+    this.errorChange.emit('');
     this.onChange.emit({
       choiceOptions: this.choiceOptions
     })

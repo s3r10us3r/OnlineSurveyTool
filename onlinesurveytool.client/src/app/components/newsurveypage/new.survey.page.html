@@ -2,7 +2,7 @@
   <input type="text" class="surveyName" placeholder="your survey name"/>
 
   <div class="questionHolder" *ngFor="let q of questions; let i = index">
-    <new-question-component class="nqc" [(question)]="questions[i]" (error)=""></new-question-component>
+    <new-question-component class="nqc" [(question)]="questions[i]" (error)="processError($event)"></new-question-component>
     <button class="removeQuestionButton" (click)="removeQuestion(i)">Remove question</button>
   </div>
 

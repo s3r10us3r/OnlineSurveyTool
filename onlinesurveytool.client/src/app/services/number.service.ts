@@ -9,13 +9,13 @@ export class NumberService {
 
   isValidDouble(str: string): boolean {
     const num = Number(str);
-    return !Number.isNaN(num) && num !== -0;
+    return !Number.isNaN(num) && !Object.is(num, -0);
   }
 
   isValidInteger(str: string): boolean {
     const numPars = Number(str);
     const intPars = parseInt(str);
 
-    return numPars === intPars && numPars !== -0;
+    return numPars === intPars && !Object.is(numPars, -0);
   }
 }

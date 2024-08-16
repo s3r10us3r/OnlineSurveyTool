@@ -1,7 +1,7 @@
 <div class="newQuestionRoot">
   <form class="center-content stretch" [formGroup]="newQuestionForm">
 
-    <textarea #questionValue  placeholder="question" (input)="autoResize()" rows="1" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
+    <textarea #questionValue  placeholder="question" (input)="autoResize(); checkValue();" rows="1" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
 
     <div class="topBox" >
       <p style="">Question type:</p>
@@ -11,9 +11,45 @@
     </div>
 
     <div [ngSwitch]="question.type" style="width: 100%">
-      <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)" (error)="processError($event)"></new-single-choice>
-      <new-multiple-choice *ngSwitchCase="QuestionType.MultipleChoice" (onChange)="mapProperties($event)" (error)="processError($event)"></new-multiple-choice>
+      <new-single-choice *ngSwitchCase="QuestionType.SingleChoice" (onChange)="mapProperties($event)" (errorChange)="processError($event)"></new-single-choice>
+      <new-multiple-choice *ngSwitchCase="QuestionType.MultipleChoice" (onChange)="mapProperties($event)" (errorChange)="processError($event)"></new-multiple-choice>
+
+      <min-max-question-component
+        *ngSwitchCase="QuestionType.NumericalInteger"
+        [minText]="'Minimal answer:'"
+        [maxText]="'Maximal answer:'"
+        [min]="-4294967296"
+        [max]="4294967296"
+        [numType]="'decimal'"
+        (onChange)="mapProperties($event)"
+        (errorChange)="processError($event)"
+      ></min-max-question-component>
+
+      <min-max-question-component
+        *ngSwitchCase="QuestionType.NumericalDouble"
+        [minText]="'Minimal answer:'"
+        [maxText]="'Maximal answer:'"
+        [min]="-4294967296"
+        [max]="4294967296"
+        [numType]="'double'"
+        (onChange)="mapProperties($event)"
+        (errorChange)="processError($event)"
+      ></min-max-question-component>
+
+
+      <min-max-question-component
+        *ngSwitchCase="QuestionType.Textual"
+        [minText]="'Minimal answer length:'"
+        [maxText]="'Maximal answer length:'"
+        [min]="0"
+        [max]="10000"
+        [numType]="'decimal'"
+        (onChange)="mapProperties($event)"
+        (errorChange)="processError($event)"
+      ></min-max-question-component>
     </div>
 
   </form>
+
+  <p class="errorMessage">{{ errorMessage }}</p>
 </div>

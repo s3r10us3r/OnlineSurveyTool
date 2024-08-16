@@ -31,4 +31,7 @@ export class NewSurveyPage {
     this.errors[err.num] = err.value;
   }
 
+  canBeSent(): boolean {
+    return !!this.errors.find(e => e); //the !! is only to satisfy ts
+  }
 }

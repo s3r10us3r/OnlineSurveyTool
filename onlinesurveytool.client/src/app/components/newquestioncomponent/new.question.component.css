@@ -57,3 +57,6 @@ button.typeButton:hover {
   color: black;
 }
 
+.errorMessage {
+  color: red;
+}

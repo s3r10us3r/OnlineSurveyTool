@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Component, EventEmitter, Input, Output, OnInit} from "@angular/core";
 import {Question} from "../../models/question";
 import {NumberService} from "../../services/number.service";
 
@@ -7,7 +7,7 @@ import {NumberService} from "../../services/number.service";
   templateUrl: 'min-max-question.component.html',
   styleUrl: 'min-max-question.component.css'
 })
-export class MinMaxQuestionComponent{
+export class MinMaxQuestionComponent implements OnInit {
   @Input() minText!: string;
   @Input() maxText!: string;
   @Input() min!: number;
@@ -21,6 +21,10 @@ export class MinMaxQuestionComponent{
   maxValue: string = '';
 
   constructor(private numberService: NumberService) {}
+
+  ngOnInit(): void {
+    this.emitValues();
+  }
 
   updateMin(event: Event) {
     this.minValue = this.extractValueFromEvent(event);
@@ -38,6 +42,11 @@ export class MinMaxQuestionComponent{
   }
 
   emitValues() {
+    if (this.minValue === '' || this.maxValue === '') {
+      this.errorChange.emit('Inputs cannot be empty!');
+      return;
+    }
+
     const err1 = this.checkValue(this.minValue);
     if (err1) {
       this.errorChange.emit(err1);
@@ -86,9 +95,5 @@ export class MinMaxQuestionComponent{
       return '';
     }
     return 'Both numbers must be valid!';
-  }
-
-  checkErrors(): void {
-
   }
 }

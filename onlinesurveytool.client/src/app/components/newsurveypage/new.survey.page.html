@@ -1,5 +1,5 @@
 <div class="surveyRoot">
-  <input type="text" class="surveyName" placeholder="your survey name"/>
+  <input type="text" [(ngModel)]="surveyName" class="surveyName" placeholder="your survey name"/>
 
   <div class="questionHolder" *ngFor="let q of questions; let i = index">
     <new-question-component class="nqc" [(question)]="questions[i]" (error)="processError($event)"></new-question-component>
@@ -7,5 +7,7 @@
   </div>
 
   <button class="addQuestionButton" (click)="addQuestion()">+</button>
+
+  <button class="submitButton" (click)="submitSurvey()" [disabled]="!canBeSent || !surveyName">submit</button>
 </div>
 <div class="bottomSpace"></div>

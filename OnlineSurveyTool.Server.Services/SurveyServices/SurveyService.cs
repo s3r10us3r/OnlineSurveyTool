@@ -63,6 +63,7 @@ public class SurveyService : ISurveyService
         }
 
         var survey = surveyDto.DtoToSurvey();
+        _logger.LogDebug("created survey: {survey}", survey);
         survey.OwnerId = user.Id;
         await _surveyRepo.Add(survey);
         var resultDto = survey.SurveyToDto();

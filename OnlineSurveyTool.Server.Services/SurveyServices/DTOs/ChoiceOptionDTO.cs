@@ -7,7 +7,6 @@ public class ChoiceOptionDTO
     [Required]
     public int Number { get; set; }
     
-    [Required]
     [StringLength(36)]
     public string? Id { get; set; }
     

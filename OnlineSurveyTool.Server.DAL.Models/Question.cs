@@ -32,9 +32,9 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public bool CanBeSkipped { get; set; }
 
         //This is null for Numerical and Textual type of questions
-        public virtual IEnumerable<ChoiceOption>? ChoiceOptions { get; set; }
+        public virtual ICollection<ChoiceOption>? ChoiceOptions { get; set; }
 
-        public virtual IEnumerable<Answer> Answers { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
 
         public virtual Survey Survey { get; set; }
     }

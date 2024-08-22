@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.Services.SurveyService.DTOs;
@@ -31,14 +32,19 @@ public class SurveyController : ControllerBase
 
         try
         {
-            var userLogin = HttpContext.User.Identity?.Name;
-
-            if (userLogin == null)
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
             {
-                _logger.LogWarning("User login not found in token.");
-                return Unauthorized(new { Message = "User not authorized." });
+                _logger.LogWarning("Bad identity supplied to SurveyController.Add()");
+                return Unauthorized();
             }
-
+            var userLogin = identity.FindFirst("sub")?.Value;
+            if (userLogin is null)
+            {
+                _logger.LogWarning("Identity without name identifier supplied to SurveyController.Add()");
+                return Unauthorized();
+            }
+            
             var result = await _surveyService.AddSurvey(userLogin, dto);
             if (result.IsFailure)
             {
@@ -52,7 +58,7 @@ public class SurveyController : ControllerBase
         }
         catch (Exception e)
         {
-            _logger.LogError("Error while adding survey {error}", e.Message);
+            _logger.LogError("Error while adding survey {error}", e);
             return StatusCode(500, new { Message = "Internal server error!" } );
         }
     }
@@ -93,7 +99,7 @@ public class SurveyController : ControllerBase
         }
         catch (Exception e)
         {
-            _logger.LogError("Error occured in SurveyController.Edit() error: {e}", e.Message);
+            _logger.LogError("Error occured in SurveyController.Edit() error: {e}", e);
             return StatusCode(500, new { Message = "Internal server error!" });
         }
     }

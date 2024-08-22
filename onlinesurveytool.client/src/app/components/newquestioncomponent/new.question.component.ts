@@ -38,6 +38,7 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges() {
     this.checkErrors();
+    this.sendQuestion();
   }
 
   chosenType: number = 0;
@@ -45,9 +46,6 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
   childError: string = '';
   isEmpty: boolean = true;
 
-  newQuestionForm = new FormGroup({
-    value: new FormControl(''),
-  })
 
 
   switchTypeLeft() {
@@ -72,6 +70,8 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
   }
 
   sendQuestion() {
+    this.question.value = this.extractQuestionValue();
+    console.debug(this.question);
     this.questionChange.emit(this.question);
   }
 
@@ -178,6 +178,9 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
     });
   }
 
+  extractQuestionValue(): string {
+    return this.questionValue.nativeElement.value;
+  }
 
   protected readonly QuestionType = QuestionType;
 }

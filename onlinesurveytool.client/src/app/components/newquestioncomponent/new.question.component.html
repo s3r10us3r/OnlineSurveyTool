@@ -1,7 +1,6 @@
-<div class="newQuestionRoot">
-  <form class="center-content stretch" [formGroup]="newQuestionForm">
+<div class="newQuestionRoot center-content stretch">
 
-    <textarea #questionValue  placeholder="question" (input)="autoResize(); checkValue();" rows="1" class="questionValue" [formControl]="newQuestionForm.controls['value']"></textarea>
+    <textarea #questionValue  placeholder="question" (input)="autoResize(); checkValue();" rows="1" class="questionValue" (input)="sendQuestion()"></textarea>
 
     <div class="topBox" >
       <p style="">Question type:</p>
@@ -49,7 +48,6 @@
       ></min-max-question-component>
     </div>
 
-  </form>
 
   <p class="errorMessage">{{ errorMessage }}</p>
 </div>

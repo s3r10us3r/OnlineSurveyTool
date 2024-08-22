@@ -88,3 +88,21 @@ button.removeQuestionButton:hover {
   bottom: 0;
   height: 10vh;
 }
+
+.submitButton {
+  margin: 1vh;
+  color: black;
+  border-width: 3px;
+  border-style: solid;
+  background-color: white;
+  border-color: green;
+  border-radius: 1vh;
+  height: 3vh;
+  width: 10vw;
+  box-shadow: none;
+  font-size: 2vh;
+}
+
+.submitButton:disabled {
+  color: grey;
+}

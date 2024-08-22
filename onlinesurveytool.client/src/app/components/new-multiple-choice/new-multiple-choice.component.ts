@@ -27,7 +27,7 @@ export class NewMultipleChoiceComponent implements OnInit{
   }
 
   minimum: number = 0;
-  maximum: number = 0;
+  maximum: number = 1 ;
   choiceOptions: Array<ChoiceOption> = [];
 
   addCo() {
@@ -67,7 +67,9 @@ export class NewMultipleChoiceComponent implements OnInit{
 
     this.errorChange.emit('');
     this.onChange.emit({
-      choiceOptions: this.choiceOptions
+      choiceOptions: this.choiceOptions,
+      minimum: this.minimum,
+      maximum: this.maximum
     })
   }
 

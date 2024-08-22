@@ -37,7 +37,7 @@ public static class Conversions
             Minimum = dto.Minimum,
             Maximum = dto.Maximum,
             CanBeSkipped = dto.CanBeSkipped,
-            ChoiceOptions = dto.ChoiceOptions?.Select(c => c.DtoToChoiceOption())
+            ChoiceOptions = dto.ChoiceOptions?.Select(c => c.DtoToChoiceOption()).ToList()
         };
     }
 
@@ -62,7 +62,7 @@ public static class Conversions
         {
             Id = surveyDto.Id ?? GuidGenerator.GenerateGuid(),
             Name = surveyDto.Name,
-            Questions = surveyDto.Questions.Select(q => q.DtoToQuestion())
+            Questions = surveyDto.Questions.Select(q => q.DtoToQuestion()).ToList()
         };
     }
 

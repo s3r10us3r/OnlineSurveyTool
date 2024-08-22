@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import {NewMultipleChoiceComponent} from "./components/new-multiple-choice/new-m
 import {NumberService} from "./services/number.service";
 import {CoMinMaxComponent} from "./components/co-min-max/co-min-max.component";
 import {MinMaxQuestionComponent} from "./components/min-max-question-component/min-max-question.component";
+import {SurveyService} from "./services/survey.service";
+import {AuthInterceptor} from "./services/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,13 @@ import {MinMaxQuestionComponent} from "./components/min-max-question-component/m
     BrowserModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [AuthService, UserService, NumberService],
+  providers: [AuthService, UserService, NumberService, SurveyService,
+    /*{
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

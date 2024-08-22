@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using OnlineSurveyTool.Server.DAL.Extensions;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.Extensions;
@@ -14,7 +15,6 @@ builder.Services.AddDbContext<OstDbContext>(options =>
 builder.Services.AddJWTAuthentication(builder.Configuration);
 //repos
 builder.Services.AddRepos();
-
 //services
 builder.Services.AddServices();
 
@@ -33,9 +33,33 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "JWT access token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+    });
+    
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference {Type = ReferenceType.SecurityScheme, Id = "Bearer"}
+            },
+            []
+        }
+    });
+});
+
 
 var app = builder.Build();
 app.UseDefaultFiles();

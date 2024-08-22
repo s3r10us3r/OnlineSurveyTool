@@ -1,6 +1,9 @@
-import {Component} from "@angular/core";
+import {Component, ChangeDetectorRef} from "@angular/core";
 import {Question, questionPrototype, QuestionType} from "../../models/question";
 import {ErrorObj} from "../newquestioncomponent/new.question.component";
+import {Survey} from "../../models/survey";
+import {SurveyService} from "../../services/survey.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'new-survey-page',
@@ -8,10 +11,14 @@ import {ErrorObj} from "../newquestioncomponent/new.question.component";
   styleUrls: ['../../styles/userForm.css', 'new.survey.page.css']
 })
 export class NewSurveyPage {
-  constructor() {}
+  constructor(private changeDetector: ChangeDetectorRef,
+              private surveyService: SurveyService,
+              private router: Router) {}
 
   questions: Array<Question> = [];
   errors: Array<boolean> = [];
+  canBeSent: boolean = false;
+  surveyName: string = '';
 
   addQuestion() {
     this.errors.push(false);
@@ -29,9 +36,50 @@ export class NewSurveyPage {
 
   processError(err: ErrorObj) {
     this.errors[err.num] = err.value;
+    this.canBeSent = this.checkIfCanBeSent();
+    this.changeDetector.detectChanges();
   }
 
-  canBeSent(): boolean {
-    return !!this.errors.find(e => e); //the !! is only to satisfy ts
+  checkIfCanBeSent(): boolean {
+    const isError = this.checkIfThereIsError();
+    const isEmpty = this.questions.length <= 0;
+
+    return !isError && !isEmpty;
+  }
+
+  checkIfThereIsError(): boolean {
+    for (let err of this.errors) {
+      if (err)
+        return true;
+    }
+    return false;
+  }
+
+  submitSurvey() {
+    const survey = this.constructSurvey();
+    console.debug('sending request...');
+    this.surveyService.AddSurvey(survey)
+      .subscribe({
+        next: result => this.handleResult(result),
+        error: error => this.handleError(error),
+      })
+    console.debug(survey);
+  }
+
+  handleResult(result: object) {
+    console.debug(result);
+    this.router.navigate(['/main']);
+  }
+
+  handleError(error: object) {
+    console.error(error);
+    this.router.navigate(['/error']);
+  }
+
+  constructSurvey(): Survey {
+    return {
+      name: this.surveyName,
+      questions: this.questions,
+    };
   }
 }

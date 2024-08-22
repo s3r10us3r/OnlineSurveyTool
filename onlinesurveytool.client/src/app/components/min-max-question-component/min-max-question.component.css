@@ -1,0 +1,18 @@
+.minMaxRoot {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.minMaxHolder {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+input {
+  width: 10vw;
+  height: 2vh;
+  font-size: 2vh;
+}

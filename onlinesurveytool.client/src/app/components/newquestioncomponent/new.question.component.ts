@@ -45,8 +45,7 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
   errorMessage: string = '';
   childError: string = '';
   isEmpty: boolean = true;
-
-
+  isChecked: boolean = false;
 
   switchTypeLeft() {
     this.childError = '';
@@ -71,6 +70,7 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
 
   sendQuestion() {
     this.question.value = this.extractQuestionValue();
+    this.question.canBeSkipped = this.isChecked;
     console.debug(this.question);
     this.questionChange.emit(this.question);
   }
@@ -135,6 +135,11 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
     const val = this.questionValue.nativeElement.value;
     this.isEmpty = !val;
     this.checkErrors();
+  }
+
+  checkSkippable(event: Event) {
+    const inputElem = event.target as HTMLInputElement;
+    this.isChecked = inputElem.checked;
   }
 
   processError(error: string): void {

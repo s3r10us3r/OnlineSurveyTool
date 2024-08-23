@@ -11,9 +11,6 @@ export class SurveyService {
 
   public AddSurvey(survey: Survey) {
     const token = this.authService.getAccessToken();
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
-    return this.http.post(`${API_URL}/Survey/add`, survey, {headers});
+    return this.http.post(`${API_URL}/Survey/add`, survey);
   }
 }

@@ -60,3 +60,9 @@ button.typeButton:hover {
 .errorMessage {
   color: red;
 }
+
+.skipabbleBox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
+}

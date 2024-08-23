@@ -1,6 +1,6 @@
 <div class="newQuestionRoot center-content stretch">
 
-    <textarea #questionValue  placeholder="question" (input)="autoResize(); checkValue();" rows="1" class="questionValue" (input)="sendQuestion()"></textarea>
+    <textarea #questionValue  placeholder="question" (input)="autoResize(); checkValue(); sendQuestion()" rows="1" class="questionValue"></textarea>
 
     <div class="topBox" >
       <p style="">Question type:</p>
@@ -35,7 +35,6 @@
         (errorChange)="processError($event)"
       ></min-max-question-component>
 
-
       <min-max-question-component
         *ngSwitchCase="QuestionType.Textual"
         [minText]="'Minimal answer length:'"
@@ -49,5 +48,11 @@
     </div>
 
 
+  <div class="skipabbleBox">
+    <label>Can be skipped? </label>
+    <input (change)="checkSkippable($event)" type="checkbox"/>
+  </div>
+
   <p class="errorMessage">{{ errorMessage }}</p>
+
 </div>

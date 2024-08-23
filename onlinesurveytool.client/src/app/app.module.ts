@@ -34,11 +34,11 @@ import {AuthInterceptor} from "./services/auth.interceptor";
     AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
   providers: [AuthService, UserService, NumberService, SurveyService,
-    /*{
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }*/
+    }
   ],
   bootstrap: [AppComponent]
 })

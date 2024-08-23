@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
+    //whoever stumbles upon this code must know that it is very stupid, both questions and answers should have been 
+    //split up to different tables based on type
     public class Answer : EntityBaseIntegerId
     {
         public QuestionType Type { get; set; }
@@ -19,14 +19,11 @@ namespace OnlineSurveyTool.Server.DAL.Models
 
         public virtual SurveyResult? SurveyResult { get; set; }
         public virtual ChoiceOption? SingleChoiceOption { get; set; }
-        public IEnumerable<AnswerOption> AnswerOptions { get; set; }
+        public virtual ICollection<AnswerOption> AnswerOptions { get; set; }
         public virtual Question Question { get; set; }
 
 
         [NotMapped]
-        public IEnumerable<ChoiceOption> ChoiceOptions
-        {
-            get => AnswerOptions?.Select(ao => ao.ChoiceOption);
-        }
+        public ICollection<ChoiceOption>? ChoiceOptions => AnswerOptions?.Select(ao => ao.ChoiceOption).ToList();
     }
 }

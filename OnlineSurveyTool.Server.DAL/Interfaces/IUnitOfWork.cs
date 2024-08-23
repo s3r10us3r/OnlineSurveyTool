@@ -10,7 +10,7 @@ public interface IUnitOfWork : IDisposable
     IChoiceOptionRepo ChoiceOptionRepo { get; }
     IQuestionRepo QuestionRepo { get; }
     ISurveyRepo SurveyRepo { get; }
-    ISurveyResult SurveyResult { get; }
+    ISurveyResultRepo SurveyResultRepo { get; }
     IUserRepo UserRepo { get; }
     
     Task<int> Save();

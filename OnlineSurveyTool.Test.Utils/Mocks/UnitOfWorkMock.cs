@@ -22,7 +22,7 @@ public class UnitOfWorkMock : IUnitOfWork
     public IChoiceOptionRepo ChoiceOptionRepo => _choiceOptionRepo ??= new ChoiceOptionRepoMock(new ChoiceOptionPopulator());
     public IQuestionRepo QuestionRepo => _questionRepo ??= new QuestionRepoMock(new QuestionPopulator());
     public ISurveyRepo SurveyRepo => _surveyRepo ??= new SurveyRepoMock(new SurveyPopulator());
-    public ISurveyResult SurveyResult { get; }
+    public ISurveyResultRepo SurveyResultRepo { get; }
     public IUserRepo UserRepo => _userRepo ??= new UserRepoMock(new UserPopulator());
     public async Task<int> Save()
     {

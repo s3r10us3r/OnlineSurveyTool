@@ -14,7 +14,7 @@ public class UnitOfWork : IUnitOfWork
     private IChoiceOptionRepo? _choiceOptionRepo;
     private IQuestionRepo? _questionRepo;
     private ISurveyRepo? _surveyRepo;
-    private ISurveyResult? _surveyResultRepo;
+    private ISurveyResultRepo? _surveyResultRepo;
     private IUserRepo? _userRepo;
 
     public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(_context);
@@ -22,7 +22,7 @@ public class UnitOfWork : IUnitOfWork
     public IChoiceOptionRepo ChoiceOptionRepo => _choiceOptionRepo ??= new ChoiceOptionRepo(_context);
     public IQuestionRepo QuestionRepo => _questionRepo ??= new QuestionRepo(_context);
     public ISurveyRepo SurveyRepo => _surveyRepo ??= new SurveyRepo(_context);
-    public ISurveyResult SurveyResult => _surveyResultRepo ??= new SurveyResult(_context);
+    public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context);
     public IUserRepo UserRepo => _userRepo ??= new UserRepo(_context);
     
     public async Task<int> Save()

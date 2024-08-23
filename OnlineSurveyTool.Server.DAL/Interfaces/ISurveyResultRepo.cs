@@ -2,7 +2,7 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface ISurveyResult : IRepoNumericId<Models.SurveyResult>
+    public interface ISurveyResultRepo : IRepoNumericId<SurveyResult>
     {
     }
 }

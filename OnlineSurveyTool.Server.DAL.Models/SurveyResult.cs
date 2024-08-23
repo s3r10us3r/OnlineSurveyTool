@@ -13,6 +13,6 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public DateTime TimeStamp { get; set; }
 
         public virtual Survey Survey { get; set; }
-        public virtual IEnumerable<Answer> Answers { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
     }
 }

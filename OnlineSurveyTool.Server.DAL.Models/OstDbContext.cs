@@ -17,34 +17,14 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<ChoiceOption> ChoiceOptions { get; set; }
         public virtual DbSet<SurveyResult> SurveyResults { get; set; }
+        public virtual DbSet<AnswerSingleChoice> SingleChoiceAnswers { get; set; }
+        public virtual DbSet<AnswerMultipleChoice> MultipleChoiceAnswers { get; set; }
+        public virtual DbSet<AnswerNumerical> NumericalAnswers { get; set; }
+        public virtual DbSet<AnswerTextual> TextualAnswer { get; set; }
         public virtual DbSet<AnswerOption> AnswerOptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Answer>()
-                .HasOne(e => e.SurveyResult)
-                .WithMany(e => e.Answers)
-                .HasForeignKey(e => e.SurveyResultId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Answer>()
-                .HasOne(e => e.Question)
-                .WithMany(e => e.Answers)
-                .HasForeignKey(e => e.QuestionId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Answer>()
-                .HasOne(e => e.SingleChoiceOption)
-                .WithMany(e => e.Answers)
-                .HasForeignKey(e => e.SingleChoiceOptionId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<AnswerOption>()
-                .HasOne(e => e.Answer)
-                .WithMany(e => e.AnswerOptions)
-                .HasForeignKey(e => e.AnswerId)
-                .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<AnswerOption>()
                 .HasOne(e => e.ChoiceOption)
                 .WithMany(e => e.AnswerOptions)

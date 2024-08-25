@@ -16,6 +16,10 @@ namespace OnlineSurveyTool.Server.DAL.Extensions
             services.AddScoped<ISurveyRepo, SurveyRepo>();
             services.AddScoped<ISurveyResultRepo, SurveyResultRepo>();
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IAnswerNumericalRepo, AnswerNumericalRepo>();
+            services.AddScoped<IAnswerTextualRepo, AnswerTextualRepo>();
+            services.AddScoped<IAnswerSingleChoiceRepo, AnswerSingleChoiceRepo>();
+            services.AddScoped<IAnswerMultipleChoiceRepo, AnswerMultipleChoiceRepo>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

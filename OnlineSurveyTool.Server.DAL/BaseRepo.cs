@@ -23,17 +23,17 @@ public class BaseRepo<T, TId> : IBaseRepo<T, TId> where T : EntityBase<TId>
         _db?.Dispose();
     }
 
-    public async Task<int> SaveChanges()
+    public virtual async Task<int> SaveChanges()
     {
         return await _db.SaveChangesAsync();
     }
 
-    public async Task<T?> GetOne(TId id)
+    public virtual async Task<T?> GetOne(TId id)
     {
         return await _table.FindAsync(id);
     }
 
-    public async Task<int> Remove(TId id)
+    public virtual async Task<int> Remove(TId id)
     {
         T? entity = await _table.FindAsync(id);
         if (entity is null)
@@ -44,31 +44,32 @@ public class BaseRepo<T, TId> : IBaseRepo<T, TId> where T : EntityBase<TId>
         return await Remove(entity);
     }
 
-    public async Task<List<T>> GetAll()
+    public virtual async Task<List<T>> GetAll()
     {
         return await _table.ToListAsync();
     }
 
-    public async Task<int> Add(T entity)
+    public virtual async Task<int> Add(T entity)
     {
         await _table.AddAsync(entity);
         return await SaveChanges();
     }
 
-    public async Task<int> AddRange(IList<T> entities)
+    public virtual async Task<int> AddRange(IList<T> entities)
     {
         await _table.AddRangeAsync(entities);
         return await SaveChanges();
     }
 
-    public async Task<int> Update(T entity)
+    public virtual async Task<int> Update(T entity)
     {
         _table.Entry(entity).State = EntityState.Modified;
         return await SaveChanges();
     }
 
-    public async Task<int> Remove(T entity)
+    public virtual async Task<int> Remove(T entity)
     {
+        _table.Remove(entity);
         return await _db.SaveChangesAsync();
     }
 }

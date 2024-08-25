@@ -9,21 +9,34 @@ public class UnitOfWork : IUnitOfWork
     private IDbContextTransaction? _currentTransaction;
     
     private readonly OstDbContext _context = new();
-    private IAnswerRepo? _answerRepo;
     private IAnswerOptionRepo? _answerOptionRepo;
     private IChoiceOptionRepo? _choiceOptionRepo;
     private IQuestionRepo? _questionRepo;
     private ISurveyRepo? _surveyRepo;
     private ISurveyResultRepo? _surveyResultRepo;
     private IUserRepo? _userRepo;
-
-    public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(_context);
+    private IAnswerSingleChoiceRepo? _singleChoiceRepo;
+    private IAnswerMultipleChoiceRepo? _multipleChoiceRepo;
+    private IAnswerNumericalRepo? _numericalRepo;
+    private IAnswerTextualRepo? _textualRepo;
+    private IAnswerRepo? _answerRepo;
+    
     public IAnswerOptionRepo AnswerOptionRepo => _answerOptionRepo ??= new AnswerOptionRepo(_context);
     public IChoiceOptionRepo ChoiceOptionRepo => _choiceOptionRepo ??= new ChoiceOptionRepo(_context);
     public IQuestionRepo QuestionRepo => _questionRepo ??= new QuestionRepo(_context);
     public ISurveyRepo SurveyRepo => _surveyRepo ??= new SurveyRepo(_context);
     public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context);
     public IUserRepo UserRepo => _userRepo ??= new UserRepo(_context);
+    public IAnswerTextualRepo AnswerTextualRepo => _textualRepo ??= new AnswerTextualRepo(_context);
+    public IAnswerSingleChoiceRepo AnswerSingleChoiceRepo => _singleChoiceRepo ??= new AnswerSingleChoiceRepo(_context);
+
+    public IAnswerMultipleChoiceRepo AnswerMultipleChoiceRepo =>
+        _multipleChoiceRepo ??= new AnswerMultipleChoiceRepo(_context);
+
+    public IAnswerNumericalRepo AnswerNumericalRepo => _numericalRepo ??= new AnswerNumericalRepo(_context);
+
+    public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(AnswerSingleChoiceRepo, AnswerMultipleChoiceRepo,
+        AnswerNumericalRepo, AnswerTextualRepo, SurveyResultRepo);
     
     public async Task<int> Save()
     {

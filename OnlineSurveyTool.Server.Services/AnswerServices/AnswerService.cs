@@ -53,14 +53,4 @@ public class AnswerService : IAnswerService
 
         return result;
     }
-
-    private Answer DtoToAnswer(AnswerDTO dto)
-    {
-        var answer = new Answer
-        {
-            
-        };
-
-        return answer;
-    }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineSurveyTool.Server.DAL.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdb1fc78ca4f3a0e11a2ae955c15fe1fd024808d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80b548a14abba36bb53f062e00d84a3cfc2cf646")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineSurveyTool.Server.DAL.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineSurveyTool.Server.DAL.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

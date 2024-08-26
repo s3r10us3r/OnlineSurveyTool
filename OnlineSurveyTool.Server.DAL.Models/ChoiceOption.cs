@@ -18,7 +18,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public string QuestionId { get; set; }
         public virtual Question Question { get; set; }
 
-        public virtual IEnumerable<Answer> Answers { get; set; }
+        public virtual IEnumerable<AnswerSingleChoice> Answers { get; set; }
         public virtual IEnumerable<AnswerOption> AnswerOptions { get; set; }
     }
 }

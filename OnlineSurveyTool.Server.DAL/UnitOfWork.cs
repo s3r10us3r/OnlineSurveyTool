@@ -25,7 +25,7 @@ public class UnitOfWork : IUnitOfWork
     public IChoiceOptionRepo ChoiceOptionRepo => _choiceOptionRepo ??= new ChoiceOptionRepo(_context);
     public IQuestionRepo QuestionRepo => _questionRepo ??= new QuestionRepo(_context);
     public ISurveyRepo SurveyRepo => _surveyRepo ??= new SurveyRepo(_context);
-    public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context);
+    public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context, AnswerRepo, AnswerOptionRepo);
     public IUserRepo UserRepo => _userRepo ??= new UserRepo(_context);
     public IAnswerTextualRepo AnswerTextualRepo => _textualRepo ??= new AnswerTextualRepo(_context);
     public IAnswerSingleChoiceRepo AnswerSingleChoiceRepo => _singleChoiceRepo ??= new AnswerSingleChoiceRepo(_context);

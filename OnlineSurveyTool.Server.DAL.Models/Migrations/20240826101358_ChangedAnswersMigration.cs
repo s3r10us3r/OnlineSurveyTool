@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 {
     /// <inheritdoc />
-    public partial class Create : Migration
+    public partial class ChangedAnswersMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -137,33 +137,60 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                 name: "Answer",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Type = table.Column<int>(type: "int", nullable: false),
-                    QuestionId = table.Column<string>(type: "varchar(36)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     SurveyResultId = table.Column<int>(type: "int", nullable: false),
-                    SingleChoiceOptionId = table.Column<string>(type: "varchar(36)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    QuestionNumber = table.Column<int>(type: "int", nullable: false),
+                    Discriminator = table.Column<string>(type: "varchar(21)", maxLength: 21, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    QuestionId = table.Column<string>(type: "varchar(36)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ResultId = table.Column<int>(type: "int", nullable: true),
+                    Answer = table.Column<double>(type: "double", nullable: true),
+                    AnswerNumerical_ResultId = table.Column<int>(type: "int", nullable: true),
+                    ChoiceOptionId = table.Column<string>(type: "varchar(36)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AnswerSingleChoice_ResultId = table.Column<int>(type: "int", nullable: true),
+                    Text = table.Column<string>(type: "varchar(10000)", maxLength: 10000, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AnswerTextual_ResultId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Answer", x => x.Id);
+                    table.PrimaryKey("PK_Answer", x => new { x.SurveyResultId, x.QuestionNumber });
                     table.ForeignKey(
-                        name: "FK_Answer_Answers_SingleChoiceOptionId",
-                        column: x => x.SingleChoiceOptionId,
+                        name: "FK_Answer_Answers_ChoiceOptionId",
+                        column: x => x.ChoiceOptionId,
                         principalTable: "Answers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Answer_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Answer_Results_SurveyResultId",
-                        column: x => x.SurveyResultId,
+                        name: "FK_Answer_Results_AnswerNumerical_ResultId",
+                        column: x => x.AnswerNumerical_ResultId,
                         principalTable: "Results",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Answer_Results_AnswerSingleChoice_ResultId",
+                        column: x => x.AnswerSingleChoice_ResultId,
+                        principalTable: "Results",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Answer_Results_AnswerTextual_ResultId",
+                        column: x => x.AnswerTextual_ResultId,
+                        principalTable: "Results",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Answer_Results_ResultId",
+                        column: x => x.ResultId,
+                        principalTable: "Results",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -173,7 +200,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    AnswerId = table.Column<int>(type: "int", nullable: false),
+                    ResultId = table.Column<int>(type: "int", nullable: false),
+                    Number = table.Column<int>(type: "int", nullable: false),
+                    ResultId0 = table.Column<int>(name: "$ResultId", type: "int", nullable: false),
                     ChoiceOptionId = table.Column<string>(type: "varchar(36)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -181,10 +210,10 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                 {
                     table.PrimaryKey("PK_AnswerOptions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AnswerOptions_Answer_AnswerId",
-                        column: x => x.AnswerId,
+                        name: "FK_AnswerOptions_Answer_$ResultId_Number",
+                        columns: x => new { x.ResultId0, x.Number },
                         principalTable: "Answer",
-                        principalColumn: "Id",
+                        principalColumns: new[] { "SurveyResultId", "QuestionNumber" },
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AnswerOptions_Answers_ChoiceOptionId",
@@ -195,24 +224,39 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Answer_AnswerNumerical_ResultId",
+                table: "Answer",
+                column: "AnswerNumerical_ResultId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Answer_AnswerSingleChoice_ResultId",
+                table: "Answer",
+                column: "AnswerSingleChoice_ResultId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Answer_AnswerTextual_ResultId",
+                table: "Answer",
+                column: "AnswerTextual_ResultId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Answer_ChoiceOptionId",
+                table: "Answer",
+                column: "ChoiceOptionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Answer_QuestionId",
                 table: "Answer",
                 column: "QuestionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Answer_SingleChoiceOptionId",
+                name: "IX_Answer_ResultId",
                 table: "Answer",
-                column: "SingleChoiceOptionId");
+                column: "ResultId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Answer_SurveyResultId",
-                table: "Answer",
-                column: "SurveyResultId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AnswerOptions_AnswerId",
+                name: "IX_AnswerOptions_$ResultId_Number",
                 table: "AnswerOptions",
-                column: "AnswerId");
+                columns: new[] { "$ResultId", "Number" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AnswerOptions_ChoiceOptionId",

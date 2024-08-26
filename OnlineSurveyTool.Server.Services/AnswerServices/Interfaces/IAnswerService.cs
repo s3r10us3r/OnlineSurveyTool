@@ -11,5 +11,5 @@ public interface IAnswerService
 
 public enum AddResultFailureReason
 {
-    InvalidData, NonExistent, SurveyClosed
+    InvalidData, NonExistent, SurveyClosed, CouldNotAddToDb
 }

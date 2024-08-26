@@ -14,12 +14,14 @@ public class AnswerService : IAnswerService
     private readonly ISurveyResultRepo _surveyResultRepo;
     private readonly ISurveyRepo _surveyRepo;
     private readonly ISurveyResultValidator _validator;
+    private readonly ISurveyResultConverter _converter;
     
-    public AnswerService(IUnitOfWork uow, ISurveyResultValidator validator)
+    public AnswerService(IUnitOfWork uow, ISurveyResultValidator validator, ISurveyResultConverter converter)
     {
         _surveyResultRepo = uow.SurveyResultRepo;
         _surveyRepo = uow.SurveyRepo;
         _validator = validator;
+        _converter = converter;
     }
     
     public async Task<IResult<SurveyResult, AddResultFailureReason>> AddResult(SurveyResultDTO result)
@@ -32,8 +34,14 @@ public class AnswerService : IAnswerService
             return Result<SurveyResult, AddResultFailureReason>.Failure("Invalid data provided!",
                 AddResultFailureReason.InvalidData);
 
-        var surveyResult = DtoToResult(result);
-        return Result<SurveyResult, AddResultFailureReason>.Success(surveyResult);
+        var surveyResult = await DtoToResult(result);
+        int res = await _surveyResultRepo.Add(surveyResult);
+        
+        if (res > 0)
+            return Result<SurveyResult, AddResultFailureReason>.Success(surveyResult);
+        
+        return Result<SurveyResult, AddResultFailureReason>.Failure("Could not add result to the database.",
+            AddResultFailureReason.CouldNotAddToDb);
     }
 
     private async Task<bool> DoesSurveyExist(string id)
@@ -42,15 +50,9 @@ public class AnswerService : IAnswerService
         return survey is null;
     }
     
-    private SurveyResult DtoToResult(SurveyResultDTO dto)
+    private async Task<SurveyResult> DtoToResult(SurveyResultDTO dto)
     {
-        var result = new SurveyResult
-        {
-            SurveyId = dto.Id,
-            TimeStamp = DateTime.Now,
-            Answers = dto.Answers.Select(DtoToAnswer).ToList()
-        };
-
+        var result = await _converter.SurveyResultToModel(dto);
         return result;
     }
 }

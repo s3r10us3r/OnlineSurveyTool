@@ -50,8 +50,8 @@ public class SurveyResultConverter : ISurveyResultConverter
         {
             QuestionType.SingleChoice => await ToSingleChoice(dto, question),
             QuestionType.MultipleChoice => await ToMultipleChoice(dto, question),
-            QuestionType.NumericalInteger => await ToNumericalInteger(dto, question),
-            QuestionType.NumericalDouble => await ToNumericalDouble(dto, question),
+            QuestionType.NumericalInteger => await ToNumerical(dto, question),
+            QuestionType.NumericalDouble => await ToNumerical(dto, question),
             QuestionType.Textual => await ToTextual(dto, question),
             _ => throw new ArgumentOutOfRangeException()
         };
@@ -68,42 +68,29 @@ public class SurveyResultConverter : ISurveyResultConverter
 
     private async Task<Answer> ToMultipleChoice(AnswerDTO dto, Question question)
     {
-        var answer = new Answer
+        return new AnswerMultipleChoice()
         {
-            Type = question.Type,
-            QuestionId = question.Id,
-            AnswerOptions = question.ChoiceOptions!
-                .Where(c => dto.ChosenOptions!.Contains(c.Number))
-                .Select(c => new AnswerOption{AnswerId = id, ChoiceOptionId = c.Id})
-                .ToList()
+            QuestionNumber = question.Number,
+            ChoiceOptions = dto.ChosenOptions!
+                .Select(num => question.ChoiceOptions!.First(co => co.Number == num)).ToList()
         };
-        return answer;
     }
     
-    private async Task<Answer> ToNumericalInteger(AnswerDTO dto, Question question)
+    private async Task<Answer> ToNumerical(AnswerDTO dto, Question question)
     {
-        var answer = new Answer
+        return new AnswerNumerical
         {
-            Id = GenerateUniqueIntegerId(),
-            Type = question.Type,
-            QuestionId = question.Id,
-            
-        }
+            QuestionNumber = question.Number,
+            Answer = (double)dto.Answer!
+        };
     }
     
-    private async Task<Answer> ToNumericalDouble(AnswerDTO dto, Question question)
-    {
-        throw new NotImplementedException();
-    }
-
     private async Task<Answer> ToTextual(AnswerDTO dto, Question question)
     {
-        throw new NotImplementedException();
-    }
-
-    private int GenerateUniqueIntegerId()
-    {
-        var guid = Guid.NewGuid();
-        return guid.GetHashCode();
+        return new AnswerTextual
+        {
+            QuestionNumber = question.Number,
+            Text = dto.TextAnswer!
+        };
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.Requests;
 using OnlineSurveyTool.Server.Services.AnswerServices.DTOs;
 using OnlineSurveyTool.Server.Services.AnswerServices.Interfaces;
+using IResult = OnlineSurveyTool.Server.Services.Utils.Interfaces.IResult;
 
 namespace OnlineSurveyTool.Server.Controllers;
 
@@ -37,9 +38,9 @@ public class AnswerController : ControllerBase
                 
             return result.Reason switch
             {
-                AddResultFailureReason.InvalidData => BadRequest(result.Message),
+                AddResultFailureReason.InvalidData => HandleInvalidData(result.Message),
                 AddResultFailureReason.NonExistent => NotFound(
-                    new { Message = $"Server with id {surveyResult.Id} does not exist" }),
+                    new { Message = $"Survey with id {surveyResult.Id} does not exist" }),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -48,5 +49,11 @@ public class AnswerController : ControllerBase
             _logger.LogError("Error while adding answer {error}", e);
             return StatusCode(500, new { Message = "Internal server error." });
         }
+    }
+
+    private BadRequestObjectResult HandleInvalidData(string message)
+    {
+        _logger.LogWarning("Invalid data provided to AnswerController.Answer message: {mess}", message);
+        return BadRequest(new { Message = message });
     }
 }

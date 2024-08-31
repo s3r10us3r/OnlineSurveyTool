@@ -26,7 +26,7 @@ namespace OnlineSurveyTool.Server.DAL
                 ans.SurveyResultId = entity.Id;
                 if (ans is AnswerMultipleChoice m)
                     ProcessMultipleChoice(m);
-                answers.Add(ans);
+                entity.Answers.Add(ans);
             }
 
             return await SaveChanges();

@@ -225,7 +225,7 @@ public class SurveyService : ISurveyService
         {
             _logger.LogWarning("User {ownerLogin} tried to close a survey that they do not own {surveyId}", ownerLogin,
                 surveyId);
-            return Result.Failure("User does not have access to this survey.");
+            return Result.Failure($"User does not have access to this survey. {survey.OwnerId}, {user.Id}");
         }
  
         survey.IsOpen = false;

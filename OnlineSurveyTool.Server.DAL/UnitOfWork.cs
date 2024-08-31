@@ -36,7 +36,7 @@ public class UnitOfWork : IUnitOfWork
     public IAnswerNumericalRepo AnswerNumericalRepo => _numericalRepo ??= new AnswerNumericalRepo(_context);
 
     public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(AnswerSingleChoiceRepo, AnswerMultipleChoiceRepo,
-        AnswerNumericalRepo, AnswerTextualRepo, SurveyResultRepo);
+        AnswerNumericalRepo, AnswerTextualRepo);
     
     public async Task<int> Save()
     {

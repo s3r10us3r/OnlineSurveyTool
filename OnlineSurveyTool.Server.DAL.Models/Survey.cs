@@ -26,7 +26,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
 
         public virtual User Owner { get; set; }
 
-        public virtual ICollection<Question> Questions { get; set; }
+        public ICollection<Question> Questions { get; set; }
         public virtual ICollection<SurveyResult> Results { get; set; }
 
     }

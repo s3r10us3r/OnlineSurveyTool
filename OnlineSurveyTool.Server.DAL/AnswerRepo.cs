@@ -10,16 +10,14 @@ public class AnswerRepo : IAnswerRepo
     private IAnswerMultipleChoiceRepo _multipleChoiceRepo;
     private IAnswerNumericalRepo _numericalRepo;
     private IAnswerTextualRepo _textualRepo;
-    private ISurveyResultRepo _surveyResultRepo;
     
     public AnswerRepo(IAnswerSingleChoiceRepo singleChoiceRepo, IAnswerMultipleChoiceRepo multipleChoiceRepo,
-        IAnswerNumericalRepo numericalRepo, IAnswerTextualRepo textualRepo, ISurveyResultRepo surveyResultRepo)
+        IAnswerNumericalRepo numericalRepo, IAnswerTextualRepo textualRepo)
     {
         _singleChoiceRepo = singleChoiceRepo;
         _multipleChoiceRepo = multipleChoiceRepo;
         _numericalRepo = numericalRepo;
         _textualRepo = textualRepo;
-        _surveyResultRepo = surveyResultRepo;
     }
     
     public void Dispose()
@@ -38,7 +36,10 @@ public class AnswerRepo : IAnswerRepo
 
     public async Task<Answer?> GetOne(int resultId, int number)
     {
-        return (await _surveyResultRepo.GetOne(resultId))?.Answers.First(a => a.QuestionNumber == number);
+        return (Answer?)(await _singleChoiceRepo.GetOne(resultId, number)) ??
+               (Answer?)(await _multipleChoiceRepo.GetOne(resultId, number)) ??
+               (Answer?)(await _numericalRepo.GetOne(resultId, number)) ??
+               await _textualRepo.GetOne(resultId, number);
     }
 
     public async Task<int> Remove(int resultId, int number)

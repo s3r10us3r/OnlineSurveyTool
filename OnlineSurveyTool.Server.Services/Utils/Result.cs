@@ -18,7 +18,7 @@ namespace OnlineSurveyTool.Server.Services.Utils
         }
 
         public static Result Failure(string message) => new(false, message);
-        public static Result Success() => new(false, default);
+        public static Result Success() => new(true, default);
     }
     
     public class Result<T> : Result, IResult<T>

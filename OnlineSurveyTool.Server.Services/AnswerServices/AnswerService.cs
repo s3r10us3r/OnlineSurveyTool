@@ -30,9 +30,13 @@ public class AnswerService : IAnswerService
             return Result<SurveyResult, AddResultFailureReason>.Failure("Survey with this id does not exist!", 
                 AddResultFailureReason.NonExistent);
 
-        if (!await _validator.ValidateSurveyResultDto(result))
-            return Result<SurveyResult, AddResultFailureReason>.Failure("Invalid data provided!",
+        var validationResult = await _validator.ValidateSurveyResultDto(result);
+
+        if (validationResult.IsFailure)
+        {
+            return Result<SurveyResult, AddResultFailureReason>.Failure(validationResult.Message,
                 AddResultFailureReason.InvalidData);
+        }
 
         var surveyResult = await DtoToResult(result);
         int res = await _surveyResultRepo.Add(surveyResult);
@@ -47,7 +51,7 @@ public class AnswerService : IAnswerService
     private async Task<bool> DoesSurveyExist(string id)
     {
         var survey = await _surveyRepo.GetOne(id);
-        return survey is null;
+        return survey is not null;
     }
     
     private async Task<SurveyResult> DtoToResult(SurveyResultDTO dto)

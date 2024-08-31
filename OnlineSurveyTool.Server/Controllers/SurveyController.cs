@@ -75,7 +75,14 @@ public class SurveyController : ControllerBase
 
         try
         {
-            var userLogin = HttpContext.User.Identity?.Name;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
+            {
+                _logger.LogWarning("Bad identity supplied to SurveyController.Edit()");
+                return Unauthorized();
+            }
+
+            var userLogin = identity.FindFirst("sub")?.Value;
 
             if (userLogin == null)
             {
@@ -110,7 +117,14 @@ public class SurveyController : ControllerBase
     {
         try
         {
-            var userLogin = HttpContext.User.Identity?.Name;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
+            {
+                _logger.LogWarning("Bad identity supplied to SurveyController.Edit()");
+                return Unauthorized();
+            }
+            var userLogin = identity.FindFirst("sub")?.Value;
+            
             if (userLogin == null)
             {
                 _logger.LogWarning("User login not found in token.");
@@ -138,7 +152,14 @@ public class SurveyController : ControllerBase
     {
         try
         {
-            var userLogin = HttpContext.User.Identity?.Name;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
+            {
+                _logger.LogWarning("Bad identity supplied to SurveyController.Edit()");
+                return Unauthorized();
+            }
+            var userLogin = identity.FindFirst("sub")?.Value;
+            
             if (userLogin == null)
             {
                 _logger.LogWarning("User login not found in token.");
@@ -166,7 +187,15 @@ public class SurveyController : ControllerBase
     {
         try
         {
-            var userLogin = HttpContext.User.Identity?.Name;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
+            {
+                _logger.LogWarning("Bad identity supplied to SurveyController.Edit()");
+                return Unauthorized();
+            }
+
+            var userLogin = identity.FindFirst("sub")?.Value;
+            
             if (userLogin == null)
             {
                 _logger.LogWarning("User login not found in token.");
@@ -179,7 +208,8 @@ public class SurveyController : ControllerBase
                 return Ok(new { Message = "Survey opened successfully" });
             }
 
-            return NotFound(new { Message = "User does not have access to a survey with this id." });
+            _logger.LogWarning("User {userLogin} tried to get survey {id} that is not owned by him. Message: {message}", userLogin, id, result.IsSuccess);
+            return NotFound(new { Message = $"User does not have access to a survey with this id." });
         }
         catch (Exception e)
         {

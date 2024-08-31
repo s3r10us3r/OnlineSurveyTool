@@ -11,10 +11,10 @@ namespace OnlineSurveyTool.Server.DAL.Models
 
         public virtual Survey Survey { get; set; }
 
-        public ICollection<AnswerSingleChoice> SingleChoiceAnswers { get; set; }
-        public ICollection<AnswerMultipleChoice> MultipleChoiceAnswers { get; set; }
-        public ICollection<AnswerNumerical> NumericalAnswers { get; set; }
-        public ICollection<AnswerTextual> TextualAnswers { get; set; }
+        public ICollection<AnswerSingleChoice> SingleChoiceAnswers { get; set; } = [];
+        public ICollection<AnswerMultipleChoice> MultipleChoiceAnswers { get; set; } = [];
+        public ICollection<AnswerNumerical> NumericalAnswers { get; set; } = [];
+        public ICollection<AnswerTextual> TextualAnswers { get; set; } = [];
 
         [NotMapped]
         public ICollection<Answer> Answers

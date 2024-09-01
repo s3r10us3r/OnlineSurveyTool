@@ -26,5 +26,10 @@ namespace OnlineSurveyTool.Server.DAL
 
             return survey;
         }
+
+        public async Task LoadResults(Survey survey)
+        {
+            await Context.Entry(survey).Collection(s => s.Results).LoadAsync();
+        }
     }
 }

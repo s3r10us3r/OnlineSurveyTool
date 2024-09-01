@@ -14,4 +14,9 @@ public class UserRepoMock: BaseMock<User, int>, IUserRepo
     {
         return Entities.Find(u => u.Login == login);
     }
+
+    public async Task LoadSurveys(User user)
+    {
+        throw new NotImplementedException();
+    }
 }

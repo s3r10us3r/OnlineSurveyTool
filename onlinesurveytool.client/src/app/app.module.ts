@@ -21,13 +21,14 @@ import {CoMinMaxComponent} from "./components/co-min-max/co-min-max.component";
 import {MinMaxQuestionComponent} from "./components/min-max-question-component/min-max-question.component";
 import {SurveyService} from "./services/survey.service";
 import {AuthInterceptor} from "./services/auth.interceptor";
+import {ResultHeaderCardComponent} from "./components/result-header-card/result-header-card.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, RegisterComponent,
     ErrorPageComponent, MainPageComponent, NewSurveyPage,
     NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
-    CoMinMaxComponent, MinMaxQuestionComponent
+    CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

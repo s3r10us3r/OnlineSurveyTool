@@ -9,4 +9,9 @@ public class SurveyRepoMock : BaseMock<Survey, string>, ISurveyRepo
     public SurveyRepoMock(IPopulator<Survey, string> populator) : base(populator)
     {
     }
+
+    public async Task LoadResults(Survey survey)
+    {
+        throw new NotImplementedException();
+    }
 }

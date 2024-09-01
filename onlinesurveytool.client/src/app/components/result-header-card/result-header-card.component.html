@@ -1,0 +1,11 @@
+<div class="headerRoot">
+  <label>
+    Name: {{header.name}}
+  </label>
+  <label>
+    IsOpen: {{header.isOpen}}
+  </label>
+  <label *ngIf="header.resultCount > 0">
+    Answer count: {{header.resultCount}}
+  </label>
+</div>

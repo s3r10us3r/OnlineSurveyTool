@@ -14,5 +14,10 @@ namespace OnlineSurveyTool.Server.DAL
         {
             return await Table.FirstOrDefaultAsync(u => u.Login == login);
         }
+
+        public async Task LoadSurveys(User user)
+        {
+            await Context.Entry(user).Collection(u => u.Surveys).LoadAsync();
+        }
     }
 }

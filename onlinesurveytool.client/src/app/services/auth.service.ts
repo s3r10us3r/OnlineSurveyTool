@@ -1,7 +1,7 @@
 import {inject, Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {API_URL} from '../constants';
-import {catchError, map, Observable, of} from "rxjs";
+import {catchError, finalize, map, NEVER, Observable, of, tap} from "rxjs";
 import {jwtDecode} from "jwt-decode";
 import {ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from "@angular/router";
 
@@ -13,19 +13,18 @@ export interface LoginResponse {
 @Injectable()
 export class AuthService {
 
-  private static accessToken: string | undefined = undefined;
-  private static accessTokenExpiration: Date | undefined = undefined;
+  private static accessToken: string | null = null;
+  private static accessTokenExpiration: Date | null = null;
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   public login(login:string, password:string): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${API_URL}/Auth/login`, {login, password});
   }
 
   public logout() : void {
-    AuthService.accessToken = undefined;
-    AuthService.accessTokenExpiration = undefined;
+    AuthService.accessToken = null;
+    AuthService.accessTokenExpiration = null;
   }
 
   public isAccessValid() : boolean {
@@ -36,7 +35,7 @@ export class AuthService {
     return token != null && expirationDate != null && expirationDate > dateNow;
   }
 
-  public getAccessToken(): string | undefined {
+  public getAccessToken(): string | null {
     return AuthService.accessToken;
   }
 
@@ -45,8 +44,8 @@ export class AuthService {
   }
 
   public clearAccessToken() {
-    AuthService.accessToken = undefined;
-    AuthService.accessTokenExpiration = undefined;
+    AuthService.accessToken = null;
+    AuthService.accessTokenExpiration = null;
   }
 
   public isLoggedIn(): Observable<boolean> {
@@ -96,7 +95,7 @@ export class AuthService {
     console.debug('Comparison', AuthService.accessTokenExpiration > new Date());
   }
 
-  private getAccessExpirationDateTime() : Date | undefined {
+  private getAccessExpirationDateTime() : Date | null {
     return AuthService.accessTokenExpiration;
   }
 }
@@ -104,25 +103,16 @@ export class AuthService {
 export const canUseRoute: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
-) : Observable<boolean> => {
+) : Observable<boolean>  | boolean => {
   let authService = inject(AuthService);
   let router = inject(Router);
 
   return authService.isLoggedIn().pipe(
-    map(isLoggedIn => {
-      if (isLoggedIn) {
-        console.error('logged in');
-        return true;
-      } else {
-        console.error('not logged in');
+    tap(isLoggedIn => {
+      if (!isLoggedIn) {
+        console.error('got navigated here here')
         router.navigate(['/login']);
-        return false;
       }
-    }),
-    catchError(err => {
-      console.error('Error during authentication guard check', err);
-      router.navigate(['/login']);
-      return of(false);
     })
   )
 }

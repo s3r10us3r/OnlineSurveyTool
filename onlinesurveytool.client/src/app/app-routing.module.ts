@@ -6,6 +6,7 @@ import {ErrorPageComponent} from "./components/errorpage/errorpage.component";
 import {MainPageComponent} from "./components/mainpage/main.page.component";
 import {canUseRoute} from "./services/auth.service";
 import {NewSurveyPage} from "./components/newsurveypage/new.survey.page";
+import {surveyHeadersResolver} from "./services/survey-headers.resolver";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

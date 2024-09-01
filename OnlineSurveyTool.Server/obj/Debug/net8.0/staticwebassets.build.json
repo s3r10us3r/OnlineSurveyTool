@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WNC4wpTsKSDqCZDt0p4R9zOJxbjswyNXUec6Y87MGcw=",
+  "Hash": "a0iCoeM7tDEESSuF45U5emSFrF4jui/HCR7r3dd75Vc=",
   "Source": "OnlineSurveyTool.Server",
   "BasePath": "_content/OnlineSurveyTool.Server",
   "Mode": "Default",
@@ -105,12 +105,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-QXMSKEN7.js",
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-CABL5UWG.js",
       "SourceId": "OnlineSurveyTool.Server",
       "SourceType": "Discovered",
       "ContentRoot": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/",
       "BasePath": "_content/OnlineSurveyTool.Server",
-      "RelativePath": "main-QXMSKEN7.js",
+      "RelativePath": "main-CABL5UWG.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -121,7 +121,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/main-QXMSKEN7.js"
+      "OriginalItemSpec": "wwwroot/main-CABL5UWG.js"
     },
     {
       "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/polyfills-6EAL64PA.js",

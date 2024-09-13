@@ -23,7 +23,8 @@ export class AuthInterceptor implements HttpInterceptor {
     console.debug('Request intercepted:', req.url);
 
     // Skip interception for Auth endpoints
-    if (req.url.includes('Auth')) {
+    if (req.url.includes('Auth') || req.url.includes('Survey/get') || req.url.includes('Answer')) {
+      console.debug('let go')
       return next.handle(req);
     }
 

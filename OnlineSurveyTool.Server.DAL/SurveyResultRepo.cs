@@ -1,49 +1,26 @@
-﻿using OnlineSurveyTool.Server.DAL.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 
 namespace OnlineSurveyTool.Server.DAL
 {
-    public class SurveyResultRepo : BaseRepoNumericId<Models.SurveyResult>, ISurveyResultRepo
+    public class SurveyResultRepo : BaseRepoStringId<SurveyResult>, ISurveyResultRepo
     {
-        private readonly IAnswerRepo _answerRepo;
-        private readonly IAnswerOptionRepo _answerOptionRepo;
-        
-        public SurveyResultRepo(OstDbContext dbContext, IAnswerRepo answerRepo, IAnswerOptionRepo answerOptionRepo) : base(dbContext)
+        public SurveyResultRepo(OstDbContext dbContext) : base(dbContext)
         {
-            _answerRepo = answerRepo;
-            _answerOptionRepo = answerOptionRepo;
         }
 
-        public override async Task<int> Add(SurveyResult entity)
+        public override async Task<SurveyResult?> GetOne(string id)
         {
-            ICollection<Answer> answers = entity.Answers;
-
-            entity.Answers = [];
-            var result = await Table.AddAsync(entity);
-
-            foreach (var ans in answers)
-            {
-                ans.SurveyResultId = entity.Id;
-                if (ans is AnswerMultipleChoice m)
-                    ProcessMultipleChoice(m);
-                entity.Answers.Add(ans);
-            }
-
-            return await SaveChanges();
+            return await Context.SurveyResults
+                .Include(sr => sr.Answers)
+                .FirstOrDefaultAsync(sr => sr.Id == id);
         }
 
-        private void ProcessMultipleChoice(AnswerMultipleChoice multipleChoice)
+        public async Task<SurveyResult> LoadAnswers(SurveyResult surveyResult)
         {
-            List<AnswerOption> answerOptions = [];
-            answerOptions.AddRange(multipleChoice.ChoiceOptions.Select(co => new AnswerOption
-            {
-                ResultId = multipleChoice.SurveyResultId,
-                Answer = multipleChoice,
-                ChoiceOption = co,
-                ChoiceOptionId = co.Id,
-                Number = multipleChoice.QuestionNumber
-            }));
-            multipleChoice.AnswerOptions = answerOptions;
+            await Context.Entry(surveyResult).Collection(sr => sr.Answers).LoadAsync();
+            return surveyResult;
         }
     }
 }

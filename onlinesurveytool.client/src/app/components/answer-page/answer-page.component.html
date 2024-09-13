@@ -1,0 +1,5 @@
+<div *ngIf="survey !== null" class="survey">
+  <div class="title">{{ survey!.name }}</div>
+  <answer-box *ngFor="let q of survey?.questions; let i = index" [question]="q" (ans)="updateResult($event, i)"></answer-box>
+  <div class="button" [class.disabled]="!isValid" (click)="submit()">Submit</div>
+</div>

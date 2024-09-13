@@ -27,7 +27,7 @@ export class NewMultipleChoiceComponent implements OnInit{
   }
 
   minimum: number = 0;
-  maximum: number = 1 ;
+  maximum: number = 0;
   choiceOptions: Array<ChoiceOption> = [];
 
   addCo() {
@@ -79,6 +79,16 @@ export class NewMultipleChoiceComponent implements OnInit{
     while (elem.clientHeight < elem.scrollHeight) {
       elem.rows += 1;
     }
+  }
+
+  updateMin(newMin: number): void {
+    this.minimum = newMin;
+    this.emitChange();
+  }
+
+  updateMax(newMax: number): void {
+    this.maximum = newMax;
+    this.emitChange();
   }
 
   protected readonly max = max;

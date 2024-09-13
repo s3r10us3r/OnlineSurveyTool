@@ -1,0 +1,15 @@
+div {
+  width: 50vw;
+  height: 20vh;
+  padding: 5vh;
+  font-size: 4vh;
+  background-color: white;
+  border-radius: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  width: 100%;
+  text-align: center;
+}

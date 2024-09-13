@@ -1,0 +1,13 @@
+<div>
+  <textarea
+    [minLength]="question?.minimum"
+    [maxLength]="question?.maximum"
+    (input)="updateText($event)"
+    [disabled]="disabled"
+  >
+  </textarea>
+  <div class="textHolder" [style.color]="textLength > question!.maximum! || textLength < question!.minimum! ? 'red' : 'black'">
+    <p>{{question?.minimum + '-' + question?.maximum + ' characters'}}</p>
+    <p class="number">{{textLength}}</p>
+  </div>
+</div>

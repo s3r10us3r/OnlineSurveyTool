@@ -24,29 +24,37 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Answer", b =>
                 {
-                    b.Property<int>("SurveyResultId")
-                        .HasColumnType("int");
+                    b.Property<string>("SurveyResultId")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.Property<int>("QuestionNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("varchar(21)");
+                    b.Property<string>("ChoiceOptionId")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
+
+                    b.Property<int>("Discriminator")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("NumericalAnswer")
+                        .HasColumnType("double");
 
                     b.Property<string>("QuestionId")
                         .HasColumnType("varchar(36)");
 
+                    b.Property<string>("TextAnswer")
+                        .HasMaxLength(10000)
+                        .HasColumnType("varchar(10000)");
+
                     b.HasKey("SurveyResultId", "QuestionNumber");
+
+                    b.HasIndex("ChoiceOptionId");
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Answer");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Answer");
-
-                    b.UseTphMappingStrategy();
+                    b.ToTable("Answers");
                 });
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerOption", b =>
@@ -57,9 +65,6 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("$ResultId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ChoiceOptionId")
                         .IsRequired()
                         .HasColumnType("varchar(36)");
@@ -67,14 +72,15 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int>("ResultId")
-                        .HasColumnType("int");
+                    b.Property<string>("ResultId")
+                        .IsRequired()
+                        .HasColumnType("varchar(36)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ChoiceOptionId");
 
-                    b.HasIndex("$ResultId", "Number");
+                    b.HasIndex("ResultId", "Number");
 
                     b.ToTable("AnswerOptions");
                 });
@@ -101,7 +107,7 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Answers");
+                    b.ToTable("ChoiceOptions");
                 });
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Question", b =>
@@ -175,11 +181,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.SurveyResult", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.Property<string>("SurveyId")
                         .IsRequired()
@@ -225,95 +229,25 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerMultipleChoice", b =>
-                {
-                    b.HasBaseType("OnlineSurveyTool.Server.DAL.Models.Answer");
-
-                    b.Property<int?>("ResultId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.HasIndex("ResultId");
-
-                    b.HasDiscriminator().HasValue("AnswerMultipleChoice");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerNumerical", b =>
-                {
-                    b.HasBaseType("OnlineSurveyTool.Server.DAL.Models.Answer");
-
-                    b.Property<double>("Answer")
-                        .HasColumnType("double");
-
-                    b.Property<int?>("ResultId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.HasIndex("ResultId");
-
-                    b.ToTable("Answer", t =>
-                        {
-                            t.Property("ResultId")
-                                .HasColumnName("AnswerNumerical_ResultId");
-                        });
-
-                    b.HasDiscriminator().HasValue("AnswerNumerical");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerSingleChoice", b =>
-                {
-                    b.HasBaseType("OnlineSurveyTool.Server.DAL.Models.Answer");
-
-                    b.Property<string>("ChoiceOptionId")
-                        .IsRequired()
-                        .HasColumnType("varchar(36)");
-
-                    b.Property<int?>("ResultId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.HasIndex("ChoiceOptionId");
-
-                    b.HasIndex("ResultId");
-
-                    b.ToTable("Answer", t =>
-                        {
-                            t.Property("ResultId")
-                                .HasColumnName("AnswerSingleChoice_ResultId");
-                        });
-
-                    b.HasDiscriminator().HasValue("AnswerSingleChoice");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerTextual", b =>
-                {
-                    b.HasBaseType("OnlineSurveyTool.Server.DAL.Models.Answer");
-
-                    b.Property<int?>("ResultId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasMaxLength(10000)
-                        .HasColumnType("varchar(10000)");
-
-                    b.HasIndex("ResultId");
-
-                    b.ToTable("Answer", t =>
-                        {
-                            t.Property("ResultId")
-                                .HasColumnName("AnswerTextual_ResultId");
-                        });
-
-                    b.HasDiscriminator().HasValue("AnswerTextual");
-                });
-
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Answer", b =>
                 {
+                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.ChoiceOption", "ChoiceOption")
+                        .WithMany("Answers")
+                        .HasForeignKey("ChoiceOptionId");
+
                     b.HasOne("OnlineSurveyTool.Server.DAL.Models.Question", null)
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId");
+
+                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.SurveyResult", "Result")
+                        .WithMany("Answers")
+                        .HasForeignKey("SurveyResultId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChoiceOption");
+
+                    b.Navigation("Result");
                 });
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerOption", b =>
@@ -324,9 +258,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.AnswerMultipleChoice", "Answer")
+                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.Answer", "Answer")
                         .WithMany("AnswerOptions")
-                        .HasForeignKey("$ResultId", "Number")
+                        .HasForeignKey("ResultId", "Number")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -379,56 +313,9 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
                     b.Navigation("Survey");
                 });
 
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerMultipleChoice", b =>
+            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.Answer", b =>
                 {
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.SurveyResult", "Result")
-                        .WithMany("MultipleChoiceAnswers")
-                        .HasForeignKey("ResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Result");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerNumerical", b =>
-                {
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.SurveyResult", "Result")
-                        .WithMany("NumericalAnswers")
-                        .HasForeignKey("ResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Result");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerSingleChoice", b =>
-                {
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.ChoiceOption", "ChoiceOption")
-                        .WithMany("Answers")
-                        .HasForeignKey("ChoiceOptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.SurveyResult", "Result")
-                        .WithMany("SingleChoiceAnswers")
-                        .HasForeignKey("ResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ChoiceOption");
-
-                    b.Navigation("Result");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerTextual", b =>
-                {
-                    b.HasOne("OnlineSurveyTool.Server.DAL.Models.SurveyResult", "Result")
-                        .WithMany("TextualAnswers")
-                        .HasForeignKey("ResultId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Result");
+                    b.Navigation("AnswerOptions");
                 });
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.ChoiceOption", b =>
@@ -454,23 +341,12 @@ namespace OnlineSurveyTool.Server.DAL.Models.Migrations
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.SurveyResult", b =>
                 {
-                    b.Navigation("MultipleChoiceAnswers");
-
-                    b.Navigation("NumericalAnswers");
-
-                    b.Navigation("SingleChoiceAnswers");
-
-                    b.Navigation("TextualAnswers");
+                    b.Navigation("Answers");
                 });
 
             modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.User", b =>
                 {
                     b.Navigation("Surveys");
-                });
-
-            modelBuilder.Entity("OnlineSurveyTool.Server.DAL.Models.AnswerMultipleChoice", b =>
-                {
-                    b.Navigation("AnswerOptions");
                 });
 #pragma warning restore 612, 618
         }

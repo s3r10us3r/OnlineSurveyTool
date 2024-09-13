@@ -110,7 +110,6 @@ export const canUseRoute: CanActivateFn = (
   return authService.isLoggedIn().pipe(
     tap(isLoggedIn => {
       if (!isLoggedIn) {
-        console.error('got navigated here here')
         router.navigate(['/login']);
       }
     })

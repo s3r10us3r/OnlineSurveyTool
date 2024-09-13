@@ -10,5 +10,6 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces
         Task<IResult<UserDTO, UserCreationFailure>> CreateUser(UserRegisterDTO user);
         Task<User?> GetUserFromClaimsPrincipal(ClaimsPrincipal claimsPrincipal);
         Task<bool> CheckIfLoginExists(string login);
+        Task<User?> GetUserFromIdentityClaims(ClaimsIdentity claimsIdentity);
     }
 }

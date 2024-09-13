@@ -68,6 +68,14 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
     this.changeDetector.detectChanges();
   }
 
+  checkSkippable(event: Event) {
+    console.debug('check skippable');
+    const inputElem = event.target as HTMLInputElement;
+    console.debug(inputElem.checked);
+    this.isChecked = inputElem.checked;
+    this.sendQuestion()
+  }
+
   sendQuestion() {
     this.question.value = this.extractQuestionValue();
     this.question.canBeSkipped = this.isChecked;
@@ -137,10 +145,6 @@ export class NewQuestionComponent implements AfterViewInit, OnChanges {
     this.checkErrors();
   }
 
-  checkSkippable(event: Event) {
-    const inputElem = event.target as HTMLInputElement;
-    this.isChecked = inputElem.checked;
-  }
 
   processError(error: string): void {
     console.debug('Processing error', error);

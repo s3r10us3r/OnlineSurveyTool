@@ -15,28 +15,15 @@ public class UnitOfWork : IUnitOfWork
     private ISurveyRepo? _surveyRepo;
     private ISurveyResultRepo? _surveyResultRepo;
     private IUserRepo? _userRepo;
-    private IAnswerSingleChoiceRepo? _singleChoiceRepo;
-    private IAnswerMultipleChoiceRepo? _multipleChoiceRepo;
-    private IAnswerNumericalRepo? _numericalRepo;
-    private IAnswerTextualRepo? _textualRepo;
     private IAnswerRepo? _answerRepo;
     
     public IAnswerOptionRepo AnswerOptionRepo => _answerOptionRepo ??= new AnswerOptionRepo(_context);
     public IChoiceOptionRepo ChoiceOptionRepo => _choiceOptionRepo ??= new ChoiceOptionRepo(_context);
     public IQuestionRepo QuestionRepo => _questionRepo ??= new QuestionRepo(_context);
     public ISurveyRepo SurveyRepo => _surveyRepo ??= new SurveyRepo(_context);
-    public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context, AnswerRepo, AnswerOptionRepo);
+    public ISurveyResultRepo SurveyResultRepo => _surveyResultRepo ??= new SurveyResultRepo(_context);
     public IUserRepo UserRepo => _userRepo ??= new UserRepo(_context);
-    public IAnswerTextualRepo AnswerTextualRepo => _textualRepo ??= new AnswerTextualRepo(_context);
-    public IAnswerSingleChoiceRepo AnswerSingleChoiceRepo => _singleChoiceRepo ??= new AnswerSingleChoiceRepo(_context);
-
-    public IAnswerMultipleChoiceRepo AnswerMultipleChoiceRepo =>
-        _multipleChoiceRepo ??= new AnswerMultipleChoiceRepo(_context);
-
-    public IAnswerNumericalRepo AnswerNumericalRepo => _numericalRepo ??= new AnswerNumericalRepo(_context);
-
-    public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(AnswerSingleChoiceRepo, AnswerMultipleChoiceRepo,
-        AnswerNumericalRepo, AnswerTextualRepo);
+    public IAnswerRepo AnswerRepo => _answerRepo ??= new AnswerRepo(_context);
     
     public async Task<int> Save()
     {

@@ -26,7 +26,7 @@ public class BaseRepoAnswer<T>: IBaseAnswerRepo<T>, IAsyncDisposable where T : A
         return await _table.FindAsync(resultId, number);
     }
 
-    public async Task<int> Remove(int resultId, int number)
+    public virtual async Task<int> Remove(int resultId, int number)
     {
         var ent = await GetOne(resultId, number);
         if (ent is null)

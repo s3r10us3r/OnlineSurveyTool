@@ -1,6 +1,8 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OnlineSurveyTool.Server.Requests;
+using OnlineSurveyTool.Server.Services.AuthenticationServices.Interfaces;
 using OnlineSurveyTool.Server.Services.StatServices;
 using OnlineSurveyTool.Server.Services.StatServices.Interfaces;
 
@@ -11,11 +13,13 @@ namespace OnlineSurveyTool.Server.Controllers;
 public class StatsController : ControllerBase
 {
     private readonly IStatService _statService;
+    private readonly IUserService _userService;
     private readonly ILogger _logger;
     
-    public StatsController(IStatService statService, ILogger<StatService> logger)
+    public StatsController(IStatService statService, IUserService userService, ILogger<StatService> logger)
     {
         _statService = statService;
+        _userService = userService;
         _logger = logger;
     }
     
@@ -28,7 +32,7 @@ public class StatsController : ControllerBase
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity == null)
             {
-                _logger.LogWarning("Bad identity supplied to SurveyController.Edit()");
+                _logger.LogWarning("Bad identity supplied to SurveyController.GetSurveyHeaders()");
                 return Unauthorized();
             }
 
@@ -47,6 +51,39 @@ public class StatsController : ControllerBase
         {
             _logger.LogError("Error {e} in StatsController.GetSurveyHeaders", e);
             return StatusCode(500, new { Message = "Internal server error" });
+        }
+    }
+
+    [Authorize]
+    [HttpPost("surveyStats")]
+    public async Task<IActionResult> GetSurveyStats([FromBody] StatsRequest request)
+    {
+        string surveyId = request.Id;
+        try
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity == null)
+            {
+                _logger.LogWarning("Bad identity supplied to SurveyController.GetSurveyStats()");
+                return Unauthorized();
+            }
+
+            var user = await _userService.GetUserFromIdentityClaims(identity);
+            if (user is null)
+            {
+                _logger.LogWarning("Non existing user supplied to StatsController.GetSurveyStats()");
+                return Unauthorized();
+            }
+
+            var stats = await _statService.GetSurveyStats(surveyId, user);
+            if (stats is null)
+                return NotFound();
+            return Ok(stats);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError("Error {e} in StatsController.GetSurveyStats", e);
+            return StatusCode(500, new { Message = "Internal server error" });  
         }
     }
 }

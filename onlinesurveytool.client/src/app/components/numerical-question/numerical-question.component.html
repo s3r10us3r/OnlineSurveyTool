@@ -1,0 +1,17 @@
+<form #numForm="ngForm">
+  <input
+    type="number"
+    [min]="question?.minimum ?? null"
+    [max]="question?.maximum ?? null"
+    [(ngModel)]="numberValue"
+    #numberInput="ngModel"
+    (ngModelChange)="processNumber($event)"
+    [ngModelOptions]="{standalone: true}"
+    [disabled]="disabled"
+  >
+</form>
+
+<p [style.color]="isValid ? 'black' : 'red'">
+  Number must be {{question!.type === QuestionType.NumericalInteger ? 'an integer' : ''}} between {{question?.minimum}}
+  and {{question?.maximum}}
+</p>

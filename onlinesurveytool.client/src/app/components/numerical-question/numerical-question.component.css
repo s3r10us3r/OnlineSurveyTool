@@ -1,0 +1,12 @@
+p {
+  font-size: 1.25vh;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  font-size: 1.5vh;
+}

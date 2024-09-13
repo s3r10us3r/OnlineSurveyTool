@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
@@ -12,15 +13,13 @@ namespace OnlineSurveyTool.Server.DAL.Models
         {
         }
 
+        
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Survey> Surveys { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<ChoiceOption> ChoiceOptions { get; set; }
         public virtual DbSet<SurveyResult> SurveyResults { get; set; }
-        public virtual DbSet<AnswerSingleChoice> SingleChoiceAnswers { get; set; }
-        public virtual DbSet<AnswerMultipleChoice> MultipleChoiceAnswers { get; set; }
-        public virtual DbSet<AnswerNumerical> NumericalAnswers { get; set; }
-        public virtual DbSet<AnswerTextual> TextualAnswer { get; set; }
+        public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<AnswerOption> AnswerOptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,6 +53,13 @@ namespace OnlineSurveyTool.Server.DAL.Models
                 .WithMany(e => e.Surveys)
                 .HasForeignKey(e => e.OwnerId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AnswerOption>()
+                .HasOne(ao => ao.Answer)
+                .WithMany(a => a.AnswerOptions)
+                .HasForeignKey(ao => new { ao.ResultId, ao.Number })
+                .OnDelete(DeleteBehavior.Cascade);
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)

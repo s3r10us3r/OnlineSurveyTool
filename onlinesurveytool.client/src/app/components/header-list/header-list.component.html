@@ -1,0 +1,5 @@
+<div class="grid-box">
+  <div class="card-holder" *ngFor="let header of headers" >
+    <result-header-card [header]="header" (updateEvent)="getUpdate($event)"></result-header-card>
+  </div>
+</div>

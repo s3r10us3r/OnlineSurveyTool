@@ -15,9 +15,10 @@ public class AnswerService : IAnswerService
     private readonly ISurveyRepo _surveyRepo;
     private readonly ISurveyResultValidator _validator;
     private readonly ISurveyResultConverter _converter;
-    
+    private readonly IUnitOfWork _uow;
     public AnswerService(IUnitOfWork uow, ISurveyResultValidator validator, ISurveyResultConverter converter)
     {
+        _uow = uow;
         _surveyResultRepo = uow.SurveyResultRepo;
         _surveyRepo = uow.SurveyRepo;
         _validator = validator;
@@ -39,6 +40,7 @@ public class AnswerService : IAnswerService
         }
 
         var surveyResult = await DtoToResult(result);
+        
         int res = await _surveyResultRepo.Add(surveyResult);
         
         if (res > 0)

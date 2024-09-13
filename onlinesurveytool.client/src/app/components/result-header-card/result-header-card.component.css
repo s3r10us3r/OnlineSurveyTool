@@ -1,4 +1,73 @@
 .headerRoot {
+  background-color: white;
+  height: 15vh;
+  width: 15vw;
+  border-radius: 1vw;
+  padding: 7%;
   border-style: solid;
   border-width: 2px;
+  border-color: lightgreen;
+  position: relative;
+}
+
+.name {
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-size: 2vh;
+}
+
+.resultCounter {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5vh;
+}
+
+.buttonPane {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  width: 1vw;
+  height: 1vw;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: black;
+  border-width: 2px;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  align-items: center;
+}
+
+.open {
+  background-color: green;
+}
+
+.close {
+  background-color: red;
+}
+
+.disabled {
+  opacity: 50%;
+  cursor: auto;
+}
+
+img {
+  height: 80%;
 }

@@ -1,0 +1,51 @@
+.survey {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 50%;
+  margin: 1vh;
+  background-color: white;
+  top: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5vh;
+}
+
+div:not(.survey):not(.button) {
+  width: 40vw;
+  margin: 2vh;
+  padding: 1vh;
+  border-radius: 2vw;
+}
+
+.title {
+  font-size: 5vh;
+  text-align: center;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin: 3vh;
+  background-color: lightgreen;
+  padding: 1vh;
+  border: solid green 3px;
+  border-radius: 2vh;
+  color: green;
+  cursor: pointer;
+}
+
+.button:hover:not(.disabled) {
+  background-color: limegreen;
+}
+
+.disabled {
+  opacity: 50%;
+  cursor: default;
+}

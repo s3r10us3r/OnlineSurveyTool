@@ -8,5 +8,10 @@ namespace OnlineSurveyTool.Server.DAL
         public ChoiceOptionRepo(OstDbContext dbContext) : base(dbContext)
         {
         }
+
+        public async Task LoadAnswers(ChoiceOption choiceOption)
+        {
+            await Context.Entry(choiceOption).Collection(co => co.Answers).LoadAsync();
+        }
     }
 }

@@ -1,5 +1,3 @@
-using System.ComponentModel;
-using Microsoft.AspNetCore.Identity;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.AnswerServices.DTOs;
@@ -27,70 +25,69 @@ public class SurveyResultConverter : ISurveyResultConverter
         return new SurveyResult
         {
             SurveyId = dto.Id,
-            Answers = await ToAnswerList(dto.Answers, survey.Questions),
-            TimeStamp = DateTime.UtcNow
+            Answers = ToAnswerList(dto.Answers, survey.Questions),
+            TimeStamp = DateTime.UtcNow,
+            Id = Guid.NewGuid().ToString()
         };
     }
 
-    private async Task<ICollection<Answer>> ToAnswerList(ICollection<AnswerDTO> dtos, ICollection<Question> questions)
+    private ICollection<Answer> ToAnswerList(ICollection<AnswerDTO> dtos, ICollection<Question> questions)
     {
-        var answerTasks = dtos.Join(
+         return dtos.Join(
             questions,
             a => a.Number,
             q => q.Number,
-            async (a, q) => await DtoToAnswer(a, q));
-
-        var answers = await Task.WhenAll(answerTasks);
-        return answers.ToList();
+            DtoToAnswer).ToList();
     }
 
-    private async Task<Answer> DtoToAnswer(AnswerDTO dto, Question question)
+    private Answer DtoToAnswer(AnswerDTO dto, Question question)
     {
+        var answer = new Answer()
+        {
+            QuestionNumber = question.Number,
+        };
+        
         return question.Type switch
         {
-            QuestionType.SingleChoice => await ToSingleChoice(dto, question),
-            QuestionType.MultipleChoice => await ToMultipleChoice(dto, question),
-            QuestionType.NumericalInteger => await ToNumerical(dto, question),
-            QuestionType.NumericalDouble => await ToNumerical(dto, question),
-            QuestionType.Textual => await ToTextual(dto, question),
+            QuestionType.SingleChoice => ToSingleChoice(answer, dto, question),
+            QuestionType.MultipleChoice => ToMultipleChoice(answer, dto, question),
+            QuestionType.NumericalInteger => ToNumerical(answer, dto, question),
+            QuestionType.NumericalDouble => ToNumerical(answer, dto, question),
+            QuestionType.Textual => ToTextual(answer, dto, question),
             _ => throw new ArgumentOutOfRangeException()
         };
     }
 
-    private async Task<Answer> ToSingleChoice(AnswerDTO dto, Question question)
+    private Answer ToSingleChoice(Answer answer, AnswerDTO dto, Question question)
     {
-        return new AnswerSingleChoice()
-        {
-            QuestionNumber = question.Number,
-            ChoiceOptionId = question.ChoiceOptions!.First(c => c.Number == dto.ChosenOptions!.Single()).Id
-        };
+        answer.Discriminator = AnswerDiscriminator.SingleChoice;
+        answer.ChoiceOption = question.ChoiceOptions.First(co => co.Number == dto.ChosenOptions!.Single());
+        return answer;
     }
 
-    private async Task<Answer> ToMultipleChoice(AnswerDTO dto, Question question)
+    private Answer ToMultipleChoice(Answer answer, AnswerDTO dto, Question question)
     {
-        return new AnswerMultipleChoice()
+        answer.Discriminator = AnswerDiscriminator.MultipleChoice;
+        answer.AnswerOptions = dto.ChosenOptions.Select(num => new AnswerOption()
         {
-            QuestionNumber = question.Number,
-            ChoiceOptions = dto.ChosenOptions!
-                .Select(num => question.ChoiceOptions!.First(co => co.Number == num)).ToList()
-        };
+            Answer = answer,
+            ChoiceOption = question.ChoiceOptions.First(co => co.Number == num)
+        })
+        .ToList();
+        return answer;
     }
-    
-    private async Task<Answer> ToNumerical(AnswerDTO dto, Question question)
+
+    private Answer ToNumerical(Answer answer, AnswerDTO dto, Question question)
     {
-        return new AnswerNumerical
-        {
-            QuestionNumber = question.Number,
-            Answer = (double)dto.Answer!
-        };
+        answer.Discriminator = AnswerDiscriminator.Numerical;
+        answer.NumericalAnswer = dto.Answer;
+        return answer;
     }
-    
-    private async Task<Answer> ToTextual(AnswerDTO dto, Question question)
+
+    private Answer ToTextual(Answer answer, AnswerDTO dto, Question question)
     {
-        return new AnswerTextual
-        {
-            QuestionNumber = question.Number,
-            Text = dto.TextAnswer!
-        };
+        answer.Discriminator = AnswerDiscriminator.Textual;
+        answer.TextAnswer = dto.TextAnswer;
+        return answer;
     }
 }

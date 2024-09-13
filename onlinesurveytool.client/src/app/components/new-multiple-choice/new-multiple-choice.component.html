@@ -4,11 +4,11 @@
   <div class="minMaxHolder">
     <div class="minMaxHolder">
       <p>Minimum choices: </p>
-      <co-min-max [min]="0" [max]="maximum"  (number)="minimum = $event"></co-min-max>
+      <co-min-max [min]="0" [max]="maximum"  (number)="updateMin($event)"></co-min-max>
     </div>
     <div class="minMaxHolder">
       <p>Maximum choices: </p>
-      <co-min-max [min]="Math.max(minimum + 1, choiceOptions.length)" [max]="choiceOptions.length" (number)="maximum = $event"></co-min-max>
+      <co-min-max [min]="Math.max(minimum, 1)" [max]="choiceOptions.length" (number)="updateMax($event)"></co-min-max>
     </div>
   </div>
 

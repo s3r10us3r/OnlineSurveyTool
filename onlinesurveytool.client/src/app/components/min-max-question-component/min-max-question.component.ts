@@ -12,7 +12,7 @@ export class MinMaxQuestionComponent implements OnInit {
   @Input() maxText!: string;
   @Input() min!: number;
   @Input() max!: number;
-  @Input() numType!: 'decimal' | 'double';
+  @Input() numType!: 'decimal' | 'double' | 'textual';
 
   @Output() onChange = new EventEmitter<Partial<Question>>();
   @Output() errorChange = new EventEmitter<string>();
@@ -47,6 +47,7 @@ export class MinMaxQuestionComponent implements OnInit {
       return;
     }
 
+
     const err1 = this.checkValue(this.minValue);
     if (err1) {
       this.errorChange.emit(err1);
@@ -62,6 +63,11 @@ export class MinMaxQuestionComponent implements OnInit {
     const [min, max] = this.parseNums();
     if (max < min) {
       this.errorChange.emit('Minimum must be higher than maximum!');
+      return;
+    }
+
+    if (min < 0 && this.numType === 'textual') {
+      this.errorChange.emit('Values can not be negative!');
       return;
     }
 

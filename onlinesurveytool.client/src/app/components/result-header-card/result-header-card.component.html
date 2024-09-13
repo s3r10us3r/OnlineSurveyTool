@@ -1,11 +1,20 @@
-<div class="headerRoot">
-  <label>
-    Name: {{header.name}}
-  </label>
-  <label>
-    IsOpen: {{header.isOpen}}
-  </label>
-  <label *ngIf="header.resultCount > 0">
-    Answer count: {{header.resultCount}}
-  </label>
+<div class="headerRoot" [style]="getRootStyle()">
+  <div class="name">
+    {{header.name}}
+  </div>
+
+  <div *ngIf="header.resultCount > 0" class="resultCounter">
+    {{header.resultCount}} result{{header.resultCount > 1 ? 's' : ''}}
+  </div>
+
+  <div class="buttonPane">
+    <div class="button"  [ngClass]="{'open': !header.isOpen, 'close': header.isOpen}" (click)="openClose()"></div>
+    <div class="button" [ngClass]="{'disabled': !header.isOpen}" (click)="getLinkToSurvey()">
+      <img src="assets/link.png" alt="link icon">
+    </div>
+    <div class="button" (click)="deleteSurvey()">
+      <img src="assets/bin.png" alt="bin icon">
+    </div>
+  </div>
+
 </div>

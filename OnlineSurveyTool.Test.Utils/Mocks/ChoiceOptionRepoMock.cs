@@ -9,4 +9,9 @@ public class ChoiceOptionRepoMock : BaseMock<ChoiceOption, string>, IChoiceOptio
     public ChoiceOptionRepoMock(IPopulator<ChoiceOption, string> populator) : base(populator)
     {
     }
+
+    public async Task LoadAnswers(ChoiceOption choiceOption)
+    {
+        throw new NotImplementedException();
+    }
 }

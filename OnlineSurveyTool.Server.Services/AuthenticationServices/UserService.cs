@@ -73,6 +73,12 @@ namespace OnlineSurveyTool.Server.Services.AuthenticationServices
             return await _userRepo.GetOne(login) is not null;
         }
 
+        public async Task<User?> GetUserFromIdentityClaims(ClaimsIdentity claimsIdentity)
+        {
+            var userLogin = claimsIdentity.FindFirst("sub")?.Value;
+            return userLogin is null ? null : await _userRepo.GetOne(userLogin);
+        }
+
         private bool ValidateUserRegisterDTO(UserRegisterDTO userRegisterDTO, out string message)
         {
             if (!Validator.ValidateLogin(userRegisterDTO.Login, out message))

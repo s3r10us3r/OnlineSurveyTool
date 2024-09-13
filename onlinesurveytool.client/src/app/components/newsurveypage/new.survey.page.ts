@@ -58,7 +58,7 @@ export class NewSurveyPage {
   submitSurvey() {
     const survey = this.constructSurvey();
     console.debug('sending request...');
-    this.surveyService.AddSurvey(survey)
+    this.surveyService.addSurvey(survey)
       .subscribe({
         next: result => this.handleResult(result),
         error: error => this.handleError(error),

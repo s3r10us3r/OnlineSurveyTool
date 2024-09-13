@@ -1,0 +1,37 @@
+.rootbox {
+  background-color: white;
+  width: 35vw;
+  margin: 3vh;
+  min-height: 5vh;
+  border-radius: 2vw;
+  padding: 2vw;
+  border: solid black 2px;
+}
+
+.questionbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 3vh;
+  font-size: 2.5vh;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: lightgrey;
+  width: 33vw;
+  text-align: center;
+}
+
+.skipBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  opacity: 100%;
+}
+
+p {
+  font-size: 1.5vh;
+}

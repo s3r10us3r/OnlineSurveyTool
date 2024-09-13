@@ -34,8 +34,6 @@ namespace OnlineSurveyTool.Server.DAL.Models
         //This is null for Numerical and Textual type of questions
         public virtual ICollection<ChoiceOption> ChoiceOptions { get; set; }
 
-        public virtual ICollection<Answer> Answers { get; set; }
-
         public virtual Survey Survey { get; set; }
     }
 }

@@ -2,7 +2,8 @@
 
 namespace OnlineSurveyTool.Server.DAL.Interfaces
 {
-    public interface ISurveyResultRepo : IRepoNumericId<SurveyResult>
+    public interface ISurveyResultRepo : IRepoStringId<SurveyResult>
     {
+        Task<SurveyResult> LoadAnswers(SurveyResult surveyResult);
     }
 }

@@ -12,7 +12,7 @@ export const surveyHeadersResolver: ResolveFn<SurveyHeader[]>= (
   return authService.isLoggedIn().pipe(
     switchMap(isLoggedIn => {
       if (isLoggedIn)
-        return surveyService.GetSurveyHeaders();
+        return surveyService.getSurveyHeaders();
       else
         return of([]);
     }),

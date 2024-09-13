@@ -22,19 +22,33 @@ import {MinMaxQuestionComponent} from "./components/min-max-question-component/m
 import {SurveyService} from "./services/survey.service";
 import {AuthInterceptor} from "./services/auth.interceptor";
 import {ResultHeaderCardComponent} from "./components/result-header-card/result-header-card.component";
+import {HeaderListComponent} from "./components/header-list/header-list.component";
+import {AnswerPageComponent} from "./components/answer-page/answer-page.component";
+import {AnswerBoxComponent} from "./components/answer-box/answer-box.component";
+import {SingleChoiceQuestionComponent} from "./components/single-choice-question/single-choice-question.component";
+import {TextualQuestionComponent} from "./components/textual-question/textual-question.component";
+import {
+  MultipleChoiceQuestionComponent
+} from "./components/multiple-choice-question/multiple-choice-question.component";
+import {NumericalQuestionComponent} from "./components/numerical-question/numerical-question.component";
+import {ResultService} from "./services/result.service";
+import {SubmittedPageComponent} from "./components/submitted-page/submitted-page.component";
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, RegisterComponent,
     ErrorPageComponent, MainPageComponent, NewSurveyPage,
     NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
-    CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent
+    CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent,
+    HeaderListComponent, AnswerPageComponent, AnswerBoxComponent,
+    SingleChoiceQuestionComponent, TextualQuestionComponent, MultipleChoiceQuestionComponent,
+    NumericalQuestionComponent, SubmittedPageComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [AuthService, UserService, NumberService, SurveyService,
+  providers: [AuthService, UserService, NumberService, SurveyService, ResultService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

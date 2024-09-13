@@ -15,8 +15,8 @@ namespace OnlineSurveyTool.Server.DAL
         {
             var survey = await Table.Include(s => s.Questions).FirstOrDefaultAsync(s => s.Id == id);
             
-            if (survey is null)
-                return survey;
+            if (survey is null || survey.IsArchived)
+                return null;
 
             foreach (var q in survey.Questions)
             {
@@ -30,6 +30,14 @@ namespace OnlineSurveyTool.Server.DAL
         public async Task LoadResults(Survey survey)
         {
             await Context.Entry(survey).Collection(s => s.Results).LoadAsync();
+        }
+
+        public override async Task<int> Remove(Survey entity)
+        {
+            await LoadResults(entity);
+            Context.RemoveRange(entity.Results);
+            await SaveChanges();
+            return await base.Remove(entity);
         }
     }
 }

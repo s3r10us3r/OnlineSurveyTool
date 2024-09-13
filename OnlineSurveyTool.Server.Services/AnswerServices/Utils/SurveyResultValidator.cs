@@ -38,6 +38,10 @@ public class SurveyResultValidator : ISurveyResultValidator
                 return dtoValidRes;
         }
 
+        var allNotSkippableQuestionsAnswered = survey.Questions.All(q => q.CanBeSkipped || appeared.Contains(q.Number));
+        if (!allNotSkippableQuestionsAnswered)
+            return Result.Failure($"Not all required questions has been answered.");
+
         return Result.Success();
     }
 

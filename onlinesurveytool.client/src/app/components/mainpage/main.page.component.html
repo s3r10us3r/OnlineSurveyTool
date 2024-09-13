@@ -1,4 +1,4 @@
 <div>
   <button class="newSurveyButton" (click)="handleAddSurvey()">+</button>
-  <result-header-card *ngFor="let header of headers" [header]="header"/>
+  <header-list [headers]="headers"></header-list>
 </div>

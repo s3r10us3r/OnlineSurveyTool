@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnlineSurveyTool.Server.DAL.Models
 {
-    [Table("Answers")]
     public class ChoiceOption : EntityBaseStringId
     {
         //Order of the answer inside a question
@@ -18,7 +17,7 @@ namespace OnlineSurveyTool.Server.DAL.Models
         public string QuestionId { get; set; }
         public virtual Question Question { get; set; }
 
-        public virtual IEnumerable<AnswerSingleChoice> Answers { get; set; }
-        public virtual IEnumerable<AnswerOption> AnswerOptions { get; set; }
+        public ICollection<Answer> Answers { get; set; }
+        public ICollection<AnswerOption> AnswerOptions { get; set; }
     }
 }

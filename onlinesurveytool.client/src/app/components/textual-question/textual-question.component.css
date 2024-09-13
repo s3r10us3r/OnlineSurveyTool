@@ -1,0 +1,20 @@
+textarea {
+  resize: none;
+  font-size: 2vh;
+  font-family: 'Montserrat', sans-serif;
+  width: 30vw;
+  height: 10vh;
+}
+
+p {
+  font-size: 1.25vh;
+}
+
+.textHolder {
+  display: flex;
+  flex-direction: row;
+}
+
+.number {
+  margin-left: auto;
+}

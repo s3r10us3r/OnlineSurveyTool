@@ -1,4 +1,5 @@
-using System.Runtime.InteropServices.JavaScript;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 
@@ -6,102 +7,70 @@ namespace OnlineSurveyTool.Server.DAL;
 
 public class AnswerRepo : IAnswerRepo
 {
-    private IAnswerSingleChoiceRepo _singleChoiceRepo;
-    private IAnswerMultipleChoiceRepo _multipleChoiceRepo;
-    private IAnswerNumericalRepo _numericalRepo;
-    private IAnswerTextualRepo _textualRepo;
+    private readonly DbSet<Answer> _table;
+    private readonly OstDbContext _db;
     
-    public AnswerRepo(IAnswerSingleChoiceRepo singleChoiceRepo, IAnswerMultipleChoiceRepo multipleChoiceRepo,
-        IAnswerNumericalRepo numericalRepo, IAnswerTextualRepo textualRepo)
+    public AnswerRepo(OstDbContext dbContext)
     {
-        _singleChoiceRepo = singleChoiceRepo;
-        _multipleChoiceRepo = multipleChoiceRepo;
-        _numericalRepo = numericalRepo;
-        _textualRepo = textualRepo;
+        _db = dbContext;
+        _table = dbContext.Answers;
     }
     
     public void Dispose()
     {
-        _singleChoiceRepo.Dispose();
-        _multipleChoiceRepo.Dispose();
-        _numericalRepo.Dispose();
-        _textualRepo.Dispose();
+        _db?.Dispose();
     }
 
     public async Task<int> SaveChanges()
     {
-        return await _singleChoiceRepo.SaveChanges() + await _multipleChoiceRepo.SaveChanges() +
-               await _numericalRepo.SaveChanges() + await _textualRepo.SaveChanges();
+        return await _db.SaveChangesAsync();
     }
 
     public async Task<Answer?> GetOne(int resultId, int number)
     {
-        return (Answer?)(await _singleChoiceRepo.GetOne(resultId, number)) ??
-               (Answer?)(await _multipleChoiceRepo.GetOne(resultId, number)) ??
-               (Answer?)(await _numericalRepo.GetOne(resultId, number)) ??
-               await _textualRepo.GetOne(resultId, number);
+        return await _table.FindAsync(resultId, number);
     }
 
     public async Task<int> Remove(int resultId, int number)
     {
         var answer = await GetOne(resultId, number);
+        if (answer is null)
+            return 0;
         return await Remove(answer);
     }
 
     public async Task<List<Answer>> GetAll()
     {
-        List<Answer> answers = [];
-        answers.AddRange(await _singleChoiceRepo.GetAll());
-        answers.AddRange(await _multipleChoiceRepo.GetAll());
-        answers.AddRange(await _numericalRepo.GetAll());
-        answers.AddRange(await _textualRepo.GetAll());
-        return answers;
+        return await _table.ToListAsync();
     }
 
     public async Task<int> Add(Answer entity)
     {
-        return await (entity switch
-        {
-            AnswerMultipleChoice a => _multipleChoiceRepo.Add(a),
-            AnswerNumerical a => _numericalRepo.Add(a),
-            AnswerSingleChoice a => _singleChoiceRepo.Add(a),
-            AnswerTextual a => _textualRepo.Add(a),
-            _ => throw new ArgumentOutOfRangeException(nameof(entity))
-        });
+        await _table.AddAsync(entity);
+        return await SaveChanges();
     }
 
     public async Task<int> AddRange(IList<Answer> entities)
     {
-        List<Task<int>> tasks = [];
-        foreach (var e in entities)
-        {
-            tasks.Add(Add(e));
-        }
-
-        return (await Task.WhenAll(tasks)).Sum();
+        await _table.AddRangeAsync(entities);
+        return await SaveChanges();
     }
 
     public async Task<int> Update(Answer entity)
     {
-        return await (entity switch
-        {
-            AnswerMultipleChoice a => _multipleChoiceRepo.Add(a),
-            AnswerNumerical a => _numericalRepo.Add(a),
-            AnswerSingleChoice a => _singleChoiceRepo.Add(a),
-            AnswerTextual a => _textualRepo.Add(a),
-            _ => throw new ArgumentOutOfRangeException(nameof(entity))
-        });
+        _table.Entry(entity).State = EntityState.Modified;
+        return await SaveChanges();
     }
 
     public async Task<int> Remove(Answer entity)
     {
-        return await (entity switch
-        {
-            AnswerMultipleChoice a => _multipleChoiceRepo.Add(a),
-            AnswerNumerical a => _numericalRepo.Add(a),
-            AnswerSingleChoice a => _singleChoiceRepo.Add(a),
-            AnswerTextual a => _textualRepo.Add(a),
-            _ => throw new ArgumentOutOfRangeException(nameof(entity))
-        });
+        _table.Remove(entity);
+        return await SaveChanges();
+    }
+
+    public async Task<Answer> LoadAnswerOptions(Answer answer)
+    {
+        await _table.Entry(answer).Collection(a => a.AnswerOptions).LoadAsync();
+        return answer;
     }
 }

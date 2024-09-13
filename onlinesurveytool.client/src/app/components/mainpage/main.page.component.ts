@@ -13,7 +13,7 @@ export class MainPageComponent implements OnInit{
   constructor(private router: Router, private surveyService: SurveyService) { }
 
   ngOnInit(): void {
-    this.surveyService.GetSurveyHeaders().subscribe({
+    this.surveyService.getSurveyHeaders().subscribe({
       next: res => this.handleNext(res),
       error: err => this.handleErr(err)
     });

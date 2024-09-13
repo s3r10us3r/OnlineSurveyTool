@@ -1,0 +1,16 @@
+<form [formGroup]="surveyForm" [style.opacity]="disabled ? '50%' : '100%'">
+  <div formArrayName="checkboxes" *ngIf="question">
+    <div *ngFor="let checkbox of checkboxes.controls; let i = index">
+      <label>
+        <input
+          [attr.disabled]="disabled ? true : null"
+          type="checkbox"
+          [formControlName]="i"
+          (change)="onCheckBoxChange(i, question.choiceOptions![i].number)"
+        />
+        {{ question!.choiceOptions![i].value }}
+      </label>
+    </div>
+  </div>
+</form>
+

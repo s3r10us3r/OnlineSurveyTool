@@ -1,0 +1,14 @@
+<div *ngIf="question" class="rootbox">
+  <div [ngSwitch]="question!.type" class="questionbox" [style.opacity]="disabled ? '50%' : '100%'" >
+    <label>{{question.value}}</label>
+    <single-choice-question  [disabled]="disabled" [question]="question" *ngSwitchCase="QuestionType.SingleChoice" (choice)="handleSingleChoice($event)"></single-choice-question>
+    <textual-question [disabled]="disabled" [question]="question" *ngSwitchCase="QuestionType.Textual" (textInput)="handleTextual($event)"></textual-question>
+    <multiple-choice-question [disabled]="disabled" [question]="question" *ngSwitchCase="QuestionType.MultipleChoice" (choices)="handleMultipleChoice($event)"></multiple-choice-question>
+    <numerical-question [disabled]="disabled" [question]="question" *ngSwitchCase="QuestionType.NumericalDouble" (num)="handleNumerical($event)"></numerical-question>
+    <numerical-question [disabled]="disabled" [question]="question" *ngSwitchCase="QuestionType.NumericalInteger" (num)="handleNumerical($event)"></numerical-question>
+  </div>
+  <div class="skipBox" *ngIf="question?.canBeSkipped" style="opacity: 100%">
+    <input type="checkbox" (change)="skipBoxChange($event)">
+    <p>skip this question</p>
+  </div>
+</div>

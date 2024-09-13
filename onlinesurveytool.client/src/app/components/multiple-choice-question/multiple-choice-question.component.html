@@ -1,0 +1,19 @@
+<form [formGroup]="surveyForm">
+  <div formArrayName="checkboxes" *ngIf="question">
+    <div *ngFor="let checkbox of checkboxes.controls; let i = index">
+      <label>
+        <input
+          type="checkbox"
+          [formControlName]="i"
+          (change)="onCheckBoxChange(i, question.choiceOptions![i].number)"
+          [attr.disabled]="disabled ? true : null"
+        />
+        {{ question!.choiceOptions![i].value }}
+      </label>
+    </div>
+  </div>
+</form>
+<div class="textHolder" [style.color]="isValid ? 'black' : 'red'">
+  <p>From {{question?.minimum}} to {{question?.maximum}} questions.</p>
+</div>
+

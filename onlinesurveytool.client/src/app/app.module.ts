@@ -33,6 +33,12 @@ import {
 import {NumericalQuestionComponent} from "./components/numerical-question/numerical-question.component";
 import {ResultService} from "./services/result.service";
 import {SubmittedPageComponent} from "./components/submitted-page/submitted-page.component";
+import {StatsPageComponent} from "./components/stats-page/stats-page.component";
+import { StatsService } from './services/stats.service';
+import {QuestionStatsComponent} from "./components/question-stats/question-stats.component";
+import {
+  SingleChoiceQuestionStatsComponent
+} from "./components/single-choice-question-stats/single-choice-question-stats.component";
 
 @NgModule({
   declarations: [
@@ -42,13 +48,14 @@ import {SubmittedPageComponent} from "./components/submitted-page/submitted-page
     CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent,
     HeaderListComponent, AnswerPageComponent, AnswerBoxComponent,
     SingleChoiceQuestionComponent, TextualQuestionComponent, MultipleChoiceQuestionComponent,
-    NumericalQuestionComponent, SubmittedPageComponent
+    NumericalQuestionComponent, SubmittedPageComponent, StatsPageComponent,
+    QuestionStatsComponent, SingleChoiceQuestionStatsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [AuthService, UserService, NumberService, SurveyService, ResultService,
+  providers: [AuthService, UserService, NumberService, SurveyService, ResultService, StatsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

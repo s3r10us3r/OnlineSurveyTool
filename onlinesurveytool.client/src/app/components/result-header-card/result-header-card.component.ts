@@ -76,15 +76,20 @@ export class ResultHeaderCardComponent{
     return baseUrl + `/survey/${this.header.id}`
   }
 
-  editSurvey(): void {
-
-  }
-
   deleteSurvey(): void {
     this.surveyService.deleteSurvey(this.header.id).subscribe({
       next: res => {this.updateEvent.emit(['delete', this.header.id])},
       error: err => {console.error(err); this.router.navigate(['/error'])}
     })
+  }
+
+  openStats(): void {
+    console.debug('here');
+    if (this.header.resultCount <= 0)
+      return;
+
+    console.debug('here 2');
+    this.router.navigate(['/stats'], {queryParams: {id: this.header.id}});
   }
 
   protected readonly navigator = navigator;

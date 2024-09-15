@@ -15,6 +15,9 @@
     <div class="button" (click)="deleteSurvey()">
       <img src="assets/bin.png" alt="bin icon">
     </div>
+    <div class="button" [ngClass]="{'disabled': header.resultCount <= 0}" (click)="openStats()">
+      <img src="assets/statistics.png" alt="statistics icon">
+    </div>
   </div>
 
 </div>

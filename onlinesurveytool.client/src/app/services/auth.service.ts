@@ -89,10 +89,6 @@ export class AuthService {
   public setSession(token: string, expiration: string) : void {
     AuthService.accessToken = token;
     AuthService.accessTokenExpiration = new Date(expiration);
-    console.debug('Access token set', AuthService.accessToken);
-    console.debug('Expiration date set', AuthService.accessTokenExpiration);
-    console.debug('Time now', new Date());
-    console.debug('Comparison', AuthService.accessTokenExpiration > new Date());
   }
 
   private getAccessExpirationDateTime() : Date | null {

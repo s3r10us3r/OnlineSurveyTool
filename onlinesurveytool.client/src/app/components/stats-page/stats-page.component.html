@@ -1,0 +1,8 @@
+<div class="background">
+  <div class="surveyTitle">{{this.stats.surveyName}}</div>
+  <p>{{this.stats.resultCount}} survey{{this.stats.resultCount == 1 ? '' : 's'}} submitted</p>
+
+  <question-stats [stats]="stats.answerStats[index]"/>
+  <button (click)="index = Math.max(index - 1, 0)">previous</button>
+  <button (click)="index = Math.min(index + 1, stats.answerStats.length - 1)">next</button>
+</div>

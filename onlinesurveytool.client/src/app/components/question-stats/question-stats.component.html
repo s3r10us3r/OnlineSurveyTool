@@ -1,0 +1,3 @@
+<div class="root" [ngSwitch]="stats.type">
+  <single-choice-stats *ngSwitchCase="'single choice'" [stats]="castToSingleChoice()"/>
+</div>

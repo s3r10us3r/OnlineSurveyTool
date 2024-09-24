@@ -1,1 +1,22 @@
-{{stats.questionValue}} {{stats.number}} {{stats.numberOfAnswers}}
+<div class="center">
+  <div>
+    <canvas baseChart *ngIf="barConfig !== null"
+            [datasets]="barConfig.dataset"
+            [labels] = "barConfig.labels"
+            [options]="barConfig.options"
+            [legend]="barConfig.legend"
+            [type]="barConfig.type"
+    >
+    </canvas>
+  </div>
+  <div>
+    <canvas baseChart *ngIf="pieConfig !== null"
+            [datasets]="pieConfig.dataset"
+            [labels]="pieConfig.labels"
+            [options]="pieConfig.options"
+            [legend]="pieConfig.legend"
+            [type]="pieConfig.type"
+    >
+    </canvas>
+  </div>
+</div>

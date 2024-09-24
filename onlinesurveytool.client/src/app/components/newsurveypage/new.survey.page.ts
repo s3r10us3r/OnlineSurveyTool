@@ -82,4 +82,8 @@ export class NewSurveyPage {
       questions: this.questions,
     };
   }
+
+  goBack(): void {
+    this.router.navigate(['/main']);
+  }
 }

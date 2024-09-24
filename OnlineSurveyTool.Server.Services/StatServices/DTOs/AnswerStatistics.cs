@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Text.Json.Serialization;
 
 namespace OnlineSurveyTool.Server.Services.StatServices.DTOs;
@@ -17,6 +18,7 @@ public abstract record AnswerStatistics
     public required int Number { get; init; }
     public required string QuestionValue { get; init; }
     public required int NumberOfAnswers { get; init; }
+    public required bool IsSkippable { get; init; }
 }
 
 //id-count dict
@@ -29,10 +31,12 @@ public record ChosenOptionStat(string Value, int Count);
 
 public record MultipleChoiceAnswerStatistics() : AnswerStatistics("multiple choice")
 {
-    public required ICollection<ChosenOptionsCombinationStat> ChosenOptions { get; init; } = [];
+    public required ICollection<ChosenOptionsCombinationStat> ChosenOptionCombinationStats { get; init; } = [];
+    public required ICollection<ChosenOptionStat> ChosenOptionStats { get; init; } = [];
 }
 
 public record ChosenOptionsCombinationStat(string[] Values, int Count);
+
 
 public record NumericalAnswerStatistics() : AnswerStatistics("numerical")
 {
@@ -41,10 +45,10 @@ public record NumericalAnswerStatistics() : AnswerStatistics("numerical")
     public required double Dominant { get; init; }
     public required double Minimum { get; init; }
     public required double Maximum { get; init; }
-    public required ICollection<SegmentStat> CountOnSegments { get; init; } = [];
+    public required ICollection<AnswerCount> CountOnAnswers { get; init; } = [];
 }
 
-public record SegmentStat(double Start, double End, int Count);
+public record AnswerCount(double Answer, int Count);
 
 public record TextualAnswerStatistics() : AnswerStatistics("textual")
 {

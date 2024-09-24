@@ -1,6 +1,9 @@
 <div class="surveyRoot">
-  <input type="text" [(ngModel)]="surveyName" class="surveyName" placeholder="your survey name"/>
+  <div class="backButton" (click)="goBack()">
+    <img src="assets/back-button.png" alt="back button icon">
+  </div>
 
+  <input type="text" [(ngModel)]="surveyName" class="surveyName" placeholder="your survey name"/>
   <div class="questionHolder" *ngFor="let q of questions; let i = index">
     <new-question-component class="nqc" [(question)]="questions[i]" (error)="processError($event)"></new-question-component>
     <button class="removeQuestionButton" (click)="removeQuestion(i)">Remove question</button>

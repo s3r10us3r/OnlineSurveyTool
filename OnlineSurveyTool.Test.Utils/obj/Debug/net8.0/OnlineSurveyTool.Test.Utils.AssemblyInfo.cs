@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineSurveyTool.Test.Utils")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9974f1c23ccd84553936225df1cf46170246fdda")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18055f7a1adf20ea35adf7d5395d51e0ad97d564")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineSurveyTool.Test.Utils")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineSurveyTool.Test.Utils")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

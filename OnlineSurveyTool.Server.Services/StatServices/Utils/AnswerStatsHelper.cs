@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using OnlineSurveyTool.Server.DAL.Interfaces;
 using OnlineSurveyTool.Server.DAL.Models;
 using OnlineSurveyTool.Server.Services.StatServices.DTOs;
@@ -52,64 +53,83 @@ public class AnswerStatsHelper : IAnswerStatsHelper
             Number = question.Number,
             QuestionValue = question.Value,
             NumberOfAnswers = answers.Count,
-            ChosenOptionsStats = ConstructSingleChoiceAnswerDict(answers)
+            ChosenOptionsStats = ConstructSingleChoiceAnswerDict(question, answers),
+            IsSkippable = question.CanBeSkipped
         };
     }
 
-    private ICollection<ChosenOptionStat> ConstructSingleChoiceAnswerDict(ICollection<Answer> answers)
+    private ICollection<ChosenOptionStat> ConstructSingleChoiceAnswerDict(Question question, ICollection<Answer> answers)
     {
-        var idValDict = new Dictionary<string, string>();
+        List<ChosenOptionStat> result = [];
         
-        return answers
-            .GroupBy(a =>
-            {
-                var co = a.ChoiceOption;
-                idValDict.Add(co!.Id, co.Value);
-                return co.Id;
-            })
-            .ToDictionary(g => g.Key, g => g.Count())
-            .Select(kvp => new ChosenOptionStat(idValDict[kvp.Key], kvp.Value))
-            .ToList();
+        var coIds = answers.Select(a => a.ChoiceOptionId);
+        foreach (var co in question.ChoiceOptions)
+            result.Add(new ChosenOptionStat(co.Value, answers.Count(a => a.ChoiceOptionId == co.Id)));
+
+        return result;
     }
 
     private async Task<MultipleChoiceAnswerStatistics> GenMultipleChoiceAnswerStats(Question question, ICollection<Answer> answers)
     {
+        await LoadAnswerOptions(answers);
         return new MultipleChoiceAnswerStatistics()
         {
             Number = question.Number,
             QuestionValue = question.Value,
             NumberOfAnswers = answers.Count,
-            ChosenOptions = await ConstructMultipleCoDict(answers)
+            ChosenOptionCombinationStats = ConstructMultipleCoDict(answers),
+            ChosenOptionStats = ConstructMultipleCoCount(answers),
+            IsSkippable = question.CanBeSkipped
         };
     }
 
-    private async Task<ICollection<ChosenOptionsCombinationStat>> ConstructMultipleCoDict(ICollection<Answer> answers)
+    private ICollection<ChosenOptionsCombinationStat> ConstructMultipleCoDict(ICollection<Answer> answers)
     {
-        var countDict = new Dictionary<string[], int>();
+        var countDict = new Dictionary<StringArray, int>();
         var idsValDict = new Dictionary<string, string>();
         foreach (var ans in answers)
         {
-            await _answerRepo.LoadAnswerOptions(ans);
             List<string> coIds = [];
             foreach (var ao in ans.AnswerOptions)
             {
-                var co = await _choiceOptionRepo.GetOne(ao.ChoiceOptionId);
-                if (co is null)
-                    continue;
-                idsValDict.Add(co.Id, co.Value);
+                var co = ao.ChoiceOption;
+                idsValDict.TryAdd(co.Id, co.Value);
                 coIds.Add(co.Id);
                 coIds.Sort();
             }
 
-            var arr = coIds.ToArray();
-            if (!countDict.TryAdd(arr, 0))
-                countDict[arr]++;
+            var arr = new StringArray(coIds);
+            if (!countDict.TryAdd(arr, 1)) {
+                countDict[arr] += 1;
+            }
         }
+
         return countDict
-            .Select(kvp => new ChosenOptionsCombinationStat(kvp.Key.Select(e =>idsValDict[e]).ToArray(), kvp.Value))
+            .Select(kvp => new ChosenOptionsCombinationStat(kvp.Key.List.Select(e => idsValDict[e]).ToArray(), kvp.Value))
+            .OrderBy(e => e.Count)
+            .Take(10)
             .ToList();
     }
 
+    private ICollection<ChosenOptionStat> ConstructMultipleCoCount(ICollection<Answer> answers)
+    {
+        return answers
+            .SelectMany(a => a.AnswerOptions)
+            .Select(ao => ao.ChoiceOption)
+            .GroupBy(co => (co.Id, co.Value))
+            .Select(g => new ChosenOptionStat(g.Key.Value, g.Count()))
+            .ToList();
+    }
+
+    private async Task LoadAnswerOptions(ICollection<Answer> answers)
+    {
+        foreach (var a in answers)
+            await _answerRepo.LoadAnswerOptions(a);
+        var answerOptions = answers.SelectMany(a => a.AnswerOptions);
+        foreach (var ao in answerOptions)
+            ao.ChoiceOption = (await _choiceOptionRepo.GetOne(ao.ChoiceOptionId))!;
+    }
+    
     private NumericalAnswerStatistics GenNumericalAnswerStats(Question question, ICollection<Answer> answers)
     {
         var nums = answers
@@ -128,7 +148,8 @@ public class AnswerStatsHelper : IAnswerStatsHelper
             Dominant = FindDominant(nums),
             Minimum = (double)question.Minimum!,
             Maximum = (double)question.Maximum!,
-            CountOnSegments = _numAnalyzer.AnalyzeNumbers(nums, (double)question.Minimum, (double)question.Maximum)
+            CountOnAnswers = _numAnalyzer.AnalyzeNumbers(nums),
+            IsSkippable = question.CanBeSkipped
         };
     }
     
@@ -148,12 +169,38 @@ public class AnswerStatsHelper : IAnswerStatsHelper
             QuestionValue = question.Value,
             NumberOfAnswers = answers.Count,
             AverageLength = GetAvgLength(texts),
-            MostCommonWords = await _textAnalyzer.AnalyzeTexts(texts)
+            MostCommonWords = await _textAnalyzer.AnalyzeTexts(texts),
+            IsSkippable = question.CanBeSkipped
         };
     }
 
     private double GetAvgLength(ICollection<string> texts)
     {
         return texts.Average(t => t.Length);
+    }
+
+    private class StringArray(List<string> list)
+    {
+        public ImmutableList<string> List { get; } = list.OrderBy(e => e).ToImmutableList();
+
+        public override int GetHashCode()
+        {
+            if (List.Count == 0)
+                return 0;
+            int hash = 17;
+            foreach (var str in List)
+                hash ^= str.GetHashCode();
+            return hash;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            var arr = obj as StringArray;
+            if (arr is null)
+                return false;
+            return arr.List
+                .Zip(List)
+                .All(pair => pair.First.Equals(pair.Second));
+        }
     }
 }

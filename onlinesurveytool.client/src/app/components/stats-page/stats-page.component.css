@@ -16,3 +16,33 @@
 .surveyTitle {
   font-size: 5vh;
 }
+
+button.nextPrev {
+  font-size: 7.5vh;
+  background-color: transparent;
+  color: GrayText;
+  outline: none;
+  border: none;
+}
+
+button.nextPrev:hover {
+  color: black;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.backButton {
+  height: 7vh;
+  position: absolute;
+  top: 5vh;
+  left: 9vh;
+  cursor: pointer;
+}
+
+img {
+  height: 7vh;
+}

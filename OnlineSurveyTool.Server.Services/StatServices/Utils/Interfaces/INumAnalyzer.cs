@@ -5,5 +5,5 @@ namespace OnlineSurveyTool.Server.Services.StatServices.Utils.Interfaces;
 
 public interface INumAnalyzer
 {
-    ICollection<SegmentStat> AnalyzeNumbers(ICollection<double> nums, double minimum, double maximum);
+    ICollection<AnswerCount> AnalyzeNumbers(ICollection<double> nums);
 }

@@ -1,0 +1,15 @@
+<div class="holder">
+  <b>Most common words:</b>
+  <canvas baseChart *ngIf="barConfig !== null"
+        [datasets]="barConfig.dataset"
+        [labels] = "barConfig.labels"
+        [options]="barConfig.options"
+        [legend]="barConfig.legend"
+        [type]="barConfig.type"
+  >
+  </canvas>
+
+  <div>
+    <b>Average answer length</b>: {{stats.averageLength.toFixed(1)}}
+  </div>
+</div>

@@ -8,11 +8,12 @@ export interface AnswerStatistics {
   type: string,
   number: number,
   questionValue: string,
-  numberOfAnswers: number
+  numberOfAnswers: number,
+  isSkippable: boolean
 }
 
 export interface SingleChoiceAnswerStatistics extends AnswerStatistics {
-  chosenOptionStats: ChoiceOptionStat[]
+  chosenOptionsStats: ChoiceOptionStat[]
 }
 
 export interface ChoiceOptionStat {
@@ -21,7 +22,8 @@ export interface ChoiceOptionStat {
 }
 
 export interface MultipleChoiceAnswerStatistics extends AnswerStatistics {
-  chosenOptionsStats: ChosenOptionsCombinationStat[]
+  chosenOptionCombinationStats: ChosenOptionsCombinationStat[],
+  chosenOptionStats: ChoiceOptionStat[],
 }
 
 export interface ChosenOptionsCombinationStat {
@@ -35,16 +37,18 @@ export interface NumericalAnswerStatistics extends AnswerStatistics {
   dominant: number,
   minimum: number,
   maximum: number,
-  countOnSegment: SegmentStat[]
+  countOnAnswers: AnswerCount[]
 }
 
-export interface SegmentStat {
-  start: number,
-  end: number,
+export interface AnswerCount {
+  answer: number,
   count: number
 }
 
 export interface TextualAnswerStatistics extends AnswerStatistics {
   averageLength: number,
-  mostCommonWord: { [key: string]: number }
+  mostCommonWords: { [key: string]: number }
 }
+
+
+export type Dataset = {dataset: [{data: number[], label: string, backgroundColor?: string[]}], labels: string[]};

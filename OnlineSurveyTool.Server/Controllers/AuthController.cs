@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using OnlineSurveyTool.Server.Responses;
 using OnlineSurveyTool.Server.Services.AuthenticationServices;
 using OnlineSurveyTool.Server.Services.AuthenticationServices.DTOs;
@@ -116,6 +117,13 @@ namespace OnlineSurveyTool.Server.Controllers
                 _logger.LogWarning("Invalid refresh token supplied to Refresh {e}", e);
                 return Unauthorized(new { ErrorMessage = "Invalid refresh token." });
             }
+        }
+
+        [HttpGet("logout")]
+        public async Task<IActionResult> LogOut()
+        {
+            Response.Cookies.Append("refresh-token", "");
+            return Ok();
         }
     }
 }

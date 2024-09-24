@@ -1,5 +1,5 @@
 import {inject, Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {API_URL} from '../constants';
 import {catchError, finalize, map, NEVER, Observable, of, tap} from "rxjs";
 import {jwtDecode} from "jwt-decode";
@@ -22,9 +22,10 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${API_URL}/Auth/login`, {login, password});
   }
 
-  public logout() : void {
+  public logout() : Observable<any> {
     AuthService.accessToken = null;
     AuthService.accessTokenExpiration = null;
+    return this.http.get(`${API_URL}/Auth/logout`);
   }
 
   public isAccessValid() : boolean {

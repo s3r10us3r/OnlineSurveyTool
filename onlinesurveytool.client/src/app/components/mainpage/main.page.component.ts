@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SurveyHeader, SurveyService} from "../../services/survey.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'main-page-component',
@@ -10,7 +11,7 @@ import {SurveyHeader, SurveyService} from "../../services/survey.service";
 export class MainPageComponent implements OnInit{
   headers: SurveyHeader[] = [];
 
-  constructor(private router: Router, private surveyService: SurveyService) { }
+  constructor(private router: Router, private surveyService: SurveyService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.surveyService.getSurveyHeaders().subscribe({
@@ -30,5 +31,13 @@ export class MainPageComponent implements OnInit{
 
   handleAddSurvey() {
     this.router.navigate(['/newsurvey'])
+  }
+
+  logOut() {
+    const response = this.authService.logout();
+    response.subscribe({
+      next: value => this.router.navigate(['/login']),
+      error: err => {console.debug(err); this.router.navigate(['/error']);}
+    })
   }
 }

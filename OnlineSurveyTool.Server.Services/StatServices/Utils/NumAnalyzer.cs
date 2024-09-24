@@ -6,18 +6,16 @@ namespace OnlineSurveyTool.Server.Services.StatServices.Utils;
 public class NumAnalyzer : INumAnalyzer
 {
     private const int SegmentCount = 100;
-    
-    public ICollection<SegmentStat> AnalyzeNumbers(ICollection<double> nums, double minimum, double maximum)
+
+    public ICollection<AnswerCount> AnalyzeNumbers(ICollection<double> nums)
     {
-        double step = (maximum - minimum) / SegmentCount;
-        double i = minimum;
-        List<SegmentStat> stats = [];
-        while (i <= maximum - step)
+        var dict = new Dictionary<double, int>();
+        foreach (var num in nums)
         {
-            stats.Add(new SegmentStat(i, i + step, nums.Count(n => n >= i && n < i + step)));
-            i++;
+            if (!dict.TryAdd(num, 1))
+                dict[num] += 1;
         }
 
-        return stats;
+        return dict.Select(kvp => new AnswerCount(kvp.Key, kvp.Value)).ToList();
     }
 }

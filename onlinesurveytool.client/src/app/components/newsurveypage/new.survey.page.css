@@ -9,7 +9,7 @@ div.surveyRoot {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1vh;
+  padding: 3vh;
   border-radius: 2vh;
 }
 
@@ -105,4 +105,16 @@ button.removeQuestionButton:hover {
 
 .submitButton:disabled {
   color: grey;
+}
+
+.backButton {
+  height: 7vh;
+  position: absolute;
+  top: 5vh;
+  left: 9vh;
+  cursor: pointer;
+}
+
+img {
+  height: 7vh;
 }

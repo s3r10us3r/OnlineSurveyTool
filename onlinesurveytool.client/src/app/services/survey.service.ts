@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import {Survey} from "../models/survey";
 import {API_URL} from "../constants";
 import {AuthService} from "./auth.service";

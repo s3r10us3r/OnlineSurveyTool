@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {SurveyResultStatistics} from "../../models/stats";
 
 @Component({
@@ -8,7 +8,7 @@ import {SurveyResultStatistics} from "../../models/stats";
   styleUrl: 'stats-page.component.css'
 })
 export class StatsPageComponent implements OnInit{
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   stats!: SurveyResultStatistics;
   index: number = 0;
@@ -19,6 +19,10 @@ export class StatsPageComponent implements OnInit{
     });
 
     this.stats.answerStats.sort((a,b) => a.number - b.number);
+  }
+
+  goBack(): void {
+    this.router.navigate(['/main']);
   }
 
   protected readonly Math = Math;

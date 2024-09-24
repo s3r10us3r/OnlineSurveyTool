@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+PRWq9VUs96YHfAxGhPs9pldLPVcKIuEMt8C/OsSG5M=",
+  "Hash": "n1QfonnGs+F5WEQIXEPbyWHJAOcTZpMCDYvhuJoX/lo=",
   "Source": "OnlineSurveyTool.Server",
   "BasePath": "_content/OnlineSurveyTool.Server",
   "Mode": "Default",
@@ -46,6 +46,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/3rdpartylicenses.txt"
+    },
+    {
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/back-button.png",
+      "SourceId": "OnlineSurveyTool.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/",
+      "BasePath": "_content/OnlineSurveyTool.Server",
+      "RelativePath": "assets/back-button.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/back-button.png"
     },
     {
       "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/bin.png",
@@ -105,12 +124,12 @@
       "OriginalItemSpec": "wwwroot/assets/link.png"
     },
     {
-      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/pen.png",
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/statistics.png",
       "SourceId": "OnlineSurveyTool.Server",
       "SourceType": "Discovered",
       "ContentRoot": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/",
       "BasePath": "_content/OnlineSurveyTool.Server",
-      "RelativePath": "assets/pen.png",
+      "RelativePath": "assets/statistics.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -121,7 +140,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/pen.png"
+      "OriginalItemSpec": "wwwroot/assets/statistics.png"
     },
     {
       "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/favicon.ico",
@@ -162,12 +181,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-MEJO4CAZ.js",
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-6SQT7BCR.js",
       "SourceId": "OnlineSurveyTool.Server",
       "SourceType": "Discovered",
       "ContentRoot": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/",
       "BasePath": "_content/OnlineSurveyTool.Server",
-      "RelativePath": "main-MEJO4CAZ.js",
+      "RelativePath": "main-6SQT7BCR.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -178,15 +197,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/main-MEJO4CAZ.js"
+      "OriginalItemSpec": "wwwroot/main-6SQT7BCR.js"
     },
     {
-      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/polyfills-6EAL64PA.js",
+      "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/polyfills-SCHOHYNV.js",
       "SourceId": "OnlineSurveyTool.Server",
       "SourceType": "Discovered",
       "ContentRoot": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/",
       "BasePath": "_content/OnlineSurveyTool.Server",
-      "RelativePath": "polyfills-6EAL64PA.js",
+      "RelativePath": "polyfills-SCHOHYNV.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -197,7 +216,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/polyfills-6EAL64PA.js"
+      "OriginalItemSpec": "wwwroot/polyfills-SCHOHYNV.js"
     },
     {
       "Identity": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/styles-2WQVIUJD.css",

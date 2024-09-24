@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/3rdpartylicenses.txt"
     },
     {
+      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/back-button.png",
+      "PackagePath": "staticwebassets/assets/back-button.png"
+    },
+    {
       "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/bin.png",
       "PackagePath": "staticwebassets/assets/bin.png"
     },
@@ -17,8 +21,8 @@
       "PackagePath": "staticwebassets/assets/link.png"
     },
     {
-      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/pen.png",
-      "PackagePath": "staticwebassets/assets/pen.png"
+      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/assets/statistics.png",
+      "PackagePath": "staticwebassets/assets/statistics.png"
     },
     {
       "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/favicon.ico",
@@ -29,12 +33,12 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-MEJO4CAZ.js",
-      "PackagePath": "staticwebassets/main-MEJO4CAZ.js"
+      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/main-6SQT7BCR.js",
+      "PackagePath": "staticwebassets/main-6SQT7BCR.js"
     },
     {
-      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/polyfills-6EAL64PA.js",
-      "PackagePath": "staticwebassets/polyfills-6EAL64PA.js"
+      "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/polyfills-SCHOHYNV.js",
+      "PackagePath": "staticwebassets/polyfills-SCHOHYNV.js"
     },
     {
       "Id": "/home/tradeckm/RiderProjects/OnlineSurveyTool/OnlineSurveyTool.Server/wwwroot/styles-2WQVIUJD.css",

@@ -1,0 +1,12 @@
+.holder {
+  width: 30vw;
+}
+
+canvas {
+  margin: 5vh;
+}
+
+p {
+  width: 100%;
+  text-align: center;
+}

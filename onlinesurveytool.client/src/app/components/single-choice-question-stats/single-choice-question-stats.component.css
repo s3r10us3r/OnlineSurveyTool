@@ -1,0 +1,16 @@
+canvas {
+  margin: 3vh;
+}
+
+div {
+  width: 25vw;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}

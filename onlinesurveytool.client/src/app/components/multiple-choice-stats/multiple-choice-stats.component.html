@@ -1,0 +1,17 @@
+<div>
+  <canvas baseChart *ngIf="barChartConfig"
+          [datasets]="barChartConfig.dataset"
+          [labels]="barChartConfig.labels"
+          [options]="barChartConfig.options"
+          [legend]="barChartConfig.legend"
+          [type]="barChartConfig.type"
+  >
+  </canvas>
+
+  <ul>
+    <b>Most common combinations:</b>
+    <li *ngFor="let combs of stats.chosenOptionCombinationStats">
+      {{stringArrayToText(combs.values)}}: {{combs.count}}
+    </li>
+  </ul>
+</div>

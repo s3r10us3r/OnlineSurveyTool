@@ -21,3 +21,27 @@
 .newSurveyButton:hover {
   border-width: 2px;
 }
+
+.logOutButton {
+  background-color: red;
+  color: coral;
+  display: flex;
+  height: 10vh;
+  width: 10vh;
+  font-family: 'Montserrat', sans-serif;
+  border-width: 0;
+  border-style: solid;
+  border-color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vh;
+  border-radius: 50%;
+  position: fixed;
+  top:5vh;
+  right:5vw;
+  cursor: pointer;
+}
+
+.logOutButton:hover {
+  border-width: 2px;
+}

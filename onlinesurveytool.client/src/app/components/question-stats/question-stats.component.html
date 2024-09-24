@@ -1,3 +1,21 @@
-<div class="root" [ngSwitch]="stats.type">
-  <single-choice-stats *ngSwitchCase="'single choice'" [stats]="castToSingleChoice()"/>
+<div class="root">
+  <div class="title">
+    {{stats.questionValue}}
+  </div>
+  <div class="responseLevel" *ngIf="stats.isSkippable">
+    <canvas baseChart
+            [datasets]="[{data: [getAnsweredPercentage(), 100 - getAnsweredPercentage()], label: '', backgroundColor: ['#00FF00', '#ff0000']}]"
+            [labels]="['Answered %', 'Unanswered %']"
+            [options]="{responsive: true}"
+            [legend]="true"
+            [type]="'pie'"
+    >
+    </canvas>
+  </div>
+  <div  [ngSwitch]="stats" class="statsHolder">
+    <single-choice-stats *ngIf="stats.type === 'single choice'" [oStats]="stats"/>
+    <textual-stats *ngIf="stats.type ==='textual'" [oStats]="stats"/>
+    <numerical-stats *ngIf="stats.type === 'numerical'" [oStats]="stats"/>
+    <multiple-choice-stats *ngIf="stats.type === 'multiple choice'" [oStats]="stats"/>
+  </div>
 </div>

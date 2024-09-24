@@ -1,0 +1,22 @@
+<div class="holder">
+  <canvas baseChart *ngIf="lineConfig"
+          [datasets]="lineConfig.dataset"
+          [options]="lineConfig.options"
+          [legend]="lineConfig.legend"
+          [type]="lineConfig.type"
+  >
+
+  </canvas>
+
+</div>
+<p>
+  <b>Average answer</b>: {{stats.average}}&nbsp;&nbsp;&nbsp;&nbsp;<b>Median answer</b>: {{stats.median}}
+</p>
+
+<p>
+  <b>Lowest answer</b>: {{stats.minimum}}&nbsp;&nbsp;&nbsp;&nbsp;<b>Highest answer</b>: {{stats.maximum}}
+</p>
+
+<p>
+  <b>Most common answer</b>: {{stats.dominant}}
+</p>

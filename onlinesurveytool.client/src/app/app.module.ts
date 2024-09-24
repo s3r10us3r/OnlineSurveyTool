@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -39,29 +39,29 @@ import {QuestionStatsComponent} from "./components/question-stats/question-stats
 import {
   SingleChoiceQuestionStatsComponent
 } from "./components/single-choice-question-stats/single-choice-question-stats.component";
+import {BaseChartDirective, provideCharts, withDefaultRegisterables} from 'ng2-charts';
+import {ColorService} from "./services/color.service";
+import {TextualStatsComponent} from "./components/textual-stats/textual-stats.component";
+import {NumericalStatsComponent} from "./components/numerical-stats/numerical-stats.component";
+import {MultipleChoiceStatsComponent} from "./components/multiple-choice-stats/multiple-choice-stats.component";
 
-@NgModule({
-  declarations: [
-    AppComponent, LoginComponent, RegisterComponent,
-    ErrorPageComponent, MainPageComponent, NewSurveyPage,
-    NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
-    CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent,
-    HeaderListComponent, AnswerPageComponent, AnswerBoxComponent,
-    SingleChoiceQuestionComponent, TextualQuestionComponent, MultipleChoiceQuestionComponent,
-    NumericalQuestionComponent, SubmittedPageComponent, StatsPageComponent,
-    QuestionStatsComponent, SingleChoiceQuestionStatsComponent
-  ],
-  imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, ReactiveFormsModule, FormsModule
-  ],
-  providers: [AuthService, UserService, NumberService, SurveyService, ResultService, StatsService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent, LoginComponent, RegisterComponent,
+        ErrorPageComponent, MainPageComponent, NewSurveyPage,
+        NewQuestionComponent, NewSingleChoiceComponent, NewMultipleChoiceComponent,
+        CoMinMaxComponent, MinMaxQuestionComponent, ResultHeaderCardComponent,
+        HeaderListComponent, AnswerPageComponent, AnswerBoxComponent,
+        SingleChoiceQuestionComponent, TextualQuestionComponent, MultipleChoiceQuestionComponent,
+        NumericalQuestionComponent, SubmittedPageComponent, StatsPageComponent,
+        QuestionStatsComponent, SingleChoiceQuestionStatsComponent, TextualStatsComponent,
+        NumericalStatsComponent, MultipleChoiceStatsComponent
+    ],
+  bootstrap: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, BaseChartDirective,],
+  providers: [AuthService, UserService, NumberService, SurveyService, ResultService, StatsService, ColorService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        }, provideHttpClient(withInterceptorsFromDi()), provideCharts(withDefaultRegisterables())] })
 export class AppModule { }

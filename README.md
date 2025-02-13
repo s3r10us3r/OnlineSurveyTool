@@ -1,5 +1,5 @@
 # Online Survey Tool
-A fullstack app created to host, manage and analyze your surveys!
+A fullstack app created to host, manage and analyze your surveys! This app was created to practice Angular.
 ## Features
 - Secure authentication system based on jason web tokens.
 - Home page with surveys listed
